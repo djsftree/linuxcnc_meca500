@@ -1,0 +1,480 @@
+<?xml version="1.0" ?>
+<EtherCATInfo>
+  <!-- Slave 0 -->
+  <Vendor>
+    <Id>15511009</Id>
+  </Vendor>
+  <Descriptions>
+    <Devices>
+      <Device>
+        <Type ProductCode="#x0004d500" RevisionNo="#x00000001"></Type>
+        <Sm Enable="1" StartAddress="#x1000" ControlByte="#x26" DefaultSize="128" />
+        <Sm Enable="1" StartAddress="#x1080" ControlByte="#x22" DefaultSize="128" />
+        <Sm Enable="1" StartAddress="#x1100" ControlByte="#x64" DefaultSize="124" />
+        <Sm Enable="1" StartAddress="#x1400" ControlByte="#x20" DefaultSize="60" />
+        <RxPdo Sm="2" Fixed="1" Mandatory="1">
+          <Index>#x1600</Index>
+          <Name>Robot Control</Name>
+          <Entry>
+            <Index>#x7200</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Deactivate</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7200</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Activate</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7200</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Home</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7200</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Reset Error</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7200</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Sim Mode</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x0000</Index>
+            <BitLen>27</BitLen>
+          </Entry>
+        </RxPdo>
+        <RxPdo Sm="2" Fixed="1" Mandatory="1">
+          <Index>#x1601</Index>
+          <Name>Motion Control</Name>
+          <Entry>
+            <Index>#x7310</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>16</BitLen>
+            <Name>Move ID</Name>
+            <DataType>UINT16</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7310</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>SetPoint</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7310</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Pause</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7310</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Clear Move</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7310</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Reset PStop</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x0000</Index>
+            <BitLen>12</BitLen>
+          </Entry>
+        </RxPdo>
+        <RxPdo Sm="2" Fixed="1" Mandatory="1">
+          <Index>#x1602</Index>
+          <Name>Move</Name>
+          <Entry>
+            <Index>#x7305</Index>
+            <SubIndex>0</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>Move Command</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7306</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 001</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7306</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 002</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7306</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 003</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7306</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 004</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7306</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 005</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x7306</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 006</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+        </RxPdo>
+        <TxPdo Sm="3" Fixed="1" Mandatory="1">
+          <Index>#x1a00</Index>
+          <Name>Robot Status</Name>
+          <Entry>
+            <Index>#x6010</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Busy</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6010</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Activated</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6010</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Homed</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6010</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>SimActivated</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x0000</Index>
+            <BitLen>12</BitLen>
+          </Entry>
+          <Entry>
+            <Index>#x6010</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>16</BitLen>
+            <Name>Error</Name>
+            <DataType>UINT16</DataType>
+          </Entry>
+        </TxPdo>
+        <TxPdo Sm="3" Fixed="1" Mandatory="1">
+          <Index>#x1a01</Index>
+          <Name>Motion Status</Name>
+          <Entry>
+            <Index>#x6015</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>CheckPoint</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6015</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>16</BitLen>
+            <Name>Move ID</Name>
+            <DataType>UINT16</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6015</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>16</BitLen>
+            <Name>FIFO Space</Name>
+            <DataType>UINT16</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6015</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Paused</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6015</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>EOB</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6015</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>EOM</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6015</Index>
+            <SubIndex>7</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>FIFO Cleared</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6015</Index>
+            <SubIndex>8</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>PStop</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6015</Index>
+            <SubIndex>9</SubIndex>
+            <BitLen>1</BitLen>
+            <Name>Excessive torque</Name>
+            <DataType>BOOL</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x0000</Index>
+            <BitLen>26</BitLen>
+          </Entry>
+        </TxPdo>
+        <TxPdo Sm="3" Fixed="1" Mandatory="1">
+          <Index>#x1a02</Index>
+          <Name>Joint Set</Name>
+          <Entry>
+            <Index>#x6030</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 001</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6030</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 002</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6030</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 003</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6030</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 004</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6030</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 005</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6030</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 006</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+        </TxPdo>
+        <TxPdo Sm="3" Fixed="1" Mandatory="1">
+          <Index>#x1a03</Index>
+          <Name>End-Effector Pose</Name>
+          <Entry>
+            <Index>#x6031</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 001</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6031</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 002</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6031</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 003</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6031</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 004</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6031</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 005</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6031</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 006</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+        </TxPdo>
+        <TxPdo Sm="3" Fixed="1" Mandatory="1">
+          <Index>#x1a04</Index>
+          <Name>Joint velocities</Name>
+          <Entry>
+            <Index>#x6032</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 001</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6032</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 002</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6032</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 003</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6032</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 004</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6032</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 005</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6032</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 006</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+        </TxPdo>
+        <TxPdo Sm="3" Fixed="1" Mandatory="1">
+          <Index>#x1a05</Index>
+          <Name>Torque Ratio</Name>
+          <Entry>
+            <Index>#x6033</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 001</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6033</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 002</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6033</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 003</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6033</Index>
+            <SubIndex>4</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 004</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6033</Index>
+            <SubIndex>5</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 005</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6033</Index>
+            <SubIndex>6</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>SubIndex 006</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+        </TxPdo>
+        <TxPdo Sm="3" Fixed="1" Mandatory="1">
+          <Index>#x1a06</Index>
+          <Name>Accelerometer</Name>
+          <Entry>
+            <Index>#x6040</Index>
+            <SubIndex>1</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>X</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6040</Index>
+            <SubIndex>2</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>Y</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+          <Entry>
+            <Index>#x6040</Index>
+            <SubIndex>3</SubIndex>
+            <BitLen>32</BitLen>
+            <Name>Z</Name>
+            <DataType>UINT32</DataType>
+          </Entry>
+        </TxPdo>
+      </Device>
+    </Devices>
+  </Descriptions>
+</EtherCATInfo>

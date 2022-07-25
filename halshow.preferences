@@ -1,0 +1,44 @@
+# Halshow settings
+# This file is generated automatically.
+wm geometry . 1280x717+517+60
+placeFrames 0.1995268138801262
+set ::ratio 0.1995268138801262
+set ::old_w_leftf 160
+set ::watchlist {
+    pin+lcec.0.Meca500.ctrl.activate
+    pin+lcec.0.Meca500.ctrl.deactivate
+    pin+lcec.0.Meca500.ctrl.home
+    pin+lcec.0.Meca500.ctrl.reset-errror
+    pin+lcec.0.Meca500.ctrl.sim-mode
+    pin+lcec.0.Meca500.encoder.a1
+    pin+lcec.0.Meca500.encoder.a2
+    pin+lcec.0.Meca500.encoder.a3
+    pin+lcec.0.Meca500.encoder.a4
+    pin+lcec.0.Meca500.encoder.a5
+    pin+lcec.0.Meca500.encoder.a6
+    pin+lcec.0.Meca500.motion.clear-move
+    pin+lcec.0.Meca500.motion.move-id
+    pin+lcec.0.Meca500.motion.pause
+    pin+lcec.0.Meca500.motion.reset-pstop
+    pin+lcec.0.Meca500.motion.set-point
+    pin+lcec.0.Meca500.status.activated
+    pin+lcec.0.Meca500.status.error
+    pin+lcec.0.Meca500.status.homed
+    pin+lcec.0.Meca500.status.move-id
+    pin+lcec.0.Meca500.status.paused
+    pin+lcec.0.Meca500.status.pstop
+    pin+lcec.0.Meca500.vel-cmd.a1
+    pin+lcec.0.Meca500.vel-cmd.a2
+    pin+lcec.0.Meca500.vel-cmd.a3
+    pin+lcec.0.Meca500.vel-cmd.a4
+    pin+lcec.0.Meca500.vel-cmd.a5
+    pin+lcec.0.Meca500.vel-cmd.a6
+    pin+lcec.0.Meca500.vel-command
+}
+set ::workmode watchhal
+set ::watchInterval 100
+set ::col1_width 100
+set ::ffmts 
+set ::ifmts 
+set ::alwaysOnTop 0
+set ::autoSaveWatchlist 1

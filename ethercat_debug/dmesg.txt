@@ -1,0 +1,324 @@
+[25323.295840] EtherCAT 0: Scanning bus.
+[25323.295842] EtherCAT DEBUG 0: Scanning slave 0 on main link.
+[25323.295998] EtherCAT DEBUG 0-0: Slave has the System Time register.
+[25323.296076] EtherCAT DEBUG 0-0: Assigning SII access to EtherCAT.
+[25323.296117] EtherCAT DEBUG 0-0: Determining SII size.
+[25323.296623] EtherCAT DEBUG 0-0: Found category type 30 with size 16. Proceeding to offset 82.
+[25323.297120] EtherCAT DEBUG 0-0: Found category type 40 with size 2. Proceeding to offset 86.
+[25323.297618] EtherCAT DEBUG 0-0: Found category type 41 with size 16. Proceeding to offset 104.
+[25323.298133] EtherCAT DEBUG 0-0: Found category type 60 with size 12. Proceeding to offset 118.
+[25323.332069] EtherCAT DEBUG 0-0: Slave announces to support CoE.
+[25323.332088] EtherCAT DEBUG 0-0: String 0 not found.
+[25323.332091] EtherCAT DEBUG 0-0: String 1 not found.
+[25323.332094] EtherCAT DEBUG 0-0: String 1 not found.
+[25323.332099] EtherCAT DEBUG 0-0: Unknown category type 0x003C.
+[25323.332584] EtherCAT DEBUG 0-0: Reading mailbox sync manager configuration.
+[25323.332674] EtherCAT DEBUG 0-0: Mailbox configuration:
+[25323.332677] EtherCAT DEBUG 0-0:  RX offset=0x1000 size=128
+[25323.332680] EtherCAT DEBUG 0-0:  TX offset=0x1080 size=128
+[25323.332683] EtherCAT DEBUG 0-0: Scanning PDO assignment and mapping.
+[25323.332687] EtherCAT DEBUG 0-0: Reading PDO assignment of SM2.
+[25323.332691] EtherCAT DEBUG 0-0: Uploading SDO 0x1C12:00.
+[25323.332695] EtherCAT DEBUG 0-0: Upload request:
+[25323.332697] EtherCAT DEBUG: 00 20 40 12 1C 00 00 00 00 00 
+[25323.333713] EtherCAT DEBUG 0-0: Upload response:
+[25323.333724] EtherCAT DEBUG: 00 30 4F 12 1C 00 03 00 00 00 
+[25323.333742] EtherCAT DEBUG 0-0: Uploaded data:
+[25323.335547] EtherCAT DEBUG: 03 
+[25323.335564] EtherCAT DEBUG 0-0: 3 PDOs assigned.
+[25323.335567] EtherCAT DEBUG 0-0: Uploading SDO 0x1C12:01.
+[25323.335571] EtherCAT DEBUG 0-0: Upload request:
+[25323.335574] EtherCAT DEBUG: 00 20 40 12 1C 01 00 00 00 00 
+[25323.336649] EtherCAT DEBUG 0-0: Upload response:
+[25323.336716] EtherCAT DEBUG: 00 30 4B 12 1C 01 00 00 00 00 
+[25323.336734] EtherCAT DEBUG 0-0: Uploaded data:
+[25323.336737] EtherCAT DEBUG: 00 00 
+[25323.336744] EtherCAT DEBUG 0-0: PDO 0x0000.
+[25323.336748] EtherCAT DEBUG 0-0: Uploading SDO 0x0000:00.
+[25323.336752] EtherCAT DEBUG 0-0: Upload request:
+[25323.336754] EtherCAT DEBUG: 00 20 40 00 00 00 00 00 00 00 
+[25323.337703] EtherCAT DEBUG 0-0: Upload response:
+[25323.337712] EtherCAT DEBUG: 00 20 80 00 00 00 00 00 02 06 
+[25323.337730] EtherCAT ERROR 0-0: SDO upload 0x0000:00 aborted.
+[25323.337734] EtherCAT ERROR 0-0: SDO abort message 0x06020000: "This object does not exist in the object directory".
+[25323.337738] EtherCAT ERROR 0-0: Failed to read number of mapped PDO entries.
+[25323.337741] EtherCAT ERROR 0-0: Failed to read mapped PDO entries for PDO 0x0000.
+[25323.337744] EtherCAT DEBUG 0-0: Reading PDO assignment of SM3.
+[25323.337749] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:00.
+[25323.337753] EtherCAT DEBUG 0-0: Upload request:
+[25323.337755] EtherCAT DEBUG: 00 20 40 13 1C 00 00 00 00 00 
+[25323.338584] EtherCAT DEBUG 0-0: Upload response:
+[25323.338590] EtherCAT DEBUG: 00 30 4F 13 1C 00 00 00 00 00 
+[25323.338607] EtherCAT DEBUG 0-0: Uploaded data:
+[25323.338609] EtherCAT DEBUG: 00 
+[25323.338613] EtherCAT DEBUG 0-0: 0 PDOs assigned.
+[25323.338617] EtherCAT DEBUG 0-0: Reading of PDO configuration finished.
+[25323.338619] EtherCAT 0: Bus scanning completed in 43 ms.
+[25323.338623] EtherCAT 0: Using slave 0 as DC reference clock.
+[25323.338629] EtherCAT DEBUG 0-0: ec_slave_calc_transmission_delays_rec(delay = 0 ns)
+[25323.338633] EtherCAT DEBUG 0: No app_time received up to now.
+[25323.343314] EtherCAT DEBUG 0-0: Changing state from PREOP to PREOP (forced).
+[25323.343331] EtherCAT DEBUG 0-0: Configuring...
+[25323.344021] EtherCAT DEBUG 0-0: Now in INIT.
+[25323.344024] EtherCAT DEBUG 0-0: Clearing FMMU configurations...
+[25323.344065] EtherCAT DEBUG 0-0: Clearing sync manager configurations...
+[25323.344106] EtherCAT DEBUG 0-0: Clearing DC assignment...
+[25323.344148] EtherCAT DEBUG 0-0: Configuring mailbox sync managers...
+[25323.344152] EtherCAT DEBUG 0-0: SM0: Addr 0x1000, Size 128, Ctrl 0x26, En 1
+[25323.344157] EtherCAT DEBUG 0-0: SM1: Addr 0x1080, Size 128, Ctrl 0x22, En 1
+[25323.344200] EtherCAT DEBUG 0-0: Assigning SII access to PDI.
+[25323.345346] EtherCAT DEBUG 0-0: Now in PREOP.
+[25323.345356] EtherCAT DEBUG 0-0: Assigning SII access back to EtherCAT.
+[25323.345398] EtherCAT DEBUG 0-0: Finished configuration.
+[25323.345403] EtherCAT DEBUG 0-0: Ready for requests.
+[25324.505775] EtherCAT: Requesting master 0...
+[25324.505792] EtherCAT DEBUG 0: IDLE -> OPERATION.
+[25324.505798] EtherCAT: Successfully requested master 0.
+[25324.505804] EtherCAT DEBUG 0: ecrt_master_create_domain(master = 0x00000000955d8ed1)
+[25324.505811] EtherCAT DEBUG 0: Created domain 0.
+[25324.505818] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.505823] EtherCAT DEBUG 0: Creating slave configuration for 0:0, 0x00ECADE1/0x0004D500.
+[25324.505831] EtherCAT DEBUG 0 0:0: Attached slave 0.
+[25324.505915] EtherCAT DEBUG 0 0:0: ecrt_slave_config_dc(sc = 0x00000000db2b61d9, assign_activate = 0x0300, sync0_cycle = 1000000, sync0_shift = 0, sync1_cycle = 0, sync1_shift = 0
+[25324.505927] EtherCAT DEBUG 0 0:0: ecrt_slave_config_sync_manager(sc = 0x00000000db2b61d9, sync_index = 0, dir = 1, watchdog_mode = 0)
+[25324.505936] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_clear(sc = 0x00000000db2b61d9, sync_index = 0)
+[25324.505945] EtherCAT DEBUG 0 0:0: ecrt_slave_config_sync_manager(sc = 0x00000000db2b61d9, sync_index = 1, dir = 2, watchdog_mode = 0)
+[25324.505952] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_clear(sc = 0x00000000db2b61d9, sync_index = 1)
+[25324.505959] EtherCAT DEBUG 0 0:0: ecrt_slave_config_sync_manager(sc = 0x00000000db2b61d9, sync_index = 2, dir = 1, watchdog_mode = 0)
+[25324.505966] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_clear(sc = 0x00000000db2b61d9, sync_index = 2)
+[25324.505974] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x00000000db2b61d9, sync_index = 2, pdo_index = 0x1600)
+[25324.505980] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1600.
+[25324.505983] EtherCAT DEBUG 0 0:0: No default mapping found.
+[25324.505990] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x00000000db2b61d9, pdo_index = 0x1600)
+[25324.505999] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1600, entry_index = 0x7200, entry_subindex = 0x01, entry_bit_length = 1)
+[25324.506009] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1600, entry_index = 0x7200, entry_subindex = 0x02, entry_bit_length = 1)
+[25324.506019] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1600, entry_index = 0x7200, entry_subindex = 0x03, entry_bit_length = 1)
+[25324.506029] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1600, entry_index = 0x7200, entry_subindex = 0x04, entry_bit_length = 1)
+[25324.506038] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1600, entry_index = 0x7200, entry_subindex = 0x05, entry_bit_length = 1)
+[25324.506047] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1600, entry_index = 0x0000, entry_subindex = 0x00, entry_bit_length = 27)
+[25324.506057] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x00000000db2b61d9, sync_index = 2, pdo_index = 0x1601)
+[25324.506062] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1601.
+[25324.506064] EtherCAT DEBUG 0 0:0: No default mapping found.
+[25324.506070] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x00000000db2b61d9, pdo_index = 0x1601)
+[25324.506078] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1601, entry_index = 0x7310, entry_subindex = 0x01, entry_bit_length = 16)
+[25324.506088] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1601, entry_index = 0x7310, entry_subindex = 0x02, entry_bit_length = 1)
+[25324.506098] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1601, entry_index = 0x7310, entry_subindex = 0x03, entry_bit_length = 1)
+[25324.506107] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1601, entry_index = 0x7310, entry_subindex = 0x04, entry_bit_length = 1)
+[25324.506117] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1601, entry_index = 0x7310, entry_subindex = 0x05, entry_bit_length = 1)
+[25324.506126] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1601, entry_index = 0x0000, entry_subindex = 0x00, entry_bit_length = 12)
+[25324.506136] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x00000000db2b61d9, sync_index = 2, pdo_index = 0x1602)
+[25324.506141] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1602.
+[25324.506144] EtherCAT DEBUG 0 0:0: No default mapping found.
+[25324.506149] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x00000000db2b61d9, pdo_index = 0x1602)
+[25324.506157] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1602, entry_index = 0x7305, entry_subindex = 0x00, entry_bit_length = 32)
+[25324.506166] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1602, entry_index = 0x7306, entry_subindex = 0x01, entry_bit_length = 32)
+[25324.506176] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1602, entry_index = 0x7306, entry_subindex = 0x02, entry_bit_length = 32)
+[25324.506185] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1602, entry_index = 0x7306, entry_subindex = 0x03, entry_bit_length = 32)
+[25324.506194] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1602, entry_index = 0x7306, entry_subindex = 0x04, entry_bit_length = 32)
+[25324.506203] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1602, entry_index = 0x7306, entry_subindex = 0x05, entry_bit_length = 32)
+[25324.506212] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1602, entry_index = 0x7306, entry_subindex = 0x06, entry_bit_length = 32)
+[25324.506221] EtherCAT DEBUG 0 0:0: ecrt_slave_config_sync_manager(sc = 0x00000000db2b61d9, sync_index = 3, dir = 2, watchdog_mode = 0)
+[25324.506229] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_clear(sc = 0x00000000db2b61d9, sync_index = 3)
+[25324.506236] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x00000000db2b61d9, sync_index = 3, pdo_index = 0x1A00)
+[25324.506241] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A00.
+[25324.506244] EtherCAT DEBUG 0 0:0: No default mapping found.
+[25324.506249] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x00000000db2b61d9, pdo_index = 0x1A00)
+[25324.506257] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A00, entry_index = 0x6010, entry_subindex = 0x02, entry_bit_length = 1)
+[25324.506323] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A00, entry_index = 0x6010, entry_subindex = 0x03, entry_bit_length = 1)
+[25324.506335] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A00, entry_index = 0x6010, entry_subindex = 0x04, entry_bit_length = 1)
+[25324.506344] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A00, entry_index = 0x6010, entry_subindex = 0x05, entry_bit_length = 1)
+[25324.506354] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A00, entry_index = 0x0000, entry_subindex = 0x00, entry_bit_length = 12)
+[25324.506364] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A00, entry_index = 0x6010, entry_subindex = 0x01, entry_bit_length = 16)
+[25324.506373] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x00000000db2b61d9, sync_index = 3, pdo_index = 0x1A01)
+[25324.506378] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A01.
+[25324.506381] EtherCAT DEBUG 0 0:0: No default mapping found.
+[25324.506387] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x00000000db2b61d9, pdo_index = 0x1A01)
+[25324.506394] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x01, entry_bit_length = 32)
+[25324.506403] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x02, entry_bit_length = 16)
+[25324.506413] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x03, entry_bit_length = 16)
+[25324.506422] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x04, entry_bit_length = 1)
+[25324.506431] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x05, entry_bit_length = 1)
+[25324.506441] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x06, entry_bit_length = 1)
+[25324.506449] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x07, entry_bit_length = 1)
+[25324.506459] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x08, entry_bit_length = 1)
+[25324.506468] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x09, entry_bit_length = 1)
+[25324.506477] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A01, entry_index = 0x0000, entry_subindex = 0x00, entry_bit_length = 26)
+[25324.506486] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x00000000db2b61d9, sync_index = 3, pdo_index = 0x1A02)
+[25324.506491] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A02.
+[25324.506494] EtherCAT DEBUG 0 0:0: No default mapping found.
+[25324.506500] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x00000000db2b61d9, pdo_index = 0x1A02)
+[25324.506507] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A02, entry_index = 0x6030, entry_subindex = 0x01, entry_bit_length = 32)
+[25324.506517] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A02, entry_index = 0x6030, entry_subindex = 0x02, entry_bit_length = 32)
+[25324.506526] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A02, entry_index = 0x6030, entry_subindex = 0x03, entry_bit_length = 32)
+[25324.506535] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A02, entry_index = 0x6030, entry_subindex = 0x04, entry_bit_length = 32)
+[25324.506544] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A02, entry_index = 0x6030, entry_subindex = 0x05, entry_bit_length = 32)
+[25324.506554] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A02, entry_index = 0x6030, entry_subindex = 0x06, entry_bit_length = 32)
+[25324.506563] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x00000000db2b61d9, sync_index = 3, pdo_index = 0x1A03)
+[25324.506568] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A03.
+[25324.506571] EtherCAT DEBUG 0 0:0: No default mapping found.
+[25324.506576] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x00000000db2b61d9, pdo_index = 0x1A03)
+[25324.506584] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A03, entry_index = 0x6031, entry_subindex = 0x01, entry_bit_length = 32)
+[25324.506593] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A03, entry_index = 0x6031, entry_subindex = 0x02, entry_bit_length = 32)
+[25324.506602] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A03, entry_index = 0x6031, entry_subindex = 0x03, entry_bit_length = 32)
+[25324.506611] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A03, entry_index = 0x6031, entry_subindex = 0x04, entry_bit_length = 32)
+[25324.506620] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A03, entry_index = 0x6031, entry_subindex = 0x05, entry_bit_length = 32)
+[25324.506630] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A03, entry_index = 0x6031, entry_subindex = 0x06, entry_bit_length = 32)
+[25324.506639] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x00000000db2b61d9, sync_index = 3, pdo_index = 0x1A04)
+[25324.506644] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A04.
+[25324.506646] EtherCAT DEBUG 0 0:0: No default mapping found.
+[25324.506652] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x00000000db2b61d9, pdo_index = 0x1A04)
+[25324.506660] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A04, entry_index = 0x6032, entry_subindex = 0x01, entry_bit_length = 32)
+[25324.506669] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A04, entry_index = 0x6032, entry_subindex = 0x02, entry_bit_length = 32)
+[25324.506678] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A04, entry_index = 0x6032, entry_subindex = 0x03, entry_bit_length = 32)
+[25324.506687] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A04, entry_index = 0x6032, entry_subindex = 0x04, entry_bit_length = 32)
+[25324.506697] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A04, entry_index = 0x6032, entry_subindex = 0x05, entry_bit_length = 32)
+[25324.506706] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A04, entry_index = 0x6032, entry_subindex = 0x06, entry_bit_length = 32)
+[25324.506715] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x00000000db2b61d9, sync_index = 3, pdo_index = 0x1A05)
+[25324.506720] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A05.
+[25324.506722] EtherCAT DEBUG 0 0:0: No default mapping found.
+[25324.506728] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x00000000db2b61d9, pdo_index = 0x1A05)
+[25324.506736] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A05, entry_index = 0x6033, entry_subindex = 0x01, entry_bit_length = 32)
+[25324.506745] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A05, entry_index = 0x6033, entry_subindex = 0x02, entry_bit_length = 32)
+[25324.506754] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A05, entry_index = 0x6033, entry_subindex = 0x03, entry_bit_length = 32)
+[25324.506764] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A05, entry_index = 0x6033, entry_subindex = 0x04, entry_bit_length = 32)
+[25324.506775] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A05, entry_index = 0x6033, entry_subindex = 0x05, entry_bit_length = 32)
+[25324.506784] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A05, entry_index = 0x6033, entry_subindex = 0x06, entry_bit_length = 32)
+[25324.506793] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x00000000db2b61d9, sync_index = 3, pdo_index = 0x1A06)
+[25324.506798] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A06.
+[25324.506801] EtherCAT DEBUG 0 0:0: No default mapping found.
+[25324.506807] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x00000000db2b61d9, pdo_index = 0x1A06)
+[25324.506815] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A06, entry_index = 0x6040, entry_subindex = 0x01, entry_bit_length = 32)
+[25324.506824] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A06, entry_index = 0x6040, entry_subindex = 0x02, entry_bit_length = 32)
+[25324.506834] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x00000000db2b61d9, pdo_index = 0x1A06, entry_index = 0x6040, entry_subindex = 0x03, entry_bit_length = 32)
+[25324.506861] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.506873] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7200, subindex = 0x01, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.506881] EtherCAT DEBUG 0: Domain 0: Added 36 bytes, total 36.
+[25324.506888] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.506897] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7200, subindex = 0x02, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.506904] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.506912] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7200, subindex = 0x03, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.506919] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.506927] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7200, subindex = 0x04, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.506934] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.506942] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7200, subindex = 0x05, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.506949] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.506958] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7310, subindex = 0x01, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.506965] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.506973] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7310, subindex = 0x02, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.506980] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.506988] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7310, subindex = 0x03, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.506996] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507004] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7310, subindex = 0x04, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507011] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507019] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7310, subindex = 0x05, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507026] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507034] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7305, subindex = 0x00, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507041] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507049] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7306, subindex = 0x01, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507056] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507065] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7306, subindex = 0x02, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507072] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507080] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7306, subindex = 0x03, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507087] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507095] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7306, subindex = 0x04, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507102] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507110] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7306, subindex = 0x05, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507118] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507126] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x7306, subindex = 0x06, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507133] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507141] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6010, subindex = 0x02, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507148] EtherCAT DEBUG 0: Domain 0: Added 124 bytes, total 160.
+[25324.507154] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507162] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6010, subindex = 0x03, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507169] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507178] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6010, subindex = 0x04, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507185] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507193] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6010, subindex = 0x05, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507201] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507209] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6010, subindex = 0x01, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507216] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507224] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6015, subindex = 0x01, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507231] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507239] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6015, subindex = 0x02, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507246] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507255] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6015, subindex = 0x03, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507262] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507312] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6015, subindex = 0x04, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507323] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507332] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6015, subindex = 0x05, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507339] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507348] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6015, subindex = 0x06, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507355] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507363] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6015, subindex = 0x07, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507370] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507378] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6015, subindex = 0x08, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507385] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507394] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6015, subindex = 0x09, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507401] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507409] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6030, subindex = 0x01, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507417] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507425] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6030, subindex = 0x02, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507432] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507441] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6030, subindex = 0x03, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507448] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507456] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6030, subindex = 0x04, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507464] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507472] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6030, subindex = 0x05, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507479] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507487] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6030, subindex = 0x06, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507495] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507503] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6031, subindex = 0x01, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507519] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507530] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6031, subindex = 0x02, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507541] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507549] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6031, subindex = 0x03, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507556] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507564] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6031, subindex = 0x04, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507572] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507580] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6031, subindex = 0x05, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507588] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507596] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6031, subindex = 0x06, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507603] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507611] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6032, subindex = 0x01, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507618] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507627] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6032, subindex = 0x02, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507634] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507642] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6032, subindex = 0x03, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507650] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507658] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6032, subindex = 0x04, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507665] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507674] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6032, subindex = 0x05, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507681] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507690] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6032, subindex = 0x06, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507697] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507706] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6033, subindex = 0x01, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507714] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507722] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6033, subindex = 0x02, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507730] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507738] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6033, subindex = 0x03, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507746] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507754] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6033, subindex = 0x04, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507762] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507770] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6033, subindex = 0x05, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507777] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507786] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6033, subindex = 0x06, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507793] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507802] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6040, subindex = 0x01, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507810] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507819] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6040, subindex = 0x02, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507826] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000955d8ed1, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
+[25324.507835] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x00000000db2b61d9, index = 0x6040, subindex = 0x03, domain = 0x000000007cf48c95, bit_position = 0x00000000cf3e0a81)
+[25324.507871] EtherCAT DEBUG 0: ecrt_domain_external_memory(domain = 0x000000007cf48c95, mem = 0x00000000587b6e94)
+[25324.507876] EtherCAT DEBUG 0: ecrt_master_callbacks(master = 0x00000000955d8ed1, send_cb = 0x00000000c5d077a4, receive_cb = 0x000000003a00532a, cb_data = 0x00000000955d8ed1)
+[25324.507881] EtherCAT DEBUG 0: ecrt_master_activate(master = 0x00000000955d8ed1)
+[25324.507889] EtherCAT DEBUG 0: Adding datagram pair with expected WC 3.
+[25324.507891] EtherCAT 0: Domain0: Logical address 0x00000000, 160 byte, expected working counter 3.
+[25324.507895] EtherCAT 0:   Datagram domain0-0-main: Logical offset 0x00000000, 160 byte, type LRW.
+[25324.507900] EtherCAT DEBUG 0: Stopping master thread.
+[25324.508897] EtherCAT DEBUG 0: Master IDLE thread exiting...
+[25324.517371] EtherCAT 0: Master thread exited.
+[25324.517388] EtherCAT DEBUG 0: FSM datagram is 0000000098ae9300.
+[25324.517394] EtherCAT 0: Starting EtherCAT-OP thread.
+[25324.519467] EtherCAT DEBUG 0: mmap()
+[25324.519504] EtherCAT DEBUG 0: Vma fault, offset = 0, page = 0000000097401563
+[25324.519689] EtherCAT DEBUG 0: Operation thread running with fsm interval = 1000 us, max data size=11250
