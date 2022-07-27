@@ -33,25 +33,18 @@ c.newpin("plotclear", hal.HAL_BIT, hal.HAL_IN)
 c.ready()
 
 work = Capture()
-
-# show CNC-tooltip position (ie tool trace in window)
 tooltip = Capture()
+tool = Capture()
+tool = Collection([tooltip, tool])
 
-# create finger (tool)
-finger1 = CylinderZ(80, 10, 0, 10)
-finger1 = Color([0.9,0.9,0.9,1],[finger1])
-
-# create visual tool coordinates axes
+# create visual tool coordinates axes	
 xaxis = Color([1,0,0,1],[CylinderX(0,3,100,3)])
 yaxis = Color([0,1,0,1],[CylinderY(0,3,100,3)])
 zaxis = Color([0,0,1,1],[CylinderZ(0,3,100,3)])
-
-# combine tool and coordinate axis = tool-assembly
-finger1 = Collection([finger1,tooltip,xaxis,yaxis,zaxis])
-finger1 = Translate([finger1],12.5,-20.0,-40)
-finger1 = Rotate([finger1],-90,0,1,0)
+finger1 = Collection([tool,xaxis,yaxis,zaxis])
 
 try: # Expect files in working directory
+    link8 = AsciiOBJ(filename="models/spindle_assembly.obj")
     link7 = AsciiOBJ(filename="models/meca500_link7.obj")
     link6 = AsciiOBJ(filename="models/meca500_link6.obj")
     link5 = AsciiOBJ(filename="models/meca500_link5.obj")
@@ -64,9 +57,16 @@ except Exception as detail:
     print(detail)
     raise SystemExit("meca500 requires files in models directory")
 
+# create spindle model
+link8 = Color([0.9,0.9,0.9,1],[link8])
+link8 = Translate([link8],0,0,100)
+link8 = Rotate([link8],-90,0,1,0)
+finger1 = Translate([finger1],12.5,-20.0,-40)
+link8 = Collection([finger1,link8])
+
 ### Create link7
 link7 = Color([0.9,0.9,0.9,1],[link7])
-link7 = Collection([finger1, link7])
+link7 = Collection([link8, link7])
 link7 = HalRotate([link7],c,"joint6",1,1,0,0)
 
 ### Create link6
