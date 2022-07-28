@@ -1,0 +1,7 @@
+Package: meca500
+Version: 1.0.0-rc
+Architecture: all
+Depends: python
+Breaks: rmdrtr
+Maintainer: DJS <djs@fathomtreeltd.com>
+Description: Control Interface for Meca500
