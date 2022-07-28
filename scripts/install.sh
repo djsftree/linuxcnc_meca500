@@ -30,6 +30,7 @@ mkdir -p "$DEB_DIR/$PKG_NAME/$ASSET_DIR"
 mkdir -p "$DEB_DIR/$PKG_NAME/$CONFG_DIR"
 mkdir -p "$DEB_DIR/$PKG_NAME/$BINRY_DIR"
 mkdir -p "$DEB_DIR/$PKG_NAME/DEBIAN"
+# TODO: Need to auto increment the version number
 cp "$BASE_DIR/scripts/control" "$DEB_DIR/$PKG_NAME/DEBIAN/"
 
 echo -e "$SCRIPT: Building Debian Package"
@@ -39,3 +40,4 @@ cp "$SRC_DIR/meca500gui.py" "$DEB_DIR/$PKG_NAME/$BINRY_DIR/meca500gui"
 sudo chmod +x "$DEB_DIR/$PKG_NAME/$BINRY_DIR/meca500gui"
 
 dpkg-deb --build "$DEB_DIR/$PKG_NAME"
+sudo apt install "$DEB_DIR/$PKG_NAME.deb" --reinstall
