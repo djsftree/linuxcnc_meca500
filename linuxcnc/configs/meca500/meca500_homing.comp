@@ -1,0 +1,596 @@
+component meca500_homecomp "Homing Module for Mecademic Meca500";
+
+description """
+""";
+
+pin out bit is_module = 1;
+license "GPL";
+option homemod;
+option extra_setup;
+
+;;
+
+
+
+#include "motion.h"
+#include "homing.h"
+#include "math.h"
+#include "time.h"
+
+#define STR(s) #s
+#define XSTR(s) STR(s)
+#define ABS(x)(((x) < 0) ? -(x) : (x))
+#define CUSTOM_HOMEMODULE
+
+
+
+/* 
+ ** EXTRA_SETUP()
+ ** 
+ ** rtapi_app_main() supplied by halcompile
+ ** executed before rtapi_app_main()
+ */
+EXTRA_SETUP() {
+        rtapi_print("\n!!!%s: Meca500 Homing Module\n\n", __FILE__);
+        return 0;
+}
+
+
+
+/* 
+ ** Functions ptrs received from motmod
+ ** 
+ ** 
+ */
+static emcmot_joint_t * joints;
+static int all_joints;
+static int extra_joints;
+static double servo_freq;
+static void( * SetRotaryUnlock)(int, int);
+static int( * GetRotaryIsUnlocked)(int);
+void homeMotFunctions(void( * pSetRotaryUnlock)(int, int), int( * pGetRotaryIsUnlocked)(int)) {
+        SetRotaryUnlock = * pSetRotaryUnlock;
+        GetRotaryIsUnlocked = * pGetRotaryIsUnlocked;
+}
+
+
+
+/* 
+ ** 
+ ** 
+ ** 
+ */
+typedef struct {
+
+        bool request_custom_homing;
+        bool is_custom_homing;
+	
+        hal_bit_t home_sw;              // home switch input
+        hal_bit_t homing;               // joint is homing
+        hal_bit_t homed;                // joint was homed
+        hal_bit_t index_enable;         // motmod sets:    request reset on index
+                                        // encoder clears: index arrived
+        hal_s32_t home_state;           // homing state machine state
+        hal_s32_t tperiod;              // period dummy pin that counts the periods
+        
+        // LinuxCNC Control
+        hal_bit_t enable;               // IN  - true enables the joint
+        float pos_cmd;                  // IN  - target Position, from Motion or PID
+        float vel_cmd;                  // IN  - target Velocity, from Motion or PID
+        float target_velocity;          // OUT - target velocity, to robot joint
+        float actual_position;          // IN  - joint actual position (deg)
+        float actual_velocity;          // IN  - joint actual velocity (deg/s)
+        float actual_torque;            // IN  - joint actual torque ratio (percent of max allowed)
+
+        // Robot Control
+        hal_bit_t ctrl_deactivate;      // IO  - true deactivates robot
+        hal_bit_t ctrl_activate;        // IO  - true activates the robot (if deactivated 0) 
+        hal_bit_t ctrl_home;            // IO  - true starts the robot internal home procedure (if activated, not homed) 
+        hal_bit_t ctrl_reset_error;     // IO  - true resets status_error_code
+        hal_bit_t ctrl_sim_mode;        // IO  - true enables simulation mode (if the robot is not activated)         
+
+        // Robot Motion Control
+        hal_u32_t motion_move_id;       // IO  - motion command ID = 21 (MoveJointsVel)
+        hal_bit_t motion_set_point;     // IO  - true for motion commands to be sent to the robot
+        hal_u32_t motion_move_id;       // IO  - movemment id to the joint drive ( always 21 for velocity mode)
+        hal_float_t target_velocity;    // IO  - velocity command to the joint drive
+
+        // Robot Status
+        hal_bit_t status_busy;          // IN  - true only while the robot is being activated, homed or deactivated
+        hal_bit_t status_activated;     // IN  - true indicates the motors are on (powered)
+        hal_bit_t status_homed;         // IN  - true indicated the robot is homed and ready to receive motion commands
+        hal_bit_t status_sim_activated; // IN  - true indicates whether the robot simulation mode is activated
+        hal_u32_t status_error_code;    // IN  - the error number or 0 if there is no error
+        hal_u32_t status_excess_torque; // IN  - true indicates joint torque is exceeding torque limit
+
+        // Robot Joint Feedback
+        hal_float_t position-fb;        // IN  - joint actual position (deg)
+        hal_float_t velocity-fb;        // IN  - joint actual velocity (deg/s)
+        hal_float_t torque-fb;          // IN  - joint actual torque ratio (percent of max allowed)
+        
+        bool enable_edge;               // NA  - used in write_homing_out_pins() to detect edge
+        bool old_enable_edge;
+        
+        // Inluded for compatibility with homing.c
+        int pause_timer;
+        double home_final_vel;         // intfc
+        double home_search_vel;        // intfc
+        double home_latch_vel;         // intfc
+
+} home_local_data_t;
+
+static home_local_data_t H[EMCMOT_MAX_JOINTS];
+
+
+
+/* 
+ ** 
+ ** 
+ ** 
+ */
+typedef struct {
+
+        hal_bit_t * request_custom_homing; // input requests custom homing
+        hal_bit_t * is_custom_homing;      // output verifies custom homing
+
+        hal_bit_t * home_sw;               // home switch input
+        hal_bit_t * homing;                // joint is homing
+        hal_bit_t * homed;                 // joint was homed
+        hal_bit_t * index_enable;          // motmod sets:    request reset on index
+                                           // encoder clears: index arrived
+        hal_s32_t * home_state;            // homing state machine state
+        hal_s32_t * tperiod;               // period dummy pin that counts the periods
+        
+        // LinuxCNC Control
+        hal_bit_t * enable;                // IN  - true enables the joint
+        float * pos_cmd;                   // IN  - target Position, from Motion or PID
+        float * vel_cmd;                   // IN  - target Velocity, from Motion or PID
+        float * target_velocity;           // OUT - target velocity, to robot joint
+        float * actual_position;           // IN  - joint actual position (deg)
+        float * actual_velocity;           // IN  - joint actual velocity (deg/s)
+        float * actual_torque;             // IN  - joint actual torque ratio (percent of max allowed)
+        
+        // Robot Control
+        hal_bit_t * ctrl_deactivate;       // IO  - true deactivates robot
+        hal_bit_t * ctrl_activate;         // IO  - true activates the robot (if deactivated 0) 
+        hal_bit_t * ctrl_home;             // IO  - true starts the robot internal home procedure (if activated, not homed) 
+        hal_bit_t * ctrl_reset_error;      // IO  - true resets status_error_code
+        hal_bit_t * ctrl_sim_mode;         // IO  - true enables simulation mode (if the robot is not activated)         
+
+        // Robot Motion Control
+        hal_u32_t * motion_move_id;        // IO  - motion command ID = 21 (MoveJointsVel)
+        hal_bit_t * motion_set_point;      // IO  - true for motion commands to be sent to the robot
+        hal_float_t * target_velocity;     // IO  - velocity command to the joint drive
+
+        // Robot Status
+        hal_bit_t * status_busy;           // IN  - true only while the robot is being activated, homed or deactivated
+        hal_bit_t * status_activated;      // IN  - true indicates the motors are on (powered)
+        hal_bit_t * status_homed;          // IN  - true indicated the robot is homed and ready to receive motion commands
+        hal_bit_t * status_sim_activated;  // IN  - true indicates whether the robot simulation mode is activated
+        hal_u32_t * status_error_code;     // IN  - the error number or 0 if there is no error
+        hal_u32_t * status_excess_torque;  // IN  - true indicates joint torque is exceeding torque limit
+
+        // Robot Joint Feedback
+        hal_float_t * position-fb;         // IN  - joint actual position (deg)
+        hal_float_t * velocity-fb;         // IN  - joint actual velocity (deg/s)
+        hal_float_t * torque-fb;           // IN  - joint actual torque ratio (percent of max allowed)
+        
+        int * enable_edge;                 // NA  - used in write_homing_out_pins() to detect edge
+        int * old_enable_edge;    
+        
+} one_joint_home_data_t;
+
+typedef struct {
+        one_joint_home_data_t jhd[EMCMOT_MAX_JOINTS];
+} all_joints_home_data_t;
+
+static all_joints_home_data_t * joint_home_data = 0;
+
+
+
+/* 
+ ** makepins() 
+ ** 
+ ** 
+ */
+static int makepins(int id, int njoints) {
+        // home_pins needed to work with configs expecting them:
+        int jno, retval;
+        one_joint_home_data_t * addr;
+
+        joint_home_data = hal_malloc(sizeof(all_joints_home_data_t));
+        if (joint_home_data == 0) {
+                rtapi_print_msg(RTAPI_MSG_ERR, "HOMING: all_joints_home_data_t malloc failed\n");
+                return -1;
+        }
+
+        retval = 0;
+        for (jno = 0; jno < njoints; jno++) {
+
+                addr = & (joint_home_data -> jhd[jno]);
+
+                retval += hal_pin_bit_newf(HAL_IN,  & (addr -> home_sw),      id, "joint.%d.home-sw-in", jno);
+                retval += hal_pin_bit_newf(HAL_OUT, & (addr -> homing),       id, "joint.%d.homing", jno);
+                retval += hal_pin_bit_newf(HAL_OUT, & (addr -> homed),        id, "joint.%d.homed", jno);
+                retval += hal_pin_s32_newf(HAL_OUT, & (addr -> home_state),   id, "joint.%d.home-state", jno);
+                retval += hal_pin_bit_newf(HAL_IO,  & (addr -> index_enable), id, "joint.%d.index-enable", jno);
+
+                // Robot Control
+                retval += hal_pin_bit_newf(HAL_IO, & (addr -> ctrl_deactivate),  id, "joint.%d.ctrl-deactivate", jno);
+                retval += hal_pin_bit_newf(HAL_IO, & (addr -> ctrl_activate),    id, "joint.%d.ctrl-activate", jno);
+                retval += hal_pin_bit_newf(HAL_IO, & (addr -> ctrl_home),        id, "joint.%d.ctrl-home", jno);
+                retval += hal_pin_bit_newf(HAL_IO, & (addr -> ctrl_reset_error), id, "joint.%d.ctrl-reset_error", jno);
+                retval += hal_pin_bit_newf(HAL_IO, & (addr -> ctrl_sim_mode),    id, "joint.%d.ctrl-sim-mode", jno);
+
+                // Robot Motion Control
+                retval += hal_pin_u32_newf(HAL_IO,   & (addr -> motion_move_id),         id, "joint.%d.motion-move-id", jno);
+                retval += hal_pin_bit_newf(HAL_IO,   & (addr -> motion_set_point),       id, "joint.%d.motion-set-point", jno);
+                retval += hal_pin_float_newf(HAL_IO, & (addr -> motion_target_velocity), id, "joint.%d.motion-target-velocity", jno);
+
+                // Robot Status
+                retval += hal_pin_bit_newf(HAL_IN, & (addr -> status_busy),          id, "joint.%d.status-busy", jno);
+                retval += hal_pin_bit_newf(HAL_IN, & (addr -> status_activated),     id, "joint.%d.status-activated", jno);
+                retval += hal_pin_bit_newf(HAL_IN, & (addr -> status_homed),         id, "joint.%d.status-homed", jno);
+                retval += hal_pin_bit_newf(HAL_IN, & (addr -> status_sim_activated), id, "joint.%d.status-sim-activated", jno);
+                retval += hal_pin_u32_newf(HAL_IN, & (addr -> status_error_code),    id, "joint.%d.status-error-code", jno);
+                retval += hal_pin_bit_newf(HAL_IN, & (addr -> status_excess_torque), id, "joint.%d.status-excess-torque", jno);
+                
+                // Robot Joint Feedback
+                retval += hal_pin_float_newf(HAL_IN, & (addr -> position-fb),  id, "joint.%d.position-fb", jno);
+                retval += hal_pin_float_newf(HAL_IN, & (addr -> velocity-fb),  id, "joint.%d.velocity-fb", jno);
+                retval += hal_pin_float_newf(HAL_IN, & (addr -> torque-fb),    id, "joint.%d.torque-fb", jno);
+
+        }
+        return retval;
+}
+
+
+
+/* 
+ ** homing_init() 
+ ** 
+ ** 
+ */
+int homing_init(int id,
+        double servo_period,
+        int n_joints,
+        int n_extrajoints,
+        emcmot_joint_t * pjoints) {
+        joints = pjoints;
+        return makepins(id, n_joints);
+}
+
+
+
+/* 
+** do_homing()
+** adapted from homing.c:base_do_homing() augmented
+** with support for custom homing as specified on hal input pin:
+** joint.n.request-custom-homing and echoed on hal output pin
+** joint.n.is-custom-homing
+*/
+bool do_homing(void) {
+        int joint_num;
+        int homing_flag = 0;
+        bool beginning_allhomed = get_allhomed();
+
+        do_homing_sequence();
+        /* loop thru joints, treat each one individually */
+        for (joint_num = 0; joint_num < all_joints; joint_num++) {
+                if (!H[joint_num].joint_in_sequence) {
+                        continue;
+                }
+                if (!GET_JOINT_ACTIVE_FLAG( & joints[joint_num])) {
+                        continue;
+                }
+
+                if (H[joint_num].is_custom_homing) {
+                        // CUSTOM joint homing state machine:
+                        homing_flag += custom_1joint_state_machine(joint_num);
+                } else {
+                        // DEFAULT joint homing state machine:
+                        homing_flag += base_1joint_state_machine(joint_num);
+                }
+        }
+        if (homing_flag > 0) {
+                /* one or more joint is homing */
+                homing_active = 1;
+        } else {
+                /* is a homing sequence in progress? */
+                if (sequence_state == HOME_SEQUENCE_IDLE) {
+                        /* no, single joint only, we're done */
+                        homing_active = 0;
+                }
+        }
+        // return 1 if homing completed this period
+        if (!beginning_allhomed && get_allhomed()) {
+                homing_active = 0;
+                return 1;
+        }
+        return 0;
+}
+
+
+
+/*  
+ ** get_allhomed()
+ ** 
+ ** 
+ */
+bool get_allhomed() {
+        return 1;
+}
+
+
+
+/*  
+ ** get_homed()
+ ** 
+ ** 
+ */
+bool get_homed(int jno) {
+        return H[jno].homed;
+}
+
+
+
+/* 
+ ** get_home_is_idle()
+ ** 
+ ** 
+ */
+bool get_home_is_idle(int jno) {
+        return H[jno].home_state == HOME_IDLE ? 1 : 0;
+}
+
+
+
+/*  
+ ** get_home_is_synchronized()
+ ** 
+ ** 
+ */
+bool get_home_is_synchronized(int jno) {
+        return H[jno].home_is_synchronized;
+}
+
+
+
+/* 
+ ** get_home_needs_unlock_first()
+ ** 
+ ** 
+ */
+bool get_home_needs_unlock_first(int jno) {
+        return (H[jno].home_flags & HOME_UNLOCK_FIRST) ? 1 : 0;
+}
+
+
+
+/*  
+ ** get_home_sequence()
+ ** 
+ ** 
+ */
+int get_home_sequence(int jno) {
+        return H[jno].home_sequence;
+}
+
+
+
+/*  
+ ** get_homing()
+ ** 
+ ** 
+ */
+bool get_homing(int jno) {
+        return H[jno].homing;
+}
+
+
+
+/*  
+ ** get_homing_at_index_search_wait()
+ ** 
+ ** 
+ */
+bool get_homing_at_index_search_wait(int jno) {
+        return H[jno].home_state == HOME_INDEX_SEARCH_WAIT ? 1 : 0;
+}
+
+
+
+/*  
+ ** get_homing_is_active()
+ ** 
+ ** 
+ */
+bool get_homing_is_active() {
+        return homing_active;
+}
+
+
+
+/* 
+ ** get_index_enable()
+ ** 
+ ** 
+ */
+bool get_index_enable(int jno) {
+        return H[jno].index_enable;
+}
+
+
+
+/*  
+ ** read_homing_in_pins()
+ ** 
+ ** 
+ */
+void read_homing_in_pins(int njoints) {
+        int jno;
+        one_joint_home_data_t * addr;
+        clock_t t_period;             // period between call in clocks
+        float f_period;               // period in seconds
+        clock_t period;               // we need to make our own period variable as it does not exist in this kind of component
+
+        t_period = clock() - last_time;
+        period = t_period * (CLOCKS_PER_SEC / 1e+9); // convert to nanoseconds
+        f_period = (float) t_period * ((float) t_period / (float) CLOCKS_PER_SEC);
+        last_time += t_period;
+        
+        for (jno = 0; jno < njoints; jno++) {
+                addr = & (joint_home_data -> jhd[jno]);
+        }
+        return;
+}
+
+
+
+/*  
+ ** do_home_joint()
+ ** 
+ ** 
+ */
+void do_home_joint(int jno) {
+        if (jno == -1) {
+                do_home_all();
+        } else {
+                do_home_one_joint(jno); // apply rules if home_sequence negative
+        }
+}
+
+
+
+/*  
+ ** do_cancel_homing()
+ ** 
+ ** 
+ */
+void do_cancel_homing(int jno) {
+        if (H[jno].homing) {
+                H[jno].home_state = HOME_ABORT;
+        }
+}
+
+
+
+/*  
+ ** set_unhomed()
+ ** 
+ ** 
+ */
+void set_unhomed(int jno, motion_state_t motstate) {
+        // Note: negative jno ==> unhome multiple joints
+        emcmot_joint_t * joint;
+        if (jno < 0) {
+                set_all_unhomed(jno, motstate);
+                return;
+        }
+
+        if (jno > all_joints) {
+                /* invalid joint number specified */
+                rtapi_print_msg(RTAPI_MSG_ERR, ("Cannot unhome invalid joint %d (max %d)\n"), jno, (all_joints - 1));
+                return;
+        }
+        /* request was for one joint number */
+        if ((jno >= (all_joints - extra_joints)) // jno is extrajoint
+                &&
+                (motstate != EMCMOT_MOTION_DISABLED)) {
+                rtapi_print_msg(RTAPI_MSG_ERR, ("Cannot unhome extrajoint <%d> with motion enabled\n"), jno);
+                return;
+        }
+        joint = & joints[jno];
+        if (GET_JOINT_ACTIVE_FLAG(joint)) {
+                if (get_homing(jno)) {
+                        rtapi_print_msg(RTAPI_MSG_ERR, ("Cannot unhome while homing, joint %d\n"), jno);
+                        return;
+                }
+                if (!GET_JOINT_INPOS_FLAG(joint)) {
+                        rtapi_print_msg(RTAPI_MSG_ERR, ("Cannot unhome while moving, joint %d\n"), jno);
+                        return;
+                }
+                H[jno].homed = 0;
+        } else {
+                rtapi_print_msg(RTAPI_MSG_ERR, ("Cannot unhome inactive joint %d\n"), jno);
+        }
+
+}
+
+
+
+/*  
+ ** set_joint_homing_params()
+ ** 
+ ** 
+ */
+void set_joint_homing_params(int jno,
+        double offset,
+        double home,
+        double home_final_vel,
+        double home_search_vel,
+        double home_latch_vel,
+        int home_flags,
+        int home_sequence,
+        bool volatile_home) {
+        return;
+}
+
+
+
+
+/* 
+ ** update_joint_homing_params()
+ ** 
+ ** 
+ */
+void update_joint_homing_params(int jno,
+        double offset,
+        double home,
+        int home_sequence) {
+        return;
+}
+
+
+
+/* 
+ ** write_homing_out_pins()
+ ** 
+ ** 
+ */
+void write_homing_out_pins(int njoints) {
+        return;
+}
+
+
+/* 
+ ** all home functions for homing api
+ ** 
+ ** 
+ */
+EXPORT_SYMBOL(homeMotFunctions);
+EXPORT_SYMBOL(homing_init);
+EXPORT_SYMBOL(do_homing);
+EXPORT_SYMBOL(get_allhomed);
+EXPORT_SYMBOL(get_homed);
+EXPORT_SYMBOL(get_home_is_idle);
+EXPORT_SYMBOL(get_home_is_synchronized);
+EXPORT_SYMBOL(get_home_needs_unlock_first);
+EXPORT_SYMBOL(get_home_sequence);
+EXPORT_SYMBOL(get_homing);
+EXPORT_SYMBOL(get_homing_at_index_search_wait);
+EXPORT_SYMBOL(get_homing_is_active);
+EXPORT_SYMBOL(get_index_enable);
+EXPORT_SYMBOL(read_homing_in_pins);
+EXPORT_SYMBOL(do_home_joint);
+EXPORT_SYMBOL(do_cancel_homing);
+EXPORT_SYMBOL(set_unhomed);
+EXPORT_SYMBOL(set_joint_homing_params);
+EXPORT_SYMBOL(update_joint_homing_params);
+EXPORT_SYMBOL(write_homing_out_pins);
+
+#undef XSTR
+#undef STR
+#undef HOMING_BASE
+#undef USE_HOMING_BASE
+#undef CUSTOM_HOMEMODULE
