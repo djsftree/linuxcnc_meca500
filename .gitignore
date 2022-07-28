@@ -1,0 +1,16 @@
+
+# Extensions
+**.var
+**.var.bak
+**.halscope
+**.deb
+
+# Folders
+.vscode/**
+.idea/**
+debian/meca500/**
+
+# Specific Files
+**/position.txt
+# Personal Preference
+#**/halshow.preferences
