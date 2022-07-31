@@ -1,0 +1,7 @@
+# note pyvcp and meca500gui joint numbers are 1-based
+net :j0 <= joint.0.pos-fb => pyvcp.joint1 => meca500gui.joint1
+net :j1 <= joint.1.pos-fb => pyvcp.joint2 => meca500gui.joint2
+net :j2 <= joint.2.pos-fb => pyvcp.joint3 => meca500gui.joint3
+net :j3 <= joint.3.pos-fb => pyvcp.joint4 => meca500gui.joint4
+net :j4 <= joint.4.pos-fb => pyvcp.joint5 => meca500gui.joint5
+net :j5 <= joint.5.pos-fb => pyvcp.joint6 => meca500gui.joint6

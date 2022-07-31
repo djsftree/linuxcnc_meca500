@@ -1,0 +1,54 @@
+# Kinematic HAL config file for Mecademic Meca500 robot arm - 6 DOF
+
+#            L4   j3   L5  j4   L6  j5  L7
+#   j2    *-------*--------*--------*-------|end_effector|
+#         |
+#   L3    |      
+#         |
+#   j1    *
+#         |
+#   L2    |
+#         |
+#   j0    *
+#       |---|
+#   L1  |---|
+#  base |---|
+
+#
+# DH Parameters
+# 
+#          j0             j1            j2            j3             j4             j5
+# A       -1.570796326    0.0000000    -1.570796326  -1.570796326   -1.570796326    0.0000000
+# a        0.0000000      135.0000000   38.0000000    0.0000000      0.0000000      0.0000000
+# D        0.0000000     -1.570796326   0.0000000    -3.141592652   -3.141592652   -3.141592652
+# d        135.0000000    0.0000000     0.0000000     120.0000000    0.0000000      70.0000000
+
+#
+# Modified DH Parameters
+#
+#          j0             j1            j2            j3             j4             j5
+# A        0.0000000     -1.570796326   0.0000000    -1.570796326    1.570796326   -1.570796326
+# a        0.0000000      0.0000000     135.0000000   38.0000000     0.0000000      0.0000000
+# D        0.0000000      1.570796326   0.0000000     0.0000000      0.0000000      3.141592652
+# d        135.0000000    0.0000000     0.0000000     120.0000000    0.0000000      70.0000000
+
+setp genserkins.A-0 0
+setp genserkins.A-1 0
+setp genserkins.A-2 135.0
+setp genserkins.A-3 38.0
+setp genserkins.A-4 0
+setp genserkins.A-5 0
+
+setp genserkins.ALPHA-0   0
+setp genserkins.ALPHA-1   -1.570796326
+setp genserkins.ALPHA-2   0
+setp genserkins.ALPHA-3   -1.570796326 
+setp genserkins.ALPHA-4   -1.570796326
+setp genserkins.ALPHA-5   -1.570796326
+
+setp genserkins.D-0 135.0
+setp genserkins.D-1 0
+setp genserkins.D-2 0
+setp genserkins.D-3 120.0
+setp genserkins.D-4 0
+setp genserkins.D-5 70.0

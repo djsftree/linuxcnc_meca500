@@ -1,0 +1,228 @@
+loadusr -W lcec_conf meca500-ethercat.xml
+loadrt lcec
+
+loadrt [KINS]KINEMATICS
+loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS
+
+# PID Realtime Loop Component
+loadrt at_pid names=pid.j0,pid.j1,pid.j2,pid.j3,pid.j4,pid.j5
+
+addf lcec.read-all          servo-thread
+
+addf motion-command-handler servo-thread
+addf motion-controller      servo-thread
+
+addf pid.j0.do-pid-calcs    servo-thread
+addf pid.j1.do-pid-calcs    servo-thread
+addf pid.j2.do-pid-calcs    servo-thread
+addf pid.j3.do-pid-calcs    servo-thread
+addf pid.j4.do-pid-calcs    servo-thread
+addf pid.j5.do-pid-calcs    servo-thread
+
+addf lcec.write-all         servo-thread
+
+# vel-command 21 = MoveJointVel deg/sec
+setp lcec.0.Meca500.vel-command 21
+setp lcec.0.Meca500.motion.set-point 1
+setp lcec.0.Meca500.motion.move-id 0
+
+net robot-activated <= lcec.0.Meca500.status.activated
+net robot-homed     <= lcec.0.Meca500.status.homed
+
+
+#-------------------
+# Joint 0
+#-------------------
+setp   pid.j0.Pgain     [JOINT_0]P
+setp   pid.j0.Igain     [JOINT_0]I
+setp   pid.j0.Dgain     [JOINT_0]D
+setp   pid.j0.bias      [JOINT_0]BIAS
+setp   pid.j0.FF0       [JOINT_0]FF0
+setp   pid.j0.FF1       [JOINT_0]FF1
+setp   pid.j0.FF2       [JOINT_0]FF2
+setp   pid.j0.deadband  [JOINT_0]DEADBAND
+setp   pid.j0.maxoutput [JOINT_0]MAX_OUTPUT
+setp   pid.j0.error-previous-target true
+setp   pid.j0.maxerror  [JOINT_0]MAX_ERROR
+
+net j0-servo-enable      <= joint.0.amp-enable-out
+net j0-index-enable	     => pid.j0.index-enable
+net j0-servo-enable      =>	pid.j0.enable
+net j0-pos-cmd        	 =>	pid.j0.command
+net j0-vel-cmd        	 =>	pid.j0.command-deriv
+net j0-pos-fb         	 =>	pid.j0.feedback
+net j0-output         	 <=	pid.j0.output
+net j0-pos-cmd 			 <=	joint.0.motor-pos-cmd
+net j0-output  			 =>	lcec.0.Meca500.vel-cmd.a1
+net j0-pos-fb			 <=	lcec.0.Meca500.encoder.a1
+net j0-vel-fb			 <=	lcec.0.Meca500.velocity.a1
+net j0-pos-fb			 =>	joint.0.motor-pos-fb
+
+
+#-------------------
+# Joint 1
+#-------------------
+setp   pid.j1.Pgain     [JOINT_1]P
+setp   pid.j1.Igain     [JOINT_1]I
+setp   pid.j1.Dgain     [JOINT_1]D
+setp   pid.j1.bias      [JOINT_1]BIAS
+setp   pid.j1.FF0       [JOINT_1]FF0
+setp   pid.j1.FF1       [JOINT_1]FF1
+setp   pid.j1.FF2       [JOINT_1]FF2
+setp   pid.j1.deadband  [JOINT_1]DEADBAND
+setp   pid.j1.maxoutput [JOINT_1]MAX_OUTPUT
+setp   pid.j1.error-previous-target true
+setp   pid.j1.maxerror  [JOINT_1]MAX_ERROR
+
+net j1-servo-enable      <= joint.1.amp-enable-out
+net j1-index-enable	     => pid.j1.index-enable
+net j1-servo-enable      =>	pid.j1.enable
+net j1-pos-cmd        	 =>	pid.j1.command
+net j1-vel-cmd        	 =>	pid.j1.command-deriv
+net j1-pos-fb         	 =>	pid.j1.feedback
+net j1-output         	 <=	pid.j1.output
+net j1-pos-cmd 			 <=	joint.1.motor-pos-cmd
+net j1-output  			 =>	lcec.0.Meca500.vel-cmd.a2
+net j1-pos-fb			 <=	lcec.0.Meca500.encoder.a2
+net j1-vel-fb			 <=	lcec.0.Meca500.velocity.a2
+net j1-pos-fb			 =>	joint.1.motor-pos-fb
+
+
+#-------------------
+# Joint 2
+#-------------------
+setp   pid.j2.Pgain     [JOINT_2]P
+setp   pid.j2.Igain     [JOINT_2]I
+setp   pid.j2.Dgain     [JOINT_2]D
+setp   pid.j2.bias      [JOINT_2]BIAS
+setp   pid.j2.FF0       [JOINT_2]FF0
+setp   pid.j2.FF1       [JOINT_2]FF1
+setp   pid.j2.FF2       [JOINT_2]FF2
+setp   pid.j2.deadband  [JOINT_2]DEADBAND
+setp   pid.j2.maxoutput [JOINT_2]MAX_OUTPUT
+setp   pid.j2.error-previous-target true
+setp   pid.j2.maxerror  [JOINT_2]MAX_ERROR
+
+net j2-servo-enable      <= joint.2.amp-enable-out
+net j2-index-enable	     => pid.j2.index-enable
+net j2-servo-enable      =>	pid.j2.enable
+net j2-pos-cmd        	 =>	pid.j2.command
+net j2-vel-cmd        	 =>	pid.j2.command-deriv
+net j2-pos-fb         	 =>	pid.j2.feedback
+net j2-output         	 <=	pid.j2.output
+net j2-pos-cmd 			 <=	joint.2.motor-pos-cmd
+net j2-output  			 =>	lcec.0.Meca500.vel-cmd.a3
+net j2-pos-fb			 <=	lcec.0.Meca500.encoder.a3
+net j2-vel-fb			 <=	lcec.0.Meca500.velocity.a3
+net j2-pos-fb			 =>	joint.2.motor-pos-fb
+
+
+#-------------------
+# Joint 3
+#-------------------
+setp   pid.j3.Pgain     [JOINT_3]P
+setp   pid.j3.Igain     [JOINT_3]I
+setp   pid.j3.Dgain     [JOINT_3]D
+setp   pid.j3.bias      [JOINT_3]BIAS
+setp   pid.j3.FF0       [JOINT_3]FF0
+setp   pid.j3.FF1       [JOINT_3]FF1
+setp   pid.j3.FF2       [JOINT_3]FF2
+setp   pid.j3.deadband  [JOINT_3]DEADBAND
+setp   pid.j3.maxoutput [JOINT_3]MAX_OUTPUT
+setp   pid.j3.error-previous-target true
+setp   pid.j3.maxerror  [JOINT_3]MAX_ERROR
+
+net j3-servo-enable      <= joint.3.amp-enable-out
+net j3-index-enable	     => pid.j3.index-enable
+net j3-servo-enable      =>	pid.j3.enable
+net j3-pos-cmd        	 =>	pid.j3.command
+net j3-vel-cmd        	 =>	pid.j3.command-deriv
+net j3-pos-fb         	 =>	pid.j3.feedback
+net j3-output         	 <=	pid.j3.output
+net j3-pos-cmd 			 <=	joint.3.motor-pos-cmd
+net j3-output  			 =>	lcec.0.Meca500.vel-cmd.a4
+net j3-pos-fb			 <=	lcec.0.Meca500.encoder.a4
+net j3-vel-fb			 <=	lcec.0.Meca500.velocity.a4
+net j3-pos-fb			 =>	joint.3.motor-pos-fb
+
+
+#-------------------
+# Joint 4
+#-------------------
+setp   pid.j4.Pgain     [JOINT_4]P
+setp   pid.j4.Igain     [JOINT_4]I
+setp   pid.j4.Dgain     [JOINT_4]D
+setp   pid.j4.bias      [JOINT_4]BIAS
+setp   pid.j4.FF0       [JOINT_4]FF0
+setp   pid.j4.FF1       [JOINT_4]FF1
+setp   pid.j4.FF2       [JOINT_4]FF2
+setp   pid.j4.deadband  [JOINT_4]DEADBAND
+setp   pid.j4.maxoutput [JOINT_4]MAX_OUTPUT
+setp   pid.j4.error-previous-target true
+setp   pid.j4.maxerror  [JOINT_4]MAX_ERROR
+
+net j4-servo-enable      <= joint.4.amp-enable-out
+net j4-index-enable	     => pid.j4.index-enable
+net j4-servo-enable      =>	pid.j4.enable
+net j4-pos-cmd        	 =>	pid.j4.command
+net j4-vel-cmd        	 =>	pid.j4.command-deriv
+net j4-pos-fb         	 =>	pid.j4.feedback
+net j4-output         	 <=	pid.j4.output
+net j4-pos-cmd 			 <=	joint.4.motor-pos-cmd
+net j4-output  			 =>	lcec.0.Meca500.vel-cmd.a5
+net j4-pos-fb			 <=	lcec.0.Meca500.encoder.a5
+net j4-vel-fb			 <=	lcec.0.Meca500.velocity.a5
+net j4-pos-fb			 =>	joint.4.motor-pos-fb
+
+
+#-------------------
+# Joint 5
+#-------------------
+setp   pid.j5.Pgain     [JOINT_5]P
+setp   pid.j5.Igain     [JOINT_5]I
+setp   pid.j5.Dgain     [JOINT_5]D
+setp   pid.j5.bias      [JOINT_5]BIAS
+setp   pid.j5.FF0       [JOINT_5]FF0
+setp   pid.j5.FF1       [JOINT_5]FF1
+setp   pid.j5.FF2       [JOINT_5]FF2
+setp   pid.j5.deadband  [JOINT_5]DEADBAND
+setp   pid.j5.maxoutput [JOINT_5]MAX_OUTPUT
+setp   pid.j5.error-previous-target true
+setp   pid.j5.maxerror  [JOINT_5]MAX_ERROR
+
+net j5-servo-enable      <= joint.5.amp-enable-out
+net j5-index-enable	     => pid.j5.index-enable
+net j5-servo-enable      =>	pid.j5.enable
+net j5-pos-cmd        	 =>	pid.j5.command
+net j5-vel-cmd        	 =>	pid.j5.command-deriv
+net j5-pos-fb         	 =>	pid.j5.feedback
+net j5-output         	 <=	pid.j5.output
+net j5-pos-cmd 			 <=	joint.5.motor-pos-cmd
+net j5-output  			 =>	lcec.0.Meca500.vel-cmd.a6
+net j5-pos-fb			 <=	lcec.0.Meca500.encoder.a6
+net j5-vel-fb			 <=	lcec.0.Meca500.velocity.a6
+net j5-pos-fb			 =>	joint.5.motor-pos-fb
+
+# estop loopback
+net estop-loop iocontrol.0.user-enable-out iocontrol.0.emc-enable-in
+
+# create signals for tool loading loopback
+net tool-prep-loop iocontrol.0.tool-prepare iocontrol.0.tool-prepared
+net tool-change-loop iocontrol.0.tool-change iocontrol.0.tool-changed
+
+loadusr -W meca500gui
+
+setp pid.j0.tune-effort 20.0
+setp pid.j1.tune-effort 20.0
+setp pid.j2.tune-effort 20.0
+setp pid.j3.tune-effort 20.0
+setp pid.j4.tune-effort 20.0
+setp pid.j5.tune-effort 20.0
+
+setp pid.j0.tune-mode 1
+setp pid.j1.tune-mode 1
+setp pid.j2.tune-mode 1
+setp pid.j3.tune-mode 1
+setp pid.j4.tune-mode 1
+setp pid.j5.tune-mode 1
+
