@@ -1,575 +1,906 @@
-[18163.982743] EtherCAT: Requesting master 0...
-[18163.982761] EtherCAT DEBUG 0: IDLE -> OPERATION.
-[18163.982767] EtherCAT: Successfully requested master 0.
-[18163.982772] EtherCAT DEBUG 0: ecrt_master_create_domain(master = 0x00000000e0795065)
-[18163.982783] EtherCAT DEBUG 0: Created domain 0.
-[18163.982790] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.982796] EtherCAT DEBUG 0: Creating slave configuration for 0:0, 0x00ECADE1/0x0004D500.
-[18163.982803] EtherCAT DEBUG 0 0:0: Attached slave 0.
-[18163.983311] EtherCAT DEBUG 0 0:0: ecrt_slave_config_dc(sc = 0x000000002c33dfa7, assign_activate = 0x0300, sync0_cycle = 1000000, sync0_shift = 0, sync1_cycle = 0, sync1_shift = 0
-[18163.983324] EtherCAT DEBUG 0 0:0: ecrt_slave_config_sync_manager(sc = 0x000000002c33dfa7, sync_index = 0, dir = 1, watchdog_mode = 0)
-[18163.983333] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_clear(sc = 0x000000002c33dfa7, sync_index = 0)
-[18163.983341] EtherCAT DEBUG 0 0:0: ecrt_slave_config_sync_manager(sc = 0x000000002c33dfa7, sync_index = 1, dir = 2, watchdog_mode = 0)
-[18163.983349] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_clear(sc = 0x000000002c33dfa7, sync_index = 1)
-[18163.983356] EtherCAT DEBUG 0 0:0: ecrt_slave_config_sync_manager(sc = 0x000000002c33dfa7, sync_index = 2, dir = 1, watchdog_mode = 0)
-[18163.983364] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_clear(sc = 0x000000002c33dfa7, sync_index = 2)
-[18163.983376] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x000000002c33dfa7, sync_index = 2, pdo_index = 0x1600)
-[18163.983382] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1600.
-[18163.983388] EtherCAT DEBUG 0 0:0: Entry 0x7200:01.
-[18163.983391] EtherCAT DEBUG 0 0:0: Entry 0x7200:02.
-[18163.983394] EtherCAT DEBUG 0 0:0: Entry 0x7200:03.
-[18163.983397] EtherCAT DEBUG 0 0:0: Entry 0x7200:04.
-[18163.983399] EtherCAT DEBUG 0 0:0: Entry 0x7200:05.
-[18163.983402] EtherCAT DEBUG 0 0:0: Entry 0x0000:00.
-[18163.983409] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x000000002c33dfa7, pdo_index = 0x1600)
-[18163.983420] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1600, entry_index = 0x7200, entry_subindex = 0x01, entry_bit_length = 1)
-[18163.983431] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1600, entry_index = 0x7200, entry_subindex = 0x02, entry_bit_length = 1)
-[18163.983440] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1600, entry_index = 0x7200, entry_subindex = 0x03, entry_bit_length = 1)
-[18163.983450] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1600, entry_index = 0x7200, entry_subindex = 0x04, entry_bit_length = 1)
-[18163.983460] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1600, entry_index = 0x7200, entry_subindex = 0x05, entry_bit_length = 1)
-[18163.983469] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1600, entry_index = 0x0000, entry_subindex = 0x00, entry_bit_length = 27)
-[18163.983479] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x000000002c33dfa7, sync_index = 2, pdo_index = 0x1601)
-[18163.983484] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1601.
-[18163.983490] EtherCAT DEBUG 0 0:0: Entry 0x7310:01.
-[18163.983493] EtherCAT DEBUG 0 0:0: Entry 0x7310:02.
-[18163.983495] EtherCAT DEBUG 0 0:0: Entry 0x7310:03.
-[18163.983498] EtherCAT DEBUG 0 0:0: Entry 0x7310:04.
-[18163.983500] EtherCAT DEBUG 0 0:0: Entry 0x7310:05.
-[18163.983503] EtherCAT DEBUG 0 0:0: Entry 0x0000:00.
-[18163.983510] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x000000002c33dfa7, pdo_index = 0x1601)
-[18163.983519] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1601, entry_index = 0x7310, entry_subindex = 0x01, entry_bit_length = 16)
-[18163.983529] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1601, entry_index = 0x7310, entry_subindex = 0x02, entry_bit_length = 1)
-[18163.983539] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1601, entry_index = 0x7310, entry_subindex = 0x03, entry_bit_length = 1)
-[18163.983548] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1601, entry_index = 0x7310, entry_subindex = 0x04, entry_bit_length = 1)
-[18163.983557] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1601, entry_index = 0x7310, entry_subindex = 0x05, entry_bit_length = 1)
-[18163.983566] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1601, entry_index = 0x0000, entry_subindex = 0x00, entry_bit_length = 12)
-[18163.983576] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x000000002c33dfa7, sync_index = 2, pdo_index = 0x1602)
-[18163.983581] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1602.
-[18163.983586] EtherCAT DEBUG 0 0:0: Entry 0x7305:00.
-[18163.983589] EtherCAT DEBUG 0 0:0: Entry 0x7306:01.
-[18163.983591] EtherCAT DEBUG 0 0:0: Entry 0x7306:02.
-[18163.983594] EtherCAT DEBUG 0 0:0: Entry 0x7306:03.
-[18163.983596] EtherCAT DEBUG 0 0:0: Entry 0x7306:04.
-[18163.983599] EtherCAT DEBUG 0 0:0: Entry 0x7306:05.
-[18163.983602] EtherCAT DEBUG 0 0:0: Entry 0x7306:06.
-[18163.983608] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x000000002c33dfa7, pdo_index = 0x1602)
-[18163.983618] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1602, entry_index = 0x7305, entry_subindex = 0x00, entry_bit_length = 32)
-[18163.983628] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1602, entry_index = 0x7306, entry_subindex = 0x01, entry_bit_length = 32)
-[18163.983638] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1602, entry_index = 0x7306, entry_subindex = 0x02, entry_bit_length = 32)
-[18163.983647] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1602, entry_index = 0x7306, entry_subindex = 0x03, entry_bit_length = 32)
-[18163.983657] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1602, entry_index = 0x7306, entry_subindex = 0x04, entry_bit_length = 32)
-[18163.983666] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1602, entry_index = 0x7306, entry_subindex = 0x05, entry_bit_length = 32)
-[18163.983675] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1602, entry_index = 0x7306, entry_subindex = 0x06, entry_bit_length = 32)
-[18163.983684] EtherCAT DEBUG 0 0:0: ecrt_slave_config_sync_manager(sc = 0x000000002c33dfa7, sync_index = 3, dir = 2, watchdog_mode = 0)
-[18163.983692] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_clear(sc = 0x000000002c33dfa7, sync_index = 3)
-[18163.983705] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x000000002c33dfa7, sync_index = 3, pdo_index = 0x1A00)
-[18163.983710] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A00.
-[18163.983713] EtherCAT DEBUG 0 0:0: Found PDO name "Robot Status".
-[18163.983719] EtherCAT DEBUG 0 0:0: Entry 0x6010:02.
-[18163.983721] EtherCAT DEBUG 0 0:0: Entry 0x6010:03.
-[18163.983724] EtherCAT DEBUG 0 0:0: Entry 0x6010:04.
-[18163.983727] EtherCAT DEBUG 0 0:0: Entry 0x6010:05.
-[18163.983729] EtherCAT DEBUG 0 0:0: Entry 0x0000:00.
-[18163.983732] EtherCAT DEBUG 0 0:0: Entry 0x6010:01.
-[18163.983738] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x000000002c33dfa7, pdo_index = 0x1A00)
-[18163.983748] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A00, entry_index = 0x6010, entry_subindex = 0x02, entry_bit_length = 1)
-[18163.983758] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A00, entry_index = 0x6010, entry_subindex = 0x03, entry_bit_length = 1)
-[18163.983767] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A00, entry_index = 0x6010, entry_subindex = 0x04, entry_bit_length = 1)
-[18163.983777] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A00, entry_index = 0x6010, entry_subindex = 0x05, entry_bit_length = 1)
-[18163.983786] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A00, entry_index = 0x0000, entry_subindex = 0x00, entry_bit_length = 12)
-[18163.983796] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A00, entry_index = 0x6010, entry_subindex = 0x01, entry_bit_length = 16)
-[18163.983805] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x000000002c33dfa7, sync_index = 3, pdo_index = 0x1A01)
-[18163.983810] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A01.
-[18163.983813] EtherCAT DEBUG 0 0:0: Found PDO name "Motion Status".
-[18163.983819] EtherCAT DEBUG 0 0:0: Entry 0x6015:01.
-[18163.983822] EtherCAT DEBUG 0 0:0: Entry 0x6015:02.
-[18163.983825] EtherCAT DEBUG 0 0:0: Entry 0x6015:03.
-[18163.983827] EtherCAT DEBUG 0 0:0: Entry 0x6015:04.
-[18163.983830] EtherCAT DEBUG 0 0:0: Entry 0x6015:05.
-[18163.983832] EtherCAT DEBUG 0 0:0: Entry 0x6015:06.
-[18163.983835] EtherCAT DEBUG 0 0:0: Entry 0x6015:07.
-[18163.983838] EtherCAT DEBUG 0 0:0: Entry 0x6015:08.
-[18163.983840] EtherCAT DEBUG 0 0:0: Entry 0x6015:09.
-[18163.983843] EtherCAT DEBUG 0 0:0: Entry 0x0000:00.
-[18163.983850] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x000000002c33dfa7, pdo_index = 0x1A01)
-[18163.983861] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x01, entry_bit_length = 32)
-[18163.983870] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x02, entry_bit_length = 16)
-[18163.983880] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x03, entry_bit_length = 16)
-[18163.983889] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x04, entry_bit_length = 1)
-[18163.983899] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x05, entry_bit_length = 1)
-[18163.983908] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x06, entry_bit_length = 1)
-[18163.983917] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x07, entry_bit_length = 1)
-[18163.983927] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x08, entry_bit_length = 1)
-[18163.983936] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A01, entry_index = 0x6015, entry_subindex = 0x09, entry_bit_length = 1)
-[18163.983946] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A01, entry_index = 0x0000, entry_subindex = 0x00, entry_bit_length = 26)
-[18163.983955] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x000000002c33dfa7, sync_index = 3, pdo_index = 0x1A02)
-[18163.983960] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A02.
-[18163.983963] EtherCAT DEBUG 0 0:0: Found PDO name "Joint Set".
-[18163.983968] EtherCAT DEBUG 0 0:0: Entry 0x6030:01.
-[18163.983971] EtherCAT DEBUG 0 0:0: Entry 0x6030:02.
-[18163.983974] EtherCAT DEBUG 0 0:0: Entry 0x6030:03.
-[18163.983976] EtherCAT DEBUG 0 0:0: Entry 0x6030:04.
-[18163.983979] EtherCAT DEBUG 0 0:0: Entry 0x6030:05.
-[18163.983982] EtherCAT DEBUG 0 0:0: Entry 0x6030:06.
-[18163.983988] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x000000002c33dfa7, pdo_index = 0x1A02)
-[18163.983998] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A02, entry_index = 0x6030, entry_subindex = 0x01, entry_bit_length = 32)
-[18163.984008] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A02, entry_index = 0x6030, entry_subindex = 0x02, entry_bit_length = 32)
-[18163.984017] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A02, entry_index = 0x6030, entry_subindex = 0x03, entry_bit_length = 32)
-[18163.984026] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A02, entry_index = 0x6030, entry_subindex = 0x04, entry_bit_length = 32)
-[18163.984036] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A02, entry_index = 0x6030, entry_subindex = 0x05, entry_bit_length = 32)
-[18163.984046] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A02, entry_index = 0x6030, entry_subindex = 0x06, entry_bit_length = 32)
-[18163.984055] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x000000002c33dfa7, sync_index = 3, pdo_index = 0x1A03)
-[18163.984060] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A03.
-[18163.984063] EtherCAT DEBUG 0 0:0: Found PDO name "End-Effector Pose".
-[18163.984068] EtherCAT DEBUG 0 0:0: Entry 0x6031:01.
-[18163.984071] EtherCAT DEBUG 0 0:0: Entry 0x6031:02.
-[18163.984074] EtherCAT DEBUG 0 0:0: Entry 0x6031:03.
-[18163.984077] EtherCAT DEBUG 0 0:0: Entry 0x6031:04.
-[18163.984079] EtherCAT DEBUG 0 0:0: Entry 0x6031:05.
-[18163.984082] EtherCAT DEBUG 0 0:0: Entry 0x6031:06.
-[18163.984088] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x000000002c33dfa7, pdo_index = 0x1A03)
-[18163.984098] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A03, entry_index = 0x6031, entry_subindex = 0x01, entry_bit_length = 32)
-[18163.984108] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A03, entry_index = 0x6031, entry_subindex = 0x02, entry_bit_length = 32)
-[18163.984117] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A03, entry_index = 0x6031, entry_subindex = 0x03, entry_bit_length = 32)
-[18163.984127] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A03, entry_index = 0x6031, entry_subindex = 0x04, entry_bit_length = 32)
-[18163.984136] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A03, entry_index = 0x6031, entry_subindex = 0x05, entry_bit_length = 32)
-[18163.984145] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A03, entry_index = 0x6031, entry_subindex = 0x06, entry_bit_length = 32)
-[18163.984155] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x000000002c33dfa7, sync_index = 3, pdo_index = 0x1A04)
-[18163.984160] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A04.
-[18163.984162] EtherCAT DEBUG 0 0:0: Found PDO name "Joint velocities".
-[18163.984168] EtherCAT DEBUG 0 0:0: Entry 0x6032:01.
-[18163.984171] EtherCAT DEBUG 0 0:0: Entry 0x6032:02.
-[18163.984174] EtherCAT DEBUG 0 0:0: Entry 0x6032:03.
-[18163.984177] EtherCAT DEBUG 0 0:0: Entry 0x6032:04.
-[18163.984179] EtherCAT DEBUG 0 0:0: Entry 0x6032:05.
-[18163.984182] EtherCAT DEBUG 0 0:0: Entry 0x6032:06.
-[18163.984188] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x000000002c33dfa7, pdo_index = 0x1A04)
-[18163.984198] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A04, entry_index = 0x6032, entry_subindex = 0x01, entry_bit_length = 32)
-[18163.984208] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A04, entry_index = 0x6032, entry_subindex = 0x02, entry_bit_length = 32)
-[18163.984217] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A04, entry_index = 0x6032, entry_subindex = 0x03, entry_bit_length = 32)
-[18163.984227] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A04, entry_index = 0x6032, entry_subindex = 0x04, entry_bit_length = 32)
-[18163.984236] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A04, entry_index = 0x6032, entry_subindex = 0x05, entry_bit_length = 32)
-[18163.984245] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A04, entry_index = 0x6032, entry_subindex = 0x06, entry_bit_length = 32)
-[18163.984255] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x000000002c33dfa7, sync_index = 3, pdo_index = 0x1A05)
-[18163.984260] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A05.
-[18163.984263] EtherCAT DEBUG 0 0:0: Found PDO name "Torque Ratio".
-[18163.984268] EtherCAT DEBUG 0 0:0: Entry 0x6033:01.
-[18163.984271] EtherCAT DEBUG 0 0:0: Entry 0x6033:02.
-[18163.984273] EtherCAT DEBUG 0 0:0: Entry 0x6033:03.
-[18163.984276] EtherCAT DEBUG 0 0:0: Entry 0x6033:04.
-[18163.984278] EtherCAT DEBUG 0 0:0: Entry 0x6033:05.
-[18163.984281] EtherCAT DEBUG 0 0:0: Entry 0x6033:06.
-[18163.984287] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x000000002c33dfa7, pdo_index = 0x1A05)
-[18163.984298] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A05, entry_index = 0x6033, entry_subindex = 0x01, entry_bit_length = 32)
-[18163.984307] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A05, entry_index = 0x6033, entry_subindex = 0x02, entry_bit_length = 32)
-[18163.984317] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A05, entry_index = 0x6033, entry_subindex = 0x03, entry_bit_length = 32)
-[18163.984326] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A05, entry_index = 0x6033, entry_subindex = 0x04, entry_bit_length = 32)
-[18163.984335] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A05, entry_index = 0x6033, entry_subindex = 0x05, entry_bit_length = 32)
-[18163.984345] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A05, entry_index = 0x6033, entry_subindex = 0x06, entry_bit_length = 32)
-[18163.984354] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_assign_add(sc = 0x000000002c33dfa7, sync_index = 3, pdo_index = 0x1A06)
-[18163.984359] EtherCAT DEBUG 0 0:0: Loading default mapping for PDO 0x1A06.
-[18163.984362] EtherCAT DEBUG 0 0:0: Found PDO name "Accelerometer".
-[18163.984366] EtherCAT DEBUG 0 0:0: Entry 0x6040:01.
-[18163.984368] EtherCAT DEBUG 0 0:0: Entry 0x6040:02.
-[18163.984371] EtherCAT DEBUG 0 0:0: Entry 0x6040:03.
-[18163.984377] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_clear(sc = 0x000000002c33dfa7, pdo_index = 0x1A06)
-[18163.984387] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A06, entry_index = 0x6040, entry_subindex = 0x01, entry_bit_length = 32)
-[18163.984396] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A06, entry_index = 0x6040, entry_subindex = 0x02, entry_bit_length = 32)
-[18163.984406] EtherCAT DEBUG 0 0:0: ecrt_slave_config_pdo_mapping_add(sc = 0x000000002c33dfa7, pdo_index = 0x1A06, entry_index = 0x6040, entry_subindex = 0x03, entry_bit_length = 32)
-[18163.984464] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984475] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7200, subindex = 0x01, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984484] EtherCAT DEBUG 0: Domain 0: Added 36 bytes, total 36.
-[18163.984491] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984499] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7200, subindex = 0x02, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984507] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984516] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7200, subindex = 0x03, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984523] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984532] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7200, subindex = 0x04, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984539] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984547] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7200, subindex = 0x05, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984555] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984564] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7310, subindex = 0x01, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984571] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984580] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7310, subindex = 0x02, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984587] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984596] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7310, subindex = 0x03, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984603] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984612] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7310, subindex = 0x04, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984619] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984628] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7310, subindex = 0x05, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984635] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984643] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7305, subindex = 0x00, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984651] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984659] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7306, subindex = 0x01, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984666] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984675] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7306, subindex = 0x02, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984682] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984691] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7306, subindex = 0x03, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984698] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984707] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7306, subindex = 0x04, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984714] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984722] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7306, subindex = 0x05, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984730] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984738] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x7306, subindex = 0x06, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984746] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984755] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6010, subindex = 0x02, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984761] EtherCAT DEBUG 0: Domain 0: Added 124 bytes, total 160.
-[18163.984767] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984775] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6010, subindex = 0x03, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984783] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984792] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6010, subindex = 0x04, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984799] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984808] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6010, subindex = 0x05, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984815] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984824] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6010, subindex = 0x01, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984832] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984840] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6015, subindex = 0x01, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984848] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984856] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6015, subindex = 0x02, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984864] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984873] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6015, subindex = 0x03, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984880] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984889] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6015, subindex = 0x04, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984896] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984905] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6015, subindex = 0x05, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984913] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984922] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6015, subindex = 0x06, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984929] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984938] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6015, subindex = 0x07, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984946] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984954] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6015, subindex = 0x08, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984961] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984970] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6015, subindex = 0x09, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984977] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.984986] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6030, subindex = 0x01, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.984994] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985003] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6030, subindex = 0x02, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985011] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985019] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6030, subindex = 0x03, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985027] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985036] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6030, subindex = 0x04, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985043] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985052] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6030, subindex = 0x05, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985060] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985069] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6030, subindex = 0x06, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985076] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985085] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6031, subindex = 0x01, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985092] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985101] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6031, subindex = 0x02, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985108] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985117] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6031, subindex = 0x03, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985125] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985134] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6031, subindex = 0x04, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985141] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985150] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6031, subindex = 0x05, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985158] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985166] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6031, subindex = 0x06, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985174] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985183] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6032, subindex = 0x01, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985191] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985200] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6032, subindex = 0x02, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985207] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985216] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6032, subindex = 0x03, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985223] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985233] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6032, subindex = 0x04, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985240] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985249] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6032, subindex = 0x05, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985256] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985266] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6032, subindex = 0x06, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985273] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985282] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6033, subindex = 0x01, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985289] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985298] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6033, subindex = 0x02, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985306] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985315] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6033, subindex = 0x03, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985323] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985332] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6033, subindex = 0x04, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985339] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985348] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6033, subindex = 0x05, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985356] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985365] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6033, subindex = 0x06, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985373] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985381] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6040, subindex = 0x01, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985389] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985398] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6040, subindex = 0x02, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985406] EtherCAT DEBUG 0: ecrt_master_slave_config(master = 0x00000000e0795065, alias = 0, position = 0, vendor_id = 0x00ecade1, product_code = 0x0004d500)
-[18163.985415] EtherCAT DEBUG 0 0:0: ecrt_slave_config_reg_pdo_entry(sc = 0x000000002c33dfa7, index = 0x6040, subindex = 0x03, domain = 0x00000000d0629701, bit_position = 0x00000000efcc694f)
-[18163.985450] EtherCAT DEBUG 0: ecrt_domain_external_memory(domain = 0x00000000d0629701, mem = 0x000000009e0b58e1)
-[18163.985455] EtherCAT DEBUG 0: ecrt_master_callbacks(master = 0x00000000e0795065, send_cb = 0x000000006c0f6fce, receive_cb = 0x000000004f6c943f, cb_data = 0x00000000e0795065)
-[18163.985459] EtherCAT DEBUG 0: ecrt_master_activate(master = 0x00000000e0795065)
-[18163.985467] EtherCAT DEBUG 0: Adding datagram pair with expected WC 3.
-[18163.985469] EtherCAT 0: Domain0: Logical address 0x00000000, 160 byte, expected working counter 3.
-[18163.985473] EtherCAT 0:   Datagram domain0-0-main: Logical offset 0x00000000, 160 byte, type LRW.
-[18163.985478] EtherCAT DEBUG 0: Stopping master thread.
-[18163.985492] EtherCAT DEBUG 0: Master IDLE thread exiting...
-[18163.985517] EtherCAT 0: Master thread exited.
-[18163.985524] EtherCAT DEBUG 0: FSM datagram is 00000000ba735983.
-[18163.985527] EtherCAT 0: Starting EtherCAT-OP thread.
-[18163.985656] EtherCAT DEBUG 0: Operation thread running with fsm interval = 4000 us, max data size=45000
-[18163.985661] EtherCAT DEBUG 0: mmap()
-[18163.985661] EtherCAT WARNING 0: 1 datagram UNMATCHED!
-[18163.985671] EtherCAT DEBUG 0: Vma fault, offset = 0, page = 00000000e8604b78
-[18164.594255] EtherCAT DEBUG 0: Configuration changed (aborting state check).
-[18164.594269] EtherCAT DEBUG 0-0: Checking system time offset.
-[18164.602244] EtherCAT DEBUG 0-0: DC 64 bit system time offset calculation: system_time=712677994841684087 (corrected with 8000000), app_time=712677994840699462, diff=-984625
-[18164.602262] EtherCAT DEBUG 0-0: Not touching time offset.
-[18164.610254] EtherCAT DEBUG 0: Requesting OP...
-[18164.626243] EtherCAT DEBUG 0-0: Changing state from PREOP to OP.
-[18164.626260] EtherCAT DEBUG 0-0: Configuring...
-[18164.628638] EtherCAT DEBUG 0-0: Now in INIT.
-[18164.628642] EtherCAT DEBUG 0-0: Clearing FMMU configurations...
-[18164.629647] EtherCAT DEBUG 0-0: Clearing sync manager configurations...
-[18164.630829] EtherCAT DEBUG 0-0: Clearing DC assignment...
-[18164.632644] EtherCAT DEBUG 0-0: Configuring mailbox sync managers...
-[18164.632648] EtherCAT DEBUG 0-0: SM0: Addr 0x1000, Size 128, Ctrl 0x26, En 1
-[18164.632654] EtherCAT DEBUG 0-0: SM1: Addr 0x1080, Size 128, Ctrl 0x22, En 1
-[18164.633637] EtherCAT DEBUG 0-0: Assigning SII access to PDI.
-[18164.638647] EtherCAT DEBUG 0-0: Now in PREOP.
-[18164.638667] EtherCAT DEBUG 0-0: Assigning SII access back to EtherCAT.
-[18164.642747] EtherCAT DEBUG 0-0: Setting PDO assignment of SM2:
-[18164.642759] EtherCAT DEBUG 0-0: Currently assigned PDOs: 0x1600 0x1601 0x1602. PDOs to assign: 0x1600 0x1601 0x1602
-[18164.642781] EtherCAT DEBUG 0-0: Setting number of assigned PDOs to zero.
-[18164.642786] EtherCAT DEBUG 0-0: Downloading SDO 0x1C12:00.
-[18164.642789] EtherCAT DEBUG: 00 
-[18164.642795] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.642797] EtherCAT DEBUG: 00 20 2F 12 1C 00 00 00 00 00 
-[18164.647211] EtherCAT DEBUG 0-0: Download response:
-[18164.647227] EtherCAT DEBUG: 00 30 60 12 1C 00 00 00 00 00 
-[18164.647256] EtherCAT DEBUG 0-0: Assigning PDO 0x1600 at position 1.
-[18164.647260] EtherCAT DEBUG 0-0: Downloading SDO 0x1C12:01.
-[18164.647264] EtherCAT DEBUG: 00 16 
-[18164.647272] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.647274] EtherCAT DEBUG: 00 20 2B 12 1C 01 00 16 00 00 
-[18164.652642] EtherCAT DEBUG 0-0: Download response:
-[18164.652660] EtherCAT DEBUG: 00 30 60 12 1C 01 00 16 00 00 
-[18164.652680] EtherCAT DEBUG 0-0: Assigning PDO 0x1601 at position 2.
-[18164.652685] EtherCAT DEBUG 0-0: Downloading SDO 0x1C12:02.
-[18164.652688] EtherCAT DEBUG: 01 16 
-[18164.652695] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.652697] EtherCAT DEBUG: 00 20 2B 12 1C 02 01 16 00 00 
-[18164.659644] EtherCAT DEBUG 0-0: Download response:
-[18164.659660] EtherCAT DEBUG: 00 30 60 12 1C 02 01 16 00 00 
-[18164.659681] EtherCAT DEBUG 0-0: Assigning PDO 0x1602 at position 3.
-[18164.659685] EtherCAT DEBUG 0-0: Downloading SDO 0x1C12:03.
-[18164.659688] EtherCAT DEBUG: 02 16 
-[18164.659695] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.659698] EtherCAT DEBUG: 00 20 2B 12 1C 03 02 16 00 00 
-[18164.667667] EtherCAT DEBUG 0-0: Download response:
-[18164.667686] EtherCAT DEBUG: 00 30 60 12 1C 03 02 16 00 00 
-[18164.667707] EtherCAT DEBUG 0-0: Setting number of assigned PDOs to 3.
-[18164.667712] EtherCAT DEBUG 0-0: Downloading SDO 0x1C12:00.
-[18164.667716] EtherCAT DEBUG: 03 
-[18164.667722] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.667725] EtherCAT DEBUG: 00 20 2F 12 1C 00 03 00 00 00 
-[18164.674234] EtherCAT DEBUG 0-0: Download response:
-[18164.674249] EtherCAT DEBUG: 00 30 60 12 1C 00 03 00 00 00 
-[18164.674289] EtherCAT DEBUG 0-0: Successfully configured PDO assignment of SM2.
-[18164.674372] EtherCAT DEBUG 0-0: Setting PDO assignment of SM3:
-[18164.674375] EtherCAT DEBUG 0-0: Currently assigned PDOs: 0x1A00 0x1A01 0x1A02 0x1A03 0x1A04 0x1A05 0x1A06. PDOs to assign: 0x1A00 0x1A01 0x1A02 0x1A03 0x1A04 0x1A05 0x1A06
-[18164.674415] EtherCAT DEBUG 0-0: Setting number of assigned PDOs to zero.
-[18164.674419] EtherCAT DEBUG 0-0: Downloading SDO 0x1C13:00.
-[18164.674422] EtherCAT DEBUG: 00 
-[18164.674427] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.674430] EtherCAT DEBUG: 00 20 2F 13 1C 00 00 00 00 00 
-[18164.677635] EtherCAT DEBUG 0-0: Download response:
-[18164.677638] EtherCAT DEBUG: 00 30 60 13 1C 00 00 00 00 00 
-[18164.677675] EtherCAT DEBUG 0-0: Assigning PDO 0x1A00 at position 1.
-[18164.677679] EtherCAT DEBUG 0-0: Downloading SDO 0x1C13:01.
-[18164.677683] EtherCAT DEBUG: 00 1A 
-[18164.677688] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.677690] EtherCAT DEBUG: 00 20 2B 13 1C 01 00 1A 00 00 
-[18164.681647] EtherCAT DEBUG 0-0: Download response:
-[18164.681664] EtherCAT DEBUG: 00 30 60 13 1C 01 00 1A 00 00 
-[18164.681684] EtherCAT DEBUG 0-0: Assigning PDO 0x1A01 at position 2.
-[18164.681688] EtherCAT DEBUG 0-0: Downloading SDO 0x1C13:02.
-[18164.681692] EtherCAT DEBUG: 01 1A 
-[18164.681699] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.681701] EtherCAT DEBUG: 00 20 2B 13 1C 02 01 1A 00 00 
-[18164.685654] EtherCAT DEBUG 0-0: Download response:
-[18164.685672] EtherCAT DEBUG: 00 30 60 13 1C 02 01 1A 00 00 
-[18164.685693] EtherCAT DEBUG 0-0: Assigning PDO 0x1A02 at position 3.
-[18164.685697] EtherCAT DEBUG 0-0: Downloading SDO 0x1C13:03.
-[18164.685700] EtherCAT DEBUG: 02 1A 
-[18164.685707] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.685709] EtherCAT DEBUG: 00 20 2B 13 1C 03 02 1A 00 00 
-[18164.690654] EtherCAT DEBUG 0-0: Download response:
-[18164.690673] EtherCAT DEBUG: 00 30 60 13 1C 03 02 1A 00 00 
-[18164.690694] EtherCAT DEBUG 0-0: Assigning PDO 0x1A03 at position 4.
-[18164.690698] EtherCAT DEBUG 0-0: Downloading SDO 0x1C13:04.
-[18164.690702] EtherCAT DEBUG: 03 1A 
-[18164.690708] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.690710] EtherCAT DEBUG: 00 20 2B 13 1C 04 03 1A 00 00 
-[18164.696640] EtherCAT DEBUG 0-0: Download response:
-[18164.696655] EtherCAT DEBUG: 00 30 60 13 1C 04 03 1A 00 00 
-[18164.696677] EtherCAT DEBUG 0-0: Assigning PDO 0x1A04 at position 5.
-[18164.696682] EtherCAT DEBUG 0-0: Downloading SDO 0x1C13:05.
-[18164.696685] EtherCAT DEBUG: 04 1A 
-[18164.696692] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.696694] EtherCAT DEBUG: 00 20 2B 13 1C 05 04 1A 00 00 
-[18164.702647] EtherCAT DEBUG 0-0: Download response:
-[18164.702664] EtherCAT DEBUG: 00 30 60 13 1C 05 04 1A 00 00 
-[18164.702686] EtherCAT DEBUG 0-0: Assigning PDO 0x1A05 at position 6.
-[18164.702691] EtherCAT DEBUG 0-0: Downloading SDO 0x1C13:06.
-[18164.702695] EtherCAT DEBUG: 05 1A 
-[18164.702702] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.702704] EtherCAT DEBUG: 00 20 2B 13 1C 06 05 1A 00 00 
-[18164.708646] EtherCAT DEBUG 0-0: Download response:
-[18164.708662] EtherCAT DEBUG: 00 30 60 13 1C 06 05 1A 00 00 
-[18164.708683] EtherCAT DEBUG 0-0: Assigning PDO 0x1A06 at position 7.
-[18164.708687] EtherCAT DEBUG 0-0: Downloading SDO 0x1C13:07.
-[18164.708690] EtherCAT DEBUG: 06 1A 
-[18164.708697] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.708700] EtherCAT DEBUG: 00 20 2B 13 1C 07 06 1A 00 00 
-[18164.715642] EtherCAT DEBUG 0-0: Download response:
-[18164.715661] EtherCAT DEBUG: 00 30 60 13 1C 07 06 1A 00 00 
-[18164.715681] EtherCAT DEBUG 0-0: Setting number of assigned PDOs to 7.
-[18164.715685] EtherCAT DEBUG 0-0: Downloading SDO 0x1C13:00.
-[18164.715689] EtherCAT DEBUG: 07 
-[18164.715694] EtherCAT DEBUG 0-0: Expedited download request:
-[18164.715696] EtherCAT DEBUG: 00 20 2F 13 1C 00 07 00 00 00 
-[18164.720663] EtherCAT DEBUG 0-0: Download response:
-[18164.720684] EtherCAT DEBUG: 00 30 60 13 1C 00 07 00 00 00 
-[18164.720768] EtherCAT DEBUG 0-0: Successfully configured PDO assignment of SM3.
-[18164.720796] EtherCAT DEBUG 0-0: SM2: Addr 0x1100, Size  36, Ctrl 0x64, En 1
-[18164.720805] EtherCAT DEBUG 0-0: SM3: Addr 0x1400, Size 124, Ctrl 0x20, En 1
-[18164.722841] EtherCAT DEBUG 0 0:0: FMMU: LogAddr 0x00000000, Size  36, PhysAddr 0x1100, SM2, Dir out
-[18164.722855] EtherCAT DEBUG 0 0:0: FMMU: LogAddr 0x00000024, Size 124, PhysAddr 0x1400, SM3, Dir in
-[18164.724737] EtherCAT DEBUG 0-0: Setting DC cycle times to 1000000 / 0.
-[18164.727008] EtherCAT DEBUG 0-0: Checking for synchrony.
-[18164.729310] EtherCAT DEBUG 0-0: Sync after    0 ms:      33741 ns
-[18164.731923] EtherCAT DEBUG 0-0: Sync after    4 ms:      34390 ns
-[18164.733639] EtherCAT DEBUG 0-0: Sync after    4 ms:      34618 ns
-[18164.734665] EtherCAT DEBUG 0-0: Sync after    8 ms:      35152 ns
-[18164.735741] EtherCAT DEBUG 0-0: Sync after    8 ms:      35463 ns
-[18164.737743] EtherCAT DEBUG 0-0: Sync after    8 ms:      35725 ns
-[18164.740806] EtherCAT DEBUG 0-0: Sync after   12 ms:      36509 ns
-[18164.742639] EtherCAT DEBUG 0-0: Sync after   16 ms:      36451 ns
-[18164.743630] EtherCAT DEBUG 0-0: Sync after   16 ms:      37008 ns
-[18164.744635] EtherCAT DEBUG 0-0: Sync after   16 ms:      36975 ns
-[18164.745800] EtherCAT DEBUG 0-0: Sync after   16 ms:      37612 ns
-[18164.751560] EtherCAT DEBUG 0-0: Sync after   20 ms:      35545 ns
-[18164.753795] EtherCAT DEBUG 0-0: Sync after   24 ms:      32201 ns
-[18164.755639] EtherCAT DEBUG 0-0: Sync after   28 ms:      32416 ns
-[18164.756626] EtherCAT DEBUG 0-0: Sync after   28 ms:      32745 ns
-[18164.757629] EtherCAT DEBUG 0-0: Sync after   28 ms:      33233 ns
-[18164.758826] EtherCAT DEBUG 0-0: Sync after   32 ms:      34187 ns
-[18164.760631] EtherCAT DEBUG 0-0: Sync after   32 ms:      35245 ns
-[18164.761771] EtherCAT DEBUG 0-0: Sync after   32 ms:      35246 ns
-[18164.763754] EtherCAT DEBUG 0-0: Sync after   36 ms:      36134 ns
-[18164.765784] EtherCAT DEBUG 0-0: Sync after   36 ms:      36378 ns
-[18164.768205] EtherCAT DEBUG 0-0: Sync after   40 ms:      36620 ns
-[18164.769628] EtherCAT DEBUG 0-0: Sync after   40 ms:      36403 ns
-[18164.770667] EtherCAT DEBUG 0-0: Sync after   44 ms:      36580 ns
-[18164.772637] EtherCAT DEBUG 0-0: Sync after   44 ms:      37245 ns
-[18164.773629] EtherCAT DEBUG 0-0: Sync after   44 ms:      36995 ns
-[18164.774691] EtherCAT DEBUG 0-0: Sync after   48 ms:      37433 ns
-[18164.776733] EtherCAT DEBUG 0-0: Sync after   48 ms:      37842 ns
-[18164.778669] EtherCAT DEBUG 0-0: Sync after   52 ms:      38276 ns
-[18164.780630] EtherCAT DEBUG 0-0: Sync after   52 ms:      38617 ns
-[18164.782826] EtherCAT DEBUG 0-0: Sync after   52 ms:      38736 ns
-[18164.784630] EtherCAT DEBUG 0-0: Sync after   56 ms:      38752 ns
-[18164.785632] EtherCAT DEBUG 0-0: Sync after   56 ms:      38955 ns
-[18164.787055] EtherCAT DEBUG 0-0: Sync after   60 ms:      39561 ns
-[18164.788806] EtherCAT DEBUG 0-0: Sync after   60 ms:      39258 ns
-[18164.790654] EtherCAT DEBUG 0-0: Sync after   64 ms:      39027 ns
-[18164.792632] EtherCAT DEBUG 0-0: Sync after   64 ms:      39123 ns
-[18164.793729] EtherCAT DEBUG 0-0: Sync after   64 ms:      38974 ns
-[18164.795634] EtherCAT DEBUG 0-0: Sync after   68 ms:      39076 ns
-[18164.797784] EtherCAT DEBUG 0-0: Sync after   68 ms:      38848 ns
-[18164.799633] EtherCAT DEBUG 0-0: Sync after   72 ms:      39121 ns
-[18164.800628] EtherCAT DEBUG 0-0: Sync after   72 ms:      38885 ns
-[18164.801645] EtherCAT DEBUG 0-0: Sync after   72 ms:      39295 ns
-[18164.802786] EtherCAT DEBUG 0-0: Sync after   76 ms:      39881 ns
-[18164.804803] EtherCAT DEBUG 0-0: Sync after   76 ms:      39343 ns
-[18164.806662] EtherCAT DEBUG 0-0: Sync after   80 ms:      38186 ns
-[18164.807630] EtherCAT DEBUG 0-0: Sync after   80 ms:      38633 ns
-[18164.808629] EtherCAT DEBUG 0-0: Sync after   80 ms:      38483 ns
-[18164.809739] EtherCAT DEBUG 0-0: Sync after   80 ms:      39029 ns
-[18164.811803] EtherCAT DEBUG 0-0: Sync after   84 ms:      39777 ns
-[18164.813634] EtherCAT DEBUG 0-0: Sync after   84 ms:      39030 ns
-[18164.814643] EtherCAT DEBUG 0-0: Sync after   88 ms:      39549 ns
-[18164.815783] EtherCAT DEBUG 0-0: Sync after   88 ms:      39813 ns
-[18164.819177] EtherCAT DEBUG 0-0: Sync after   88 ms:      39153 ns
-[18164.820632] EtherCAT DEBUG 0-0: Sync after   92 ms:      34211 ns
-[18164.821629] EtherCAT DEBUG 0-0: Sync after   92 ms:      33986 ns
-[18164.822790] EtherCAT DEBUG 0-0: Sync after   96 ms:      34669 ns
-[18164.824652] EtherCAT DEBUG 0-0: Sync after   96 ms:      35241 ns
-[18164.825821] EtherCAT DEBUG 0-0: Sync after   96 ms:      36035 ns
-[18164.827652] EtherCAT DEBUG 0-0: Sync after  100 ms:      35068 ns
-[18164.828711] EtherCAT DEBUG 0-0: Sync after  100 ms:      33650 ns
-[18164.830681] EtherCAT DEBUG 0-0: Sync after  104 ms:      33134 ns
-[18164.831645] EtherCAT DEBUG 0-0: Sync after  104 ms:      32958 ns
-[18164.832686] EtherCAT DEBUG 0-0: Sync after  104 ms:      32643 ns
-[18164.833733] EtherCAT DEBUG 0-0: Sync after  104 ms:      32807 ns
-[18164.835653] EtherCAT DEBUG 0-0: Sync after  108 ms:      33620 ns
-[18164.837139] EtherCAT DEBUG 0-0: Sync after  108 ms:      31713 ns
-[18164.841418] EtherCAT DEBUG 0-0: Sync after  112 ms:      28016 ns
-[18164.843648] EtherCAT DEBUG 0-0: Sync after  116 ms:      15726 ns
-[18164.844642] EtherCAT DEBUG 0-0: Sync after  116 ms:      12956 ns
-[18164.846705] EtherCAT DEBUG 0-0: Sync after  116 ms:      13817 ns
-[18164.848644] EtherCAT DEBUG 0-0: Sync after  120 ms:      16674 ns
-[18164.849650] EtherCAT DEBUG 0-0: Sync after  120 ms:      18005 ns
-[18164.851227] EtherCAT DEBUG 0-0: Sync after  124 ms:      19163 ns
-[18164.853212] EtherCAT DEBUG 0-0: Sync after  124 ms:      18179 ns
-[18164.854995] EtherCAT DEBUG 0-0: Sync after  128 ms:      17632 ns
-[18164.857183] EtherCAT DEBUG 0-0: Sync after  128 ms:      18576 ns
-[18164.859118] EtherCAT DEBUG 0-0: Sync after  132 ms:      17585 ns
-[18164.861301] EtherCAT DEBUG 0-0: Sync after  132 ms:      17880 ns
-[18164.863486] EtherCAT DEBUG 0-0: Sync after  136 ms:      11390 ns
-[18164.864990] EtherCAT DEBUG 0-0: 4530 ns difference after 136 ms.
-[18164.865012] EtherCAT DEBUG 0-0:    ref_time=712677994224444000
-[18164.865017] EtherCAT DEBUG 0-0:    app_time=712677995103788822
-[18164.865020] EtherCAT DEBUG 0-0:  start_time=712677995203788822
-[18164.865023] EtherCAT DEBUG 0-0:       cycle=1000000
-[18164.865026] EtherCAT DEBUG 0-0:  shift_time=0
-[18164.865029] EtherCAT DEBUG 0-0:   remainder=344822
-[18164.865034] EtherCAT DEBUG 0-0:        start=712677995204444000
-[18164.865037] EtherCAT DEBUG 0-0: Setting DC cyclic operation start time to 712677995204444000.
-[18164.867707] EtherCAT DEBUG 0-0: Setting DC AssignActivate to 0x0300.
-[18164.872664] EtherCAT DEBUG 0-0: Now in SAFEOP.
-[18164.872665] EtherCAT 0: Domain 0: Working counter changed to 3/3
-[18164.872683] .
-[18165.245792] EtherCAT DEBUG 0-0: Now in OP. Finished configuration.
-[18165.250253] EtherCAT 0: Slave states on main device: OP.
-[18197.803232] EtherCAT DEBUG 0: ecrt_master_deactivate(master = 0x00000000e0795065)
-[18197.803249] EtherCAT DEBUG 0: Stopping master thread.
-[18197.803264] EtherCAT DEBUG 0: Master OP thread exiting...
-[18197.803369] EtherCAT 0: Master thread exited.
-[18197.803400] EtherCAT 0: Starting EtherCAT-IDLE thread.
-[18197.803552] EtherCAT 0: Releasing master...
-[18197.803558] EtherCAT DEBUG 0: OPERATION -> IDLE.
-[18197.803561] EtherCAT 0: Released.
-[18197.803856] EtherCAT DEBUG 0: Idle thread running with send interval = 4000 us, max data size=45000
-[18197.803871] EtherCAT DEBUG 0: UNMATCHED datagram:
-[18197.803874] EtherCAT DEBUG: 0C E5 00 00 00 00 A0 80 00 00 00 00 00 00 00 00 
-[18197.803901] EtherCAT DEBUG: 01 00 15 00 00 00 00 00 00 00 00 00 00 00 00 00 
-[18197.803926] EtherCAT DEBUG: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 06 00 
-[18197.803950] EtherCAT DEBUG: 00 00 00 00 00 00 00 00 C8 32 04 00 00 00 12 19 
-[18197.803975] EtherCAT DEBUG: EB 3F 5A C2 31 40 06 B0 D4 BF E6 A4 09 3F 99 96 
-[18197.803999] EtherCAT DEBUG: 98 BE 91 0E 16 3F 90 26 45 43 DD 32 CA 40 C3 3F 
-[18197.804025] EtherCAT DEBUG: 98 43 95 14 E4 C2 EE FB AF 42 42 4D E6 42 00 00 
-[18197.804051] EtherCAT DEBUG: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-[18197.804083] EtherCAT DEBUG: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
-[18197.804109] EtherCAT DEBUG: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 D2 01 
-[18197.804133] EtherCAT DEBUG: 00 00 DE FF FF FF 09 C1 FF FF 03 00 
-[18197.804156] EtherCAT ERROR 0-0: Failed to receive AL state datagram: Datagram initialized.
-[18197.804169] EtherCAT DEBUG 0: Datagram 00000000ba735983 already queued (skipping).
-[18197.810689] EtherCAT 0: Slave states on main device: SAFEOP + ERROR.
-[18197.819746] EtherCAT DEBUG 0-0: OP -> SAFEOP + ERROR.
-[18197.819908] EtherCAT ERROR 0-0: AL status message 0x001A: "Synchronization error".
-[18197.822248] EtherCAT 0-0: Acknowledged state SAFEOP.
-[18197.822261] EtherCAT DEBUG 0-0: Changing state from SAFEOP to PREOP (forced).
-[18197.822266] EtherCAT DEBUG 0-0: Configuring...
-[18197.823541] EtherCAT DEBUG 0-0: Now in INIT.
-[18197.823549] EtherCAT DEBUG 0-0: Clearing FMMU configurations...
-[18197.823597] EtherCAT DEBUG 0-0: Clearing sync manager configurations...
-[18197.823674] EtherCAT DEBUG 0-0: Clearing DC assignment...
-[18197.823721] EtherCAT DEBUG 0-0: Configuring mailbox sync managers...
-[18197.823725] EtherCAT DEBUG 0-0: SM0: Addr 0x1000, Size 128, Ctrl 0x26, En 1
-[18197.823730] EtherCAT DEBUG 0-0: SM1: Addr 0x1080, Size 128, Ctrl 0x22, En 1
-[18197.823777] EtherCAT DEBUG 0-0: Assigning SII access to PDI.
-[18197.824848] EtherCAT DEBUG 0-0: Now in PREOP.
-[18197.824853] EtherCAT DEBUG 0-0: Assigning SII access back to EtherCAT.
-[18197.824898] EtherCAT DEBUG 0-0: Finished configuration.
-[18197.830543] EtherCAT 0: Slave states on main device: PREOP.
-[18198.270514] EtherCAT WARNING: Datagram 00000000ba735983 (master-fsm) was SKIPPED 1 time.
+cnc@raspberrypi:~$ sudo dmesg
+[ 8444.470956] EtherCAT DEBUG 0: ecrt_master_deactivate(master = 0x000000006a578ac2)
+[ 8444.470974] EtherCAT DEBUG 0: Stopping master thread.
+[ 8444.470991] EtherCAT DEBUG 0: Master OP thread exiting...
+[ 8444.471108] EtherCAT 0: Master thread exited.
+[ 8444.471155] EtherCAT 0: Starting EtherCAT-IDLE thread.
+[ 8444.471268] EtherCAT DEBUG 0: Idle thread running with send interval = 4000 us, max data size=45000
+[ 8444.471285] EtherCAT DEBUG 0: UNMATCHED datagram:
+[ 8444.471288] EtherCAT DEBUG: 0C 5A 00 00 00 00 34 81 00 00 00 00 00 00 00 00 
+[ 8444.471314] EtherCAT 0: Releasing master...
+[ 8444.471315] EtherCAT DEBUG: 01 00 
+[ 8444.471320] EtherCAT DEBUG 0: OPERATION -> IDLE.
+[ 8444.471320] 15 00 
+[ 8444.471322] EtherCAT 0: Released.
+[ 8444.471324] 00 00 00 00 00 00 00 00 00 00 00 00 
+[ 8444.471342] EtherCAT DEBUG: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+[ 8444.471366] EtherCAT DEBUG: 00 00 00 00 00 00 28 00 00 00 2A 00 00 00 2B 00 
+[ 8444.471390] EtherCAT DEBUG: 00 00 00 00 00 00 16 00 00 00 00 00 00 00 00 00 
+[ 8444.471415] EtherCAT DEBUG: C8 32 04 00 00 00 D1 2A 3B BF DA 36 9B BF A3 F3 
+[ 8444.471439] EtherCAT DEBUG: A6 3D 83 81 93 BF 65 43 9A BF 26 76 86 BF EE 4B 
+[ 8444.471464] EtherCAT DEBUG: 3A 43 90 41 16 C0 99 97 9C 43 1C 9C 86 41 6D 1E 
+[ 8444.471488] EtherCAT DEBUG: dropped 65 bytes
+[ 8444.471492] EtherCAT DEBUG: 00 00 00 00 00 00 00 00 00 00 00 00 00 28 00 
+[ 8444.471515] EtherCAT DEBUG: 00 00 BA 2A 3B BF 53 41 9B BF 65 D7 A6 3D 4C 82 
+[ 8444.471540] EtherCAT DEBUG: 93 BF 17 43 9A BF A6 82 86 BF 2A 00 00 00 00 00 
+[ 8444.471564] EtherCAT DEBUG: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+[ 8444.472120] EtherCAT DEBUG: 00 00 00 00 00 00 2B 00 00 00 F2 F1 52 3D 8B 46 
+[ 8444.472149] EtherCAT DEBUG: 24 41 DA 72 47 41 45 F9 C7 BE ED CE AE 41 55 E9 
+[ 8444.472174] EtherCAT DEBUG: 21 C1 09 00 00 00 00 00 00 00 00 00 00 00 00 00 
+[ 8444.472198] EtherCAT DEBUG: B4 C2 00 00 00 00 00 00 00 00 00 00 00 00 03 00 
+[ 8444.472228] EtherCAT 0: 0 slave(s) responding on main device.
+[ 8444.475371] EtherCAT DEBUG 0: Datagram 000000001b2d61c7 already queued (skipping).
+[ 8444.481112] EtherCAT 0: 1 slave(s) responding on main device.
+[ 8444.481128] EtherCAT 0: Slave states on main device: SAFEOP + ERROR.
+[ 8444.481240] EtherCAT DEBUG 0: Sending broadcast-write to measure transmission delays on main link.
+[ 8444.481284] EtherCAT DEBUG 0: 1 slaves responded to delay measuring on main link.
+[ 8444.481287] EtherCAT 0: Scanning bus.
+[ 8444.481289] EtherCAT DEBUG 0: Scanning slave 0 on main link.
+[ 8444.481378] EtherCAT WARNING 0-0: Slave has state error bit set (SAFEOP + ERROR)!
+[ 8444.481462] EtherCAT DEBUG 0-0: Slave has the System Time register.
+[ 8444.481544] EtherCAT DEBUG 0-0: Assigning SII access to EtherCAT.
+[ 8444.481586] EtherCAT DEBUG 0-0: Determining SII size.
+[ 8444.482078] EtherCAT DEBUG 0-0: Found category type 30 with size 16. Proceeding to offset 82.
+[ 8444.482588] EtherCAT DEBUG 0-0: Found category type 40 with size 2. Proceeding to offset 86.
+[ 8444.483091] EtherCAT DEBUG 0-0: Found category type 41 with size 16. Proceeding to offset 104.
+[ 8444.483605] EtherCAT DEBUG 0-0: Found category type 60 with size 12. Proceeding to offset 118.
+[ 8444.515432] EtherCAT DEBUG 0-0: Slave announces to support CoE.
+[ 8444.515451] EtherCAT DEBUG 0-0: String 0 not found.
+[ 8444.515454] EtherCAT DEBUG 0-0: String 1 not found.
+[ 8444.515457] EtherCAT DEBUG 0-0: String 1 not found.
+[ 8444.515462] EtherCAT DEBUG 0-0: Unknown category type 0x003C.
+[ 8444.515466] EtherCAT DEBUG 0-0: Reading mailbox sync manager configuration.
+[ 8444.515525] EtherCAT DEBUG 0-0: Mailbox configuration:
+[ 8444.515528] EtherCAT DEBUG 0-0:  RX offset=0x1000 size=128
+[ 8444.515532] EtherCAT DEBUG 0-0:  TX offset=0x1080 size=128
+[ 8444.515535] EtherCAT DEBUG 0-0: Scanning PDO assignment and mapping.
+[ 8444.515538] EtherCAT DEBUG 0-0: Reading PDO assignment of SM2.
+[ 8444.515543] EtherCAT DEBUG 0-0: Uploading SDO 0x1C12:00.
+[ 8444.515547] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.515549] EtherCAT DEBUG: 00 20 40 12 1C 00 00 00 00 00 
+[ 8444.516864] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.516867] EtherCAT DEBUG: 00 30 4F 12 1C 00 09 00 00 00 
+[ 8444.516885] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.516887] EtherCAT DEBUG: 09 
+[ 8444.516892] EtherCAT DEBUG 0-0: 9 PDOs assigned.
+[ 8444.516895] EtherCAT DEBUG 0-0: Uploading SDO 0x1C12:01.
+[ 8444.516898] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.516900] EtherCAT DEBUG: 00 20 40 12 1C 01 00 00 00 00 
+[ 8444.518070] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.518076] EtherCAT DEBUG: 00 30 4B 12 1C 01 00 00 00 00 
+[ 8444.518095] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.518097] EtherCAT DEBUG: 00 00 
+[ 8444.518104] EtherCAT DEBUG 0-0: PDO 0x0000.
+[ 8444.518108] EtherCAT DEBUG 0-0: Uploading SDO 0x0000:00.
+[ 8444.518111] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.518113] EtherCAT DEBUG: 00 20 40 00 00 00 00 00 00 00 
+[ 8444.519880] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.519883] EtherCAT DEBUG: 00 20 80 00 00 00 00 00 02 06 
+[ 8444.519900] EtherCAT ERROR 0-0: SDO upload 0x0000:00 aborted.
+[ 8444.519903] EtherCAT ERROR 0-0: SDO abort message 0x06020000: "This object does not exist in the object directory".
+[ 8444.519908] EtherCAT ERROR 0-0: Failed to read number of mapped PDO entries.
+[ 8444.519911] EtherCAT ERROR 0-0: Failed to read mapped PDO entries for PDO 0x0000.
+[ 8444.519914] EtherCAT DEBUG 0-0: Reading PDO assignment of SM3.
+[ 8444.519917] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:00.
+[ 8444.519920] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.519922] EtherCAT DEBUG: 00 20 40 13 1C 00 00 00 00 00 
+[ 8444.521993] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.522000] EtherCAT DEBUG: 00 30 4F 13 1C 00 0B 00 00 00 
+[ 8444.522018] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.522021] EtherCAT DEBUG: 0B 
+[ 8444.522025] EtherCAT DEBUG 0-0: 11 PDOs assigned.
+[ 8444.522028] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:01.
+[ 8444.522032] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.522034] EtherCAT DEBUG: 00 20 40 13 1C 01 00 00 00 00 
+[ 8444.523285] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.523288] EtherCAT DEBUG: 00 30 4B 13 1C 01 00 1A 00 00 
+[ 8444.523305] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.523307] EtherCAT DEBUG: 00 1A 
+[ 8444.523315] EtherCAT DEBUG 0-0: PDO 0x1A00.
+[ 8444.523318] EtherCAT DEBUG 0-0: Uploading SDO 0x1A00:00.
+[ 8444.523321] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.523323] EtherCAT DEBUG: 00 20 40 00 1A 00 00 00 00 00 
+[ 8444.524899] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.524902] EtherCAT DEBUG: 00 30 4F 00 1A 00 08 00 00 00 
+[ 8444.524919] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.524921] EtherCAT DEBUG: 08 
+[ 8444.524925] EtherCAT DEBUG 0-0: 8 PDO entries mapped.
+[ 8444.524928] EtherCAT DEBUG 0-0: Uploading SDO 0x1A00:01.
+[ 8444.524930] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.524932] EtherCAT DEBUG: 00 20 40 00 1A 01 00 00 00 00 
+[ 8444.526089] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.526097] EtherCAT DEBUG: 00 30 43 00 1A 01 01 02 10 60 
+[ 8444.526115] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.526117] EtherCAT DEBUG: 01 02 10 60 
+[ 8444.526127] EtherCAT DEBUG 0-0: PDO entry 0x6010:02, 1 bit, "???".
+[ 8444.526131] EtherCAT DEBUG 0-0: Uploading SDO 0x1A00:02.
+[ 8444.526135] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.526137] EtherCAT DEBUG: 00 20 40 00 1A 02 00 00 00 00 
+[ 8444.527912] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.527915] EtherCAT DEBUG: 00 30 43 00 1A 02 01 03 10 60 
+[ 8444.527933] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.527935] EtherCAT DEBUG: 01 03 10 60 
+[ 8444.527944] EtherCAT DEBUG 0-0: PDO entry 0x6010:03, 1 bit, "???".
+[ 8444.527947] EtherCAT DEBUG 0-0: Uploading SDO 0x1A00:03.
+[ 8444.527950] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.527952] EtherCAT DEBUG: 00 20 40 00 1A 03 00 00 00 00 
+[ 8444.529859] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.529865] EtherCAT DEBUG: 00 30 43 00 1A 03 01 04 10 60 
+[ 8444.529884] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.529886] EtherCAT DEBUG: 01 04 10 60 
+[ 8444.529896] EtherCAT DEBUG 0-0: PDO entry 0x6010:04, 1 bit, "???".
+[ 8444.529900] EtherCAT DEBUG 0-0: Uploading SDO 0x1A00:04.
+[ 8444.529903] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.529905] EtherCAT DEBUG: 00 20 40 00 1A 04 00 00 00 00 
+[ 8444.531122] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.531126] EtherCAT DEBUG: 00 30 43 00 1A 04 01 05 10 60 
+[ 8444.531143] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.531145] EtherCAT DEBUG: 01 05 10 60 
+[ 8444.531154] EtherCAT DEBUG 0-0: PDO entry 0x6010:05, 1 bit, "???".
+[ 8444.531158] EtherCAT DEBUG 0-0: Uploading SDO 0x1A00:05.
+[ 8444.531161] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.531163] EtherCAT DEBUG: 00 20 40 00 1A 05 00 00 00 00 
+[ 8444.545709] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.545723] EtherCAT DEBUG: 00 30 43 00 1A 05 01 06 10 60 
+[ 8444.545743] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.545746] EtherCAT DEBUG: 01 06 10 60 
+[ 8444.545756] EtherCAT DEBUG 0-0: PDO entry 0x6010:06, 1 bit, "???".
+[ 8444.545762] EtherCAT DEBUG 0-0: Uploading SDO 0x1A00:06.
+[ 8444.545766] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.545768] EtherCAT DEBUG: 00 20 40 00 1A 06 00 00 00 00 
+[ 8444.547139] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.547145] EtherCAT DEBUG: 00 30 43 00 1A 06 01 07 10 60 
+[ 8444.547163] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.547165] EtherCAT DEBUG: 01 07 10 60 
+[ 8444.547174] EtherCAT DEBUG 0-0: PDO entry 0x6010:07, 1 bit, "???".
+[ 8444.547179] EtherCAT DEBUG 0-0: Uploading SDO 0x1A00:07.
+[ 8444.547182] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.547184] EtherCAT DEBUG: 00 20 40 00 1A 07 00 00 00 00 
+[ 8444.548862] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.548866] EtherCAT DEBUG: 00 30 43 00 1A 07 0A 00 00 00 
+[ 8444.548883] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.548886] EtherCAT DEBUG: 0A 00 00 00 
+[ 8444.548900] EtherCAT DEBUG 0-0: PDO entry 0x0000:00, 10 bit, "Gap".
+[ 8444.548915] EtherCAT DEBUG 0-0: Uploading SDO 0x1A00:08.
+[ 8444.548940] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.548947] EtherCAT DEBUG: 00 20 40 00 1A 08 00 00 00 00 
+[ 8444.550262] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.550272] EtherCAT DEBUG: 00 30 43 00 1A 08 10 01 10 60 
+[ 8444.550292] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.550294] EtherCAT DEBUG: 10 01 10 60 
+[ 8444.550305] EtherCAT DEBUG 0-0: PDO entry 0x6010:01, 16 bit, "???".
+[ 8444.550310] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:02.
+[ 8444.550314] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.550316] EtherCAT DEBUG: 00 20 40 13 1C 02 00 00 00 00 
+[ 8444.551852] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.551855] EtherCAT DEBUG: 00 30 4B 13 1C 02 01 1A 00 00 
+[ 8444.551873] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.551875] EtherCAT DEBUG: 01 1A 
+[ 8444.551881] EtherCAT DEBUG 0-0: PDO 0x1A01.
+[ 8444.551885] EtherCAT DEBUG 0-0: Uploading SDO 0x1A01:00.
+[ 8444.551888] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.551890] EtherCAT DEBUG: 00 20 40 01 1A 00 00 00 00 00 
+[ 8444.553733] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.553742] EtherCAT DEBUG: 00 30 4F 01 1A 00 0B 00 00 00 
+[ 8444.553761] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.553763] EtherCAT DEBUG: 0B 
+[ 8444.553768] EtherCAT DEBUG 0-0: 11 PDO entries mapped.
+[ 8444.553771] EtherCAT DEBUG 0-0: Uploading SDO 0x1A01:01.
+[ 8444.553775] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.553777] EtherCAT DEBUG: 00 20 40 01 1A 01 00 00 00 00 
+[ 8444.555083] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.555087] EtherCAT DEBUG: 00 30 43 01 1A 01 20 01 15 60 
+[ 8444.555157] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.555159] EtherCAT DEBUG: 20 01 15 60 
+[ 8444.555170] EtherCAT DEBUG 0-0: PDO entry 0x6015:01, 32 bit, "???".
+[ 8444.555210] EtherCAT DEBUG 0-0: Uploading SDO 0x1A01:02.
+[ 8444.555214] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.555217] EtherCAT DEBUG: 00 20 40 01 1A 02 00 00 00 00 
+[ 8444.556918] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.556922] EtherCAT DEBUG: 00 30 43 01 1A 02 10 02 15 60 
+[ 8444.556939] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.556941] EtherCAT DEBUG: 10 02 15 60 
+[ 8444.556951] EtherCAT DEBUG 0-0: PDO entry 0x6015:02, 16 bit, "???".
+[ 8444.556955] EtherCAT DEBUG 0-0: Uploading SDO 0x1A01:03.
+[ 8444.556958] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.556960] EtherCAT DEBUG: 00 20 40 01 1A 03 00 00 00 00 
+[ 8444.558414] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.558425] EtherCAT DEBUG: 00 30 43 01 1A 03 10 03 15 60 
+[ 8444.558446] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.558448] EtherCAT DEBUG: 10 03 15 60 
+[ 8444.558462] EtherCAT DEBUG 0-0: PDO entry 0x6015:03, 16 bit, "???".
+[ 8444.558466] EtherCAT DEBUG 0-0: Uploading SDO 0x1A01:04.
+[ 8444.558470] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.558472] EtherCAT DEBUG: 00 20 40 01 1A 04 00 00 00 00 
+[ 8444.559930] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.559934] EtherCAT DEBUG: 00 30 43 01 1A 04 01 05 15 60 
+[ 8444.559952] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.559954] EtherCAT DEBUG: 01 05 15 60 
+[ 8444.559963] EtherCAT DEBUG 0-0: PDO entry 0x6015:05, 1 bit, "???".
+[ 8444.559966] EtherCAT DEBUG 0-0: Uploading SDO 0x1A01:05.
+[ 8444.559969] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.559971] EtherCAT DEBUG: 00 20 40 01 1A 05 00 00 00 00 
+[ 8444.562000] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.562013] EtherCAT DEBUG: 00 30 43 01 1A 05 01 06 15 60 
+[ 8444.562033] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.562036] EtherCAT DEBUG: 01 06 15 60 
+[ 8444.562047] EtherCAT DEBUG 0-0: PDO entry 0x6015:06, 1 bit, "???".
+[ 8444.562051] EtherCAT DEBUG 0-0: Uploading SDO 0x1A01:06.
+[ 8444.562054] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.562056] EtherCAT DEBUG: 00 20 40 01 1A 06 00 00 00 00 
+[ 8444.563808] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.563812] EtherCAT DEBUG: 00 30 43 01 1A 06 01 07 15 60 
+[ 8444.563829] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.563832] EtherCAT DEBUG: 01 07 15 60 
+[ 8444.563843] EtherCAT DEBUG 0-0: PDO entry 0x6015:07, 1 bit, "???".
+[ 8444.563846] EtherCAT DEBUG 0-0: Uploading SDO 0x1A01:07.
+[ 8444.563849] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.563851] EtherCAT DEBUG: 00 20 40 01 1A 07 00 00 00 00 
+[ 8444.564964] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.564969] EtherCAT DEBUG: 00 30 43 01 1A 07 01 08 15 60 
+[ 8444.564987] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.564989] EtherCAT DEBUG: 01 08 15 60 
+[ 8444.565000] EtherCAT DEBUG 0-0: PDO entry 0x6015:08, 1 bit, "???".
+[ 8444.566016] EtherCAT DEBUG 0-0: Uploading SDO 0x1A01:08.
+[ 8444.566024] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.566027] EtherCAT DEBUG: 00 20 40 01 1A 08 00 00 00 00 
+[ 8444.567230] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.567234] EtherCAT DEBUG: 00 30 43 01 1A 08 01 09 15 60 
+[ 8444.567252] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.567254] EtherCAT DEBUG: 01 09 15 60 
+[ 8444.567265] EtherCAT DEBUG 0-0: PDO entry 0x6015:09, 1 bit, "???".
+[ 8444.567268] EtherCAT DEBUG 0-0: Uploading SDO 0x1A01:09.
+[ 8444.567271] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.567273] EtherCAT DEBUG: 00 20 40 01 1A 09 00 00 00 00 
+[ 8444.568853] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.568859] EtherCAT DEBUG: 00 30 43 01 1A 09 01 0A 15 60 
+[ 8444.568876] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.568878] EtherCAT DEBUG: 01 0A 15 60 
+[ 8444.568887] EtherCAT DEBUG 0-0: PDO entry 0x6015:0A, 1 bit, "???".
+[ 8444.568891] EtherCAT DEBUG 0-0: Uploading SDO 0x1A01:0A.
+[ 8444.568894] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.568896] EtherCAT DEBUG: 00 20 40 01 1A 0A 00 00 00 00 
+[ 8444.570044] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.570054] EtherCAT DEBUG: 00 30 43 01 1A 0A 0A 00 00 00 
+[ 8444.570073] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.570075] EtherCAT DEBUG: 0A 00 00 00 
+[ 8444.570086] EtherCAT DEBUG 0-0: PDO entry 0x0000:00, 10 bit, "Gap".
+[ 8444.570090] EtherCAT DEBUG 0-0: Uploading SDO 0x1A01:0B.
+[ 8444.570094] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.570096] EtherCAT DEBUG: 00 20 40 01 1A 0B 00 00 00 00 
+[ 8444.571870] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.571874] EtherCAT DEBUG: 00 30 43 01 1A 0B 10 04 15 60 
+[ 8444.571891] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.571893] EtherCAT DEBUG: 10 04 15 60 
+[ 8444.571902] EtherCAT DEBUG 0-0: PDO entry 0x6015:04, 16 bit, "???".
+[ 8444.571907] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:03.
+[ 8444.571909] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.571911] EtherCAT DEBUG: 00 20 40 13 1C 03 00 00 00 00 
+[ 8444.573934] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.573945] EtherCAT DEBUG: 00 30 4B 13 1C 03 02 1A 00 00 
+[ 8444.573965] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.573968] EtherCAT DEBUG: 02 1A 
+[ 8444.573976] EtherCAT DEBUG 0-0: PDO 0x1A02.
+[ 8444.573980] EtherCAT DEBUG 0-0: Uploading SDO 0x1A02:00.
+[ 8444.573984] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.573986] EtherCAT DEBUG: 00 20 40 02 1A 00 00 00 00 00 
+[ 8444.575286] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.575289] EtherCAT DEBUG: 00 30 4F 02 1A 00 06 00 00 00 
+[ 8444.575306] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.575308] EtherCAT DEBUG: 06 
+[ 8444.575313] EtherCAT DEBUG 0-0: 6 PDO entries mapped.
+[ 8444.575315] EtherCAT DEBUG 0-0: Uploading SDO 0x1A02:01.
+[ 8444.575318] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.575320] EtherCAT DEBUG: 00 20 40 02 1A 01 00 00 00 00 
+[ 8444.576936] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.576940] EtherCAT DEBUG: 00 30 43 02 1A 01 20 01 30 60 
+[ 8444.576958] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.576960] EtherCAT DEBUG: 20 01 30 60 
+[ 8444.576969] EtherCAT DEBUG 0-0: PDO entry 0x6030:01, 32 bit, "???".
+[ 8444.576973] EtherCAT DEBUG 0-0: Uploading SDO 0x1A02:02.
+[ 8444.576977] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.576979] EtherCAT DEBUG: 00 20 40 02 1A 02 00 00 00 00 
+[ 8444.586036] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.586072] EtherCAT DEBUG: 00 30 43 02 1A 02 20 02 30 60 
+[ 8444.586128] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.586130] EtherCAT DEBUG: 20 02 30 60 
+[ 8444.586153] EtherCAT DEBUG 0-0: PDO entry 0x6030:02, 32 bit, "???".
+[ 8444.586161] EtherCAT DEBUG 0-0: Uploading SDO 0x1A02:03.
+[ 8444.586166] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.586169] EtherCAT DEBUG: 00 20 40 02 1A 03 00 00 00 00 
+[ 8444.587902] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.587908] EtherCAT DEBUG: 00 30 43 02 1A 03 20 03 30 60 
+[ 8444.587926] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.587928] EtherCAT DEBUG: 20 03 30 60 
+[ 8444.587938] EtherCAT DEBUG 0-0: PDO entry 0x6030:03, 32 bit, "???".
+[ 8444.587942] EtherCAT DEBUG 0-0: Uploading SDO 0x1A02:04.
+[ 8444.587946] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.587948] EtherCAT DEBUG: 00 20 40 02 1A 04 00 00 00 00 
+[ 8444.590163] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.590179] EtherCAT DEBUG: 00 30 43 02 1A 04 20 04 30 60 
+[ 8444.590201] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.590203] EtherCAT DEBUG: 20 04 30 60 
+[ 8444.590216] EtherCAT DEBUG 0-0: PDO entry 0x6030:04, 32 bit, "???".
+[ 8444.590222] EtherCAT DEBUG 0-0: Uploading SDO 0x1A02:05.
+[ 8444.590226] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.590228] EtherCAT DEBUG: 00 20 40 02 1A 05 00 00 00 00 
+[ 8444.592056] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.592071] EtherCAT DEBUG: 00 30 43 02 1A 05 20 05 30 60 
+[ 8444.592096] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.592099] EtherCAT DEBUG: 20 05 30 60 
+[ 8444.592110] EtherCAT DEBUG 0-0: PDO entry 0x6030:05, 32 bit, "???".
+[ 8444.592117] EtherCAT DEBUG 0-0: Uploading SDO 0x1A02:06.
+[ 8444.592121] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.592124] EtherCAT DEBUG: 00 20 40 02 1A 06 00 00 00 00 
+[ 8444.594094] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.594113] EtherCAT DEBUG: 00 30 43 02 1A 06 20 06 30 60 
+[ 8444.594136] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.594139] EtherCAT DEBUG: 20 06 30 60 
+[ 8444.594153] EtherCAT DEBUG 0-0: PDO entry 0x6030:06, 32 bit, "???".
+[ 8444.594161] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:04.
+[ 8444.594166] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.594169] EtherCAT DEBUG: 00 20 40 13 1C 04 00 00 00 00 
+[ 8444.595849] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.595856] EtherCAT DEBUG: 00 30 4B 13 1C 04 03 1A 00 00 
+[ 8444.595874] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.595876] EtherCAT DEBUG: 03 1A 
+[ 8444.595884] EtherCAT DEBUG 0-0: PDO 0x1A03.
+[ 8444.595889] EtherCAT DEBUG 0-0: Uploading SDO 0x1A03:00.
+[ 8444.595892] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.595894] EtherCAT DEBUG: 00 20 40 03 1A 00 00 00 00 00 
+[ 8444.598024] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.598039] EtherCAT DEBUG: 00 30 4F 03 1A 00 06 00 00 00 
+[ 8444.598062] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.598064] EtherCAT DEBUG: 06 
+[ 8444.598069] EtherCAT DEBUG 0-0: 6 PDO entries mapped.
+[ 8444.598073] EtherCAT DEBUG 0-0: Uploading SDO 0x1A03:01.
+[ 8444.598078] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.598080] EtherCAT DEBUG: 00 20 40 03 1A 01 00 00 00 00 
+[ 8444.599985] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.599999] EtherCAT DEBUG: 00 30 43 03 1A 01 20 01 31 60 
+[ 8444.600020] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.600022] EtherCAT DEBUG: 20 01 31 60 
+[ 8444.600037] EtherCAT DEBUG 0-0: PDO entry 0x6031:01, 32 bit, "???".
+[ 8444.600042] EtherCAT DEBUG 0-0: Uploading SDO 0x1A03:02.
+[ 8444.600046] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.600048] EtherCAT DEBUG: 00 20 40 03 1A 02 00 00 00 00 
+[ 8444.601791] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.601805] EtherCAT DEBUG: 00 30 43 03 1A 02 20 02 31 60 
+[ 8444.601827] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.601830] EtherCAT DEBUG: 20 02 31 60 
+[ 8444.601842] EtherCAT DEBUG 0-0: PDO entry 0x6031:02, 32 bit, "???".
+[ 8444.601848] EtherCAT DEBUG 0-0: Uploading SDO 0x1A03:03.
+[ 8444.601852] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.601854] EtherCAT DEBUG: 00 20 40 03 1A 03 00 00 00 00 
+[ 8444.603142] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.603145] EtherCAT DEBUG: 00 30 43 03 1A 03 20 03 31 60 
+[ 8444.603163] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.603165] EtherCAT DEBUG: 20 03 31 60 
+[ 8444.603174] EtherCAT DEBUG 0-0: PDO entry 0x6031:03, 32 bit, "???".
+[ 8444.603178] EtherCAT DEBUG 0-0: Uploading SDO 0x1A03:04.
+[ 8444.603180] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.603183] EtherCAT DEBUG: 00 20 40 03 1A 04 00 00 00 00 
+[ 8444.604778] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.604784] EtherCAT DEBUG: 00 30 43 03 1A 04 20 04 31 60 
+[ 8444.604801] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.604804] EtherCAT DEBUG: 20 04 31 60 
+[ 8444.604813] EtherCAT DEBUG 0-0: PDO entry 0x6031:04, 32 bit, "???".
+[ 8444.604817] EtherCAT DEBUG 0-0: Uploading SDO 0x1A03:05.
+[ 8444.604820] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.604822] EtherCAT DEBUG: 00 20 40 03 1A 05 00 00 00 00 
+[ 8444.606311] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.606323] EtherCAT DEBUG: 00 30 43 03 1A 05 20 05 31 60 
+[ 8444.606344] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.606346] EtherCAT DEBUG: 20 05 31 60 
+[ 8444.606357] EtherCAT DEBUG 0-0: PDO entry 0x6031:05, 32 bit, "???".
+[ 8444.606362] EtherCAT DEBUG 0-0: Uploading SDO 0x1A03:06.
+[ 8444.606367] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.606369] EtherCAT DEBUG: 00 20 40 03 1A 06 00 00 00 00 
+[ 8444.608780] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.608786] EtherCAT DEBUG: 00 30 43 03 1A 06 20 06 31 60 
+[ 8444.608805] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.608807] EtherCAT DEBUG: 20 06 31 60 
+[ 8444.608817] EtherCAT DEBUG 0-0: PDO entry 0x6031:06, 32 bit, "???".
+[ 8444.608823] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:05.
+[ 8444.608827] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.608829] EtherCAT DEBUG: 00 20 40 13 1C 05 00 00 00 00 
+[ 8444.610006] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.610020] EtherCAT DEBUG: 00 30 4B 13 1C 05 09 1A 00 00 
+[ 8444.610039] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.610042] EtherCAT DEBUG: 09 1A 
+[ 8444.610053] EtherCAT DEBUG 0-0: PDO 0x1A09.
+[ 8444.610062] EtherCAT DEBUG 0-0: Uploading SDO 0x1A09:00.
+[ 8444.610068] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.610071] EtherCAT DEBUG: 00 20 40 09 1A 00 00 00 00 00 
+[ 8444.611825] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.611830] EtherCAT DEBUG: 00 30 4F 09 1A 00 06 00 00 00 
+[ 8444.611847] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.611850] EtherCAT DEBUG: 06 
+[ 8444.611854] EtherCAT DEBUG 0-0: 6 PDO entries mapped.
+[ 8444.611857] EtherCAT DEBUG 0-0: Uploading SDO 0x1A09:01.
+[ 8444.611860] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.611862] EtherCAT DEBUG: 00 20 40 09 1A 01 00 00 00 00 
+[ 8444.637863] EtherCAT WARNING: Datagram 000000001b2d61c7 (master-fsm) was SKIPPED 1 time.
+[ 8444.639397] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.639410] EtherCAT DEBUG: 00 30 43 09 1A 01 20 01 50 60 
+[ 8444.639430] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.639433] EtherCAT DEBUG: 20 01 50 60 
+[ 8444.639443] EtherCAT DEBUG 0-0: PDO entry 0x6050:01, 32 bit, "???".
+[ 8444.639450] EtherCAT DEBUG 0-0: Uploading SDO 0x1A09:02.
+[ 8444.639455] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.639457] EtherCAT DEBUG: 00 20 40 09 1A 02 00 00 00 00 
+[ 8444.642432] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.642447] EtherCAT DEBUG: 00 30 43 09 1A 02 20 02 50 60 
+[ 8444.642468] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.642471] EtherCAT DEBUG: 20 02 50 60 
+[ 8444.642481] EtherCAT DEBUG 0-0: PDO entry 0x6050:02, 32 bit, "???".
+[ 8444.642490] EtherCAT DEBUG 0-0: Uploading SDO 0x1A09:03.
+[ 8444.642495] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.642498] EtherCAT DEBUG: 00 20 40 09 1A 03 00 00 00 00 
+[ 8444.644777] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.644790] EtherCAT DEBUG: 00 30 43 09 1A 03 20 03 50 60 
+[ 8444.644809] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.644811] EtherCAT DEBUG: 20 03 50 60 
+[ 8444.644821] EtherCAT DEBUG 0-0: PDO entry 0x6050:03, 32 bit, "???".
+[ 8444.644826] EtherCAT DEBUG 0-0: Uploading SDO 0x1A09:04.
+[ 8444.644830] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.644832] EtherCAT DEBUG: 00 20 40 09 1A 04 00 00 00 00 
+[ 8444.646055] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.646067] EtherCAT DEBUG: 00 30 43 09 1A 04 20 04 50 60 
+[ 8444.646087] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.646090] EtherCAT DEBUG: 20 04 50 60 
+[ 8444.646100] EtherCAT DEBUG 0-0: PDO entry 0x6050:04, 32 bit, "???".
+[ 8444.646106] EtherCAT DEBUG 0-0: Uploading SDO 0x1A09:05.
+[ 8444.646110] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.646112] EtherCAT DEBUG: 00 20 40 09 1A 05 00 00 00 00 
+[ 8444.650153] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.650172] EtherCAT DEBUG: 00 30 43 09 1A 05 20 05 50 60 
+[ 8444.650195] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.650197] EtherCAT DEBUG: 20 05 50 60 
+[ 8444.650209] EtherCAT DEBUG 0-0: PDO entry 0x6050:05, 32 bit, "???".
+[ 8444.650215] EtherCAT DEBUG 0-0: Uploading SDO 0x1A09:06.
+[ 8444.650219] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.650221] EtherCAT DEBUG: 00 20 40 09 1A 06 00 00 00 00 
+[ 8444.653701] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.653711] EtherCAT DEBUG: 00 30 43 09 1A 06 20 06 50 60 
+[ 8444.653731] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.653733] EtherCAT DEBUG: 20 06 50 60 
+[ 8444.653743] EtherCAT DEBUG 0-0: PDO entry 0x6050:06, 32 bit, "???".
+[ 8444.653748] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:06.
+[ 8444.653752] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.653754] EtherCAT DEBUG: 00 20 40 13 1C 06 00 00 00 00 
+[ 8444.655171] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.655181] EtherCAT DEBUG: 00 30 4B 13 1C 06 0A 1A 00 00 
+[ 8444.655200] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.655202] EtherCAT DEBUG: 0A 1A 
+[ 8444.655210] EtherCAT DEBUG 0-0: PDO 0x1A0A.
+[ 8444.655215] EtherCAT DEBUG 0-0: Uploading SDO 0x1A0A:00.
+[ 8444.655219] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.655221] EtherCAT DEBUG: 00 20 40 0A 1A 00 00 00 00 00 
+[ 8444.660133] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.660148] EtherCAT DEBUG: 00 30 4F 0A 1A 00 06 00 00 00 
+[ 8444.660168] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.660170] EtherCAT DEBUG: 06 
+[ 8444.660175] EtherCAT DEBUG 0-0: 6 PDO entries mapped.
+[ 8444.660179] EtherCAT DEBUG 0-0: Uploading SDO 0x1A0A:01.
+[ 8444.660185] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.660188] EtherCAT DEBUG: 00 20 40 0A 1A 01 00 00 00 00 
+[ 8444.661904] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.661917] EtherCAT DEBUG: 00 30 43 0A 1A 01 20 01 51 60 
+[ 8444.661937] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.661939] EtherCAT DEBUG: 20 01 51 60 
+[ 8444.661950] EtherCAT DEBUG 0-0: PDO entry 0x6051:01, 32 bit, "???".
+[ 8444.661955] EtherCAT DEBUG 0-0: Uploading SDO 0x1A0A:02.
+[ 8444.661959] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.661961] EtherCAT DEBUG: 00 20 40 0A 1A 02 00 00 00 00 
+[ 8444.665886] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.665903] EtherCAT DEBUG: 00 30 43 0A 1A 02 20 02 51 60 
+[ 8444.665928] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.665931] EtherCAT DEBUG: 20 02 51 60 
+[ 8444.665943] EtherCAT DEBUG 0-0: PDO entry 0x6051:02, 32 bit, "???".
+[ 8444.665949] EtherCAT DEBUG 0-0: Uploading SDO 0x1A0A:03.
+[ 8444.665955] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.665957] EtherCAT DEBUG: 00 20 40 0A 1A 03 00 00 00 00 
+[ 8444.667124] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.667137] EtherCAT DEBUG: 00 30 43 0A 1A 03 20 03 51 60 
+[ 8444.667161] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.667163] EtherCAT DEBUG: 20 03 51 60 
+[ 8444.667173] EtherCAT DEBUG 0-0: PDO entry 0x6051:03, 32 bit, "???".
+[ 8444.667178] EtherCAT DEBUG 0-0: Uploading SDO 0x1A0A:04.
+[ 8444.667181] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.667183] EtherCAT DEBUG: 00 20 40 0A 1A 04 00 00 00 00 
+[ 8444.669991] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.670013] EtherCAT DEBUG: 00 30 43 0A 1A 04 20 04 51 60 
+[ 8444.670035] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.670348] EtherCAT DEBUG: 20 04 51 60 
+[ 8444.670371] EtherCAT DEBUG 0-0: PDO entry 0x6051:04, 32 bit, "???".
+[ 8444.670377] EtherCAT DEBUG 0-0: Uploading SDO 0x1A0A:05.
+[ 8444.670383] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.670385] EtherCAT DEBUG: 00 20 40 0A 1A 05 00 00 00 00 
+[ 8444.673878] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.673901] EtherCAT DEBUG: 00 30 43 0A 1A 05 20 05 51 60 
+[ 8444.673926] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.673928] EtherCAT DEBUG: 20 05 51 60 
+[ 8444.673945] EtherCAT DEBUG 0-0: PDO entry 0x6051:05, 32 bit, "???".
+[ 8444.673953] EtherCAT DEBUG 0-0: Uploading SDO 0x1A0A:06.
+[ 8444.673959] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.673961] EtherCAT DEBUG: 00 20 40 0A 1A 06 00 00 00 00 
+[ 8444.676952] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.676966] EtherCAT DEBUG: 00 30 43 0A 1A 06 20 06 51 60 
+[ 8444.676987] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.676990] EtherCAT DEBUG: 20 06 51 60 
+[ 8444.677000] EtherCAT DEBUG 0-0: PDO entry 0x6051:06, 32 bit, "???".
+[ 8444.677738] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:07.
+[ 8444.677749] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.677752] EtherCAT DEBUG: 00 20 40 13 1C 07 00 00 00 00 
+[ 8444.678970] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.678975] EtherCAT DEBUG: 00 30 4B 13 1C 07 10 1A 00 00 
+[ 8444.678994] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.678997] EtherCAT DEBUG: 10 1A 
+[ 8444.679006] EtherCAT DEBUG 0-0: PDO 0x1A10.
+[ 8444.679011] EtherCAT DEBUG 0-0: Uploading SDO 0x1A10:00.
+[ 8444.679014] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.679016] EtherCAT DEBUG: 00 20 40 10 1A 00 00 00 00 00 
+[ 8444.680332] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.680347] EtherCAT DEBUG: 00 30 4F 10 1A 00 06 00 00 00 
+[ 8444.680367] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.680370] EtherCAT DEBUG: 06 
+[ 8444.680376] EtherCAT DEBUG 0-0: 6 PDO entries mapped.
+[ 8444.680382] EtherCAT DEBUG 0-0: Uploading SDO 0x1A10:01.
+[ 8444.680387] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.680389] EtherCAT DEBUG: 00 20 40 10 1A 01 00 00 00 00 
+[ 8444.682475] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.682492] EtherCAT DEBUG: 00 30 43 10 1A 01 20 01 60 60 
+[ 8444.682513] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.682515] EtherCAT DEBUG: 20 01 60 60 
+[ 8444.682525] EtherCAT DEBUG 0-0: PDO entry 0x6060:01, 32 bit, "???".
+[ 8444.682531] EtherCAT DEBUG 0-0: Uploading SDO 0x1A10:02.
+[ 8444.682536] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.682539] EtherCAT DEBUG: 00 20 40 10 1A 02 00 00 00 00 
+[ 8444.685751] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.685772] EtherCAT DEBUG: 00 30 43 10 1A 02 20 02 60 60 
+[ 8444.685792] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.685795] EtherCAT DEBUG: 20 02 60 60 
+[ 8444.685806] EtherCAT DEBUG 0-0: PDO entry 0x6060:02, 32 bit, "???".
+[ 8444.685811] EtherCAT DEBUG 0-0: Uploading SDO 0x1A10:03.
+[ 8444.685816] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.685817] EtherCAT DEBUG: 00 20 40 10 1A 03 00 00 00 00 
+[ 8444.687845] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.687862] EtherCAT DEBUG: 00 30 43 10 1A 03 20 03 60 60 
+[ 8444.687883] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.687886] EtherCAT DEBUG: 20 03 60 60 
+[ 8444.687895] EtherCAT DEBUG 0-0: PDO entry 0x6060:03, 32 bit, "???".
+[ 8444.687901] EtherCAT DEBUG 0-0: Uploading SDO 0x1A10:04.
+[ 8444.687906] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.687909] EtherCAT DEBUG: 00 20 40 10 1A 04 00 00 00 00 
+[ 8444.690243] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.690259] EtherCAT DEBUG: 00 30 43 10 1A 04 20 00 00 00 
+[ 8444.690279] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.690282] EtherCAT DEBUG: 20 00 00 00 
+[ 8444.690295] EtherCAT DEBUG 0-0: PDO entry 0x0000:00, 32 bit, "Gap".
+[ 8444.690300] EtherCAT DEBUG 0-0: Uploading SDO 0x1A10:05.
+[ 8444.690305] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.690307] EtherCAT DEBUG: 00 20 40 10 1A 05 00 00 00 00 
+[ 8444.692059] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.692076] EtherCAT DEBUG: 00 30 43 10 1A 05 20 00 00 00 
+[ 8444.692098] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.692100] EtherCAT DEBUG: 20 00 00 00 
+[ 8444.692116] EtherCAT DEBUG 0-0: PDO entry 0x0000:00, 32 bit, "Gap".
+[ 8444.692122] EtherCAT DEBUG 0-0: Uploading SDO 0x1A10:06.
+[ 8444.692126] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.692128] EtherCAT DEBUG: 00 20 40 10 1A 06 00 00 00 00 
+[ 8444.694608] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.694631] EtherCAT DEBUG: 00 30 43 10 1A 06 20 00 00 00 
+[ 8444.694657] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.694659] EtherCAT DEBUG: 20 00 00 00 
+[ 8444.694676] EtherCAT DEBUG 0-0: PDO entry 0x0000:00, 32 bit, "Gap".
+[ 8444.694687] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:08.
+[ 8444.694693] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.694696] EtherCAT DEBUG: 00 20 40 13 1C 08 00 00 00 00 
+[ 8444.696248] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.696270] EtherCAT DEBUG: 00 30 4B 13 1C 08 20 1A 00 00 
+[ 8444.696296] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.696299] EtherCAT DEBUG: 20 1A 
+[ 8444.696312] EtherCAT DEBUG 0-0: PDO 0x1A20.
+[ 8444.696320] EtherCAT DEBUG 0-0: Uploading SDO 0x1A20:00.
+[ 8444.696325] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.696327] EtherCAT DEBUG: 00 20 40 20 1A 00 00 00 00 00 
+[ 8444.698499] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.698520] EtherCAT DEBUG: 00 30 4F 20 1A 00 07 00 00 00 
+[ 8444.698543] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.698546] EtherCAT DEBUG: 07 
+[ 8444.698551] EtherCAT DEBUG 0-0: 7 PDO entries mapped.
+[ 8444.698555] EtherCAT DEBUG 0-0: Uploading SDO 0x1A20:01.
+[ 8444.698560] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.698562] EtherCAT DEBUG: 00 20 40 20 1A 01 00 00 00 00 
+[ 8444.703977] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.703995] EtherCAT DEBUG: 00 30 43 20 1A 01 20 01 70 60 
+[ 8444.704016] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.704019] EtherCAT DEBUG: 20 01 70 60 
+[ 8444.704030] EtherCAT DEBUG 0-0: PDO entry 0x6070:01, 32 bit, "???".
+[ 8444.704037] EtherCAT DEBUG 0-0: Uploading SDO 0x1A20:02.
+[ 8444.704041] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.704043] EtherCAT DEBUG: 00 20 40 20 1A 02 00 00 00 00 
+[ 8444.705800] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.705814] EtherCAT DEBUG: 00 30 43 20 1A 02 20 02 70 60 
+[ 8444.705836] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.705838] EtherCAT DEBUG: 20 02 70 60 
+[ 8444.705851] EtherCAT DEBUG 0-0: PDO entry 0x6070:02, 32 bit, "???".
+[ 8444.705857] EtherCAT DEBUG 0-0: Uploading SDO 0x1A20:03.
+[ 8444.705862] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.705864] EtherCAT DEBUG: 00 20 40 20 1A 03 00 00 00 00 
+[ 8444.707056] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.707063] EtherCAT DEBUG: 00 30 43 20 1A 03 20 03 70 60 
+[ 8444.707082] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.707084] EtherCAT DEBUG: 20 03 70 60 
+[ 8444.707094] EtherCAT DEBUG 0-0: PDO entry 0x6070:03, 32 bit, "???".
+[ 8444.707100] EtherCAT DEBUG 0-0: Uploading SDO 0x1A20:04.
+[ 8444.707103] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.707106] EtherCAT DEBUG: 00 20 40 20 1A 04 00 00 00 00 
+[ 8444.708213] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.708219] EtherCAT DEBUG: 00 30 43 20 1A 04 20 04 70 60 
+[ 8444.708238] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.708240] EtherCAT DEBUG: 20 04 70 60 
+[ 8444.708249] EtherCAT DEBUG 0-0: PDO entry 0x6070:04, 32 bit, "???".
+[ 8444.708253] EtherCAT DEBUG 0-0: Uploading SDO 0x1A20:05.
+[ 8444.708256] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.708258] EtherCAT DEBUG: 00 20 40 20 1A 05 00 00 00 00 
+[ 8444.710449] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.710469] EtherCAT DEBUG: 00 30 43 20 1A 05 20 05 70 60 
+[ 8444.710493] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.710496] EtherCAT DEBUG: 20 05 70 60 
+[ 8444.710514] EtherCAT DEBUG 0-0: PDO entry 0x6070:05, 32 bit, "???".
+[ 8444.710522] EtherCAT DEBUG 0-0: Uploading SDO 0x1A20:06.
+[ 8444.710527] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.710529] EtherCAT DEBUG: 00 20 40 20 1A 06 00 00 00 00 
+[ 8444.711933] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.711944] EtherCAT DEBUG: 00 30 43 20 1A 06 20 06 70 60 
+[ 8444.711962] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.711964] EtherCAT DEBUG: 20 06 70 60 
+[ 8444.711976] EtherCAT DEBUG 0-0: PDO entry 0x6070:06, 32 bit, "???".
+[ 8444.711980] EtherCAT DEBUG 0-0: Uploading SDO 0x1A20:07.
+[ 8444.711985] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.711987] EtherCAT DEBUG: 00 20 40 20 1A 07 00 00 00 00 
+[ 8444.714169] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.714183] EtherCAT DEBUG: 00 30 43 20 1A 07 20 07 70 60 
+[ 8444.714203] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.714205] EtherCAT DEBUG: 20 07 70 60 
+[ 8444.714217] EtherCAT DEBUG 0-0: PDO entry 0x6070:07, 32 bit, "???".
+[ 8444.714223] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:09.
+[ 8444.714228] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.714230] EtherCAT DEBUG: 00 20 40 13 1C 09 00 00 00 00 
+[ 8444.715822] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.715827] EtherCAT DEBUG: 00 30 4B 13 1C 09 21 1A 00 00 
+[ 8444.715847] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.715850] EtherCAT DEBUG: 21 1A 
+[ 8444.715858] EtherCAT DEBUG 0-0: PDO 0x1A21.
+[ 8444.715863] EtherCAT DEBUG 0-0: Uploading SDO 0x1A21:00.
+[ 8444.715867] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.715870] EtherCAT DEBUG: 00 20 40 21 1A 00 00 00 00 00 
+[ 8444.718039] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.718052] EtherCAT DEBUG: 00 30 4F 21 1A 00 07 00 00 00 
+[ 8444.718073] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.718075] EtherCAT DEBUG: 07 
+[ 8444.718080] EtherCAT DEBUG 0-0: 7 PDO entries mapped.
+[ 8444.718083] EtherCAT DEBUG 0-0: Uploading SDO 0x1A21:01.
+[ 8444.718089] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.718091] EtherCAT DEBUG: 00 20 40 21 1A 01 00 00 00 00 
+[ 8444.722207] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.722225] EtherCAT DEBUG: 00 30 43 21 1A 01 20 01 71 60 
+[ 8444.722246] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.722248] EtherCAT DEBUG: 20 01 71 60 
+[ 8444.722258] EtherCAT DEBUG 0-0: PDO entry 0x6071:01, 32 bit, "???".
+[ 8444.722265] EtherCAT DEBUG 0-0: Uploading SDO 0x1A21:02.
+[ 8444.722269] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.722271] EtherCAT DEBUG: 00 20 40 21 1A 02 00 00 00 00 
+[ 8444.723856] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.723865] EtherCAT DEBUG: 00 30 43 21 1A 02 20 02 71 60 
+[ 8444.723884] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.723886] EtherCAT DEBUG: 20 02 71 60 
+[ 8444.723897] EtherCAT DEBUG 0-0: PDO entry 0x6071:02, 32 bit, "???".
+[ 8444.723902] EtherCAT DEBUG 0-0: Uploading SDO 0x1A21:03.
+[ 8444.723905] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.723907] EtherCAT DEBUG: 00 20 40 21 1A 03 00 00 00 00 
+[ 8444.727401] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.727419] EtherCAT DEBUG: 00 30 43 21 1A 03 20 03 71 60 
+[ 8444.727441] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.727443] EtherCAT DEBUG: 20 03 71 60 
+[ 8444.727455] EtherCAT DEBUG 0-0: PDO entry 0x6071:03, 32 bit, "???".
+[ 8444.727462] EtherCAT DEBUG 0-0: Uploading SDO 0x1A21:04.
+[ 8444.727467] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.727469] EtherCAT DEBUG: 00 20 40 21 1A 04 00 00 00 00 
+[ 8444.729777] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.729791] EtherCAT DEBUG: 00 30 43 21 1A 04 20 04 71 60 
+[ 8444.729814] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.729817] EtherCAT DEBUG: 20 04 71 60 
+[ 8444.729828] EtherCAT DEBUG 0-0: PDO entry 0x6071:04, 32 bit, "???".
+[ 8444.729835] EtherCAT DEBUG 0-0: Uploading SDO 0x1A21:05.
+[ 8444.729841] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.729843] EtherCAT DEBUG: 00 20 40 21 1A 05 00 00 00 00 
+[ 8444.731155] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.731163] EtherCAT DEBUG: 00 30 43 21 1A 05 20 05 71 60 
+[ 8444.731181] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.731184] EtherCAT DEBUG: 20 05 71 60 
+[ 8444.731194] EtherCAT DEBUG 0-0: PDO entry 0x6071:05, 32 bit, "???".
+[ 8444.731198] EtherCAT DEBUG 0-0: Uploading SDO 0x1A21:06.
+[ 8444.731201] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.731203] EtherCAT DEBUG: 00 20 40 21 1A 06 00 00 00 00 
+[ 8444.732825] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.732832] EtherCAT DEBUG: 00 30 43 21 1A 06 20 06 71 60 
+[ 8444.732852] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.732855] EtherCAT DEBUG: 20 06 71 60 
+[ 8444.732865] EtherCAT DEBUG 0-0: PDO entry 0x6071:06, 32 bit, "???".
+[ 8444.732870] EtherCAT DEBUG 0-0: Uploading SDO 0x1A21:07.
+[ 8444.732874] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.732875] EtherCAT DEBUG: 00 20 40 21 1A 07 00 00 00 00 
+[ 8444.746109] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.746122] EtherCAT DEBUG: 00 30 43 21 1A 07 20 07 71 60 
+[ 8444.746143] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.746145] EtherCAT DEBUG: 20 07 71 60 
+[ 8444.746158] EtherCAT DEBUG 0-0: PDO entry 0x6071:07, 32 bit, "???".
+[ 8444.746168] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:0A.
+[ 8444.746172] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.746174] EtherCAT DEBUG: 00 20 40 13 1C 0A 00 00 00 00 
+[ 8444.748644] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.748658] EtherCAT DEBUG: 00 30 4B 13 1C 0A 22 1A 00 00 
+[ 8444.748678] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.748680] EtherCAT DEBUG: 22 1A 
+[ 8444.748689] EtherCAT DEBUG 0-0: PDO 0x1A22.
+[ 8444.748694] EtherCAT DEBUG 0-0: Uploading SDO 0x1A22:00.
+[ 8444.748699] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.748701] EtherCAT DEBUG: 00 20 40 22 1A 00 00 00 00 00 
+[ 8444.750028] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.750040] EtherCAT DEBUG: 00 30 4F 22 1A 00 07 00 00 00 
+[ 8444.750059] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.750061] EtherCAT DEBUG: 07 
+[ 8444.750066] EtherCAT DEBUG 0-0: 7 PDO entries mapped.
+[ 8444.750069] EtherCAT DEBUG 0-0: Uploading SDO 0x1A22:01.
+[ 8444.750073] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.750075] EtherCAT DEBUG: 00 20 40 22 1A 01 00 00 00 00 
+[ 8444.753739] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.753750] EtherCAT DEBUG: 00 30 43 22 1A 01 20 01 72 60 
+[ 8444.753770] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.753773] EtherCAT DEBUG: 20 01 72 60 
+[ 8444.753783] EtherCAT DEBUG 0-0: PDO entry 0x6072:01, 32 bit, "???".
+[ 8444.753789] EtherCAT DEBUG 0-0: Uploading SDO 0x1A22:02.
+[ 8444.753793] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.753796] EtherCAT DEBUG: 00 20 40 22 1A 02 00 00 00 00 
+[ 8444.755735] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.755749] EtherCAT DEBUG: 00 30 43 22 1A 02 20 02 72 60 
+[ 8444.755770] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.755772] EtherCAT DEBUG: 20 02 72 60 
+[ 8444.755783] EtherCAT DEBUG 0-0: PDO entry 0x6072:02, 32 bit, "???".
+[ 8444.755788] EtherCAT DEBUG 0-0: Uploading SDO 0x1A22:03.
+[ 8444.755793] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.755795] EtherCAT DEBUG: 00 20 40 22 1A 03 00 00 00 00 
+[ 8444.761383] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.761398] EtherCAT DEBUG: 00 30 43 22 1A 03 20 03 72 60 
+[ 8444.761418] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.761421] EtherCAT DEBUG: 20 03 72 60 
+[ 8444.761432] EtherCAT DEBUG 0-0: PDO entry 0x6072:03, 32 bit, "???".
+[ 8444.761438] EtherCAT DEBUG 0-0: Uploading SDO 0x1A22:04.
+[ 8444.761442] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.761444] EtherCAT DEBUG: 00 20 40 22 1A 04 00 00 00 00 
+[ 8444.764503] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.764522] EtherCAT DEBUG: 00 30 43 22 1A 04 20 04 72 60 
+[ 8444.764543] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.764545] EtherCAT DEBUG: 20 04 72 60 
+[ 8444.764557] EtherCAT DEBUG 0-0: PDO entry 0x6072:04, 32 bit, "???".
+[ 8444.764563] EtherCAT DEBUG 0-0: Uploading SDO 0x1A22:05.
+[ 8444.764568] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.764570] EtherCAT DEBUG: 00 20 40 22 1A 05 00 00 00 00 
+[ 8444.766065] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.766079] EtherCAT DEBUG: 00 30 43 22 1A 05 20 05 72 60 
+[ 8444.766099] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.766101] EtherCAT DEBUG: 20 05 72 60 
+[ 8444.766111] EtherCAT DEBUG 0-0: PDO entry 0x6072:05, 32 bit, "???".
+[ 8444.766116] EtherCAT DEBUG 0-0: Uploading SDO 0x1A22:06.
+[ 8444.766121] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.766123] EtherCAT DEBUG: 00 20 40 22 1A 06 00 00 00 00 
+[ 8444.768162] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.768175] EtherCAT DEBUG: 00 30 43 22 1A 06 20 06 72 60 
+[ 8444.768196] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.768198] EtherCAT DEBUG: 20 06 72 60 
+[ 8444.768208] EtherCAT DEBUG 0-0: PDO entry 0x6072:06, 32 bit, "???".
+[ 8444.768214] EtherCAT DEBUG 0-0: Uploading SDO 0x1A22:07.
+[ 8444.768218] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.768220] EtherCAT DEBUG: 00 20 40 22 1A 07 00 00 00 00 
+[ 8444.770025] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.770040] EtherCAT DEBUG: 00 30 43 22 1A 07 20 07 72 60 
+[ 8444.770061] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.770063] EtherCAT DEBUG: 20 07 72 60 
+[ 8444.770073] EtherCAT DEBUG 0-0: PDO entry 0x6072:07, 32 bit, "???".
+[ 8444.770079] EtherCAT DEBUG 0-0: Uploading SDO 0x1C13:0B.
+[ 8444.770083] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.770085] EtherCAT DEBUG: 00 20 40 13 1C 0B 00 00 00 00 
+[ 8444.771780] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.771785] EtherCAT DEBUG: 00 30 4B 13 1C 0B 23 1A 00 00 
+[ 8444.771803] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.771805] EtherCAT DEBUG: 23 1A 
+[ 8444.771812] EtherCAT DEBUG 0-0: PDO 0x1A23.
+[ 8444.771816] EtherCAT DEBUG 0-0: Uploading SDO 0x1A23:00.
+[ 8444.771819] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.771821] EtherCAT DEBUG: 00 20 40 23 1A 00 00 00 00 00 
+[ 8444.777081] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.777095] EtherCAT DEBUG: 00 30 4F 23 1A 00 07 00 00 00 
+[ 8444.777115] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.777117] EtherCAT DEBUG: 07 
+[ 8444.777122] EtherCAT DEBUG 0-0: 7 PDO entries mapped.
+[ 8444.777125] EtherCAT DEBUG 0-0: Uploading SDO 0x1A23:01.
+[ 8444.777129] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.777131] EtherCAT DEBUG: 00 20 40 23 1A 01 00 00 00 00 
+[ 8444.778884] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.778945] EtherCAT DEBUG: 00 30 43 23 1A 01 20 01 73 60 
+[ 8444.778968] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.778972] EtherCAT DEBUG: 20 01 73 60 
+[ 8444.778988] EtherCAT DEBUG 0-0: PDO entry 0x6073:01, 32 bit, "???".
+[ 8444.778997] EtherCAT DEBUG 0-0: Uploading SDO 0x1A23:02.
+[ 8444.779001] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.779003] EtherCAT DEBUG: 00 20 40 23 1A 02 00 00 00 00 
+[ 8444.780228] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.780232] EtherCAT DEBUG: 00 30 43 23 1A 02 20 02 73 60 
+[ 8444.780251] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.780253] EtherCAT DEBUG: 20 02 73 60 
+[ 8444.780262] EtherCAT DEBUG 0-0: PDO entry 0x6073:02, 32 bit, "???".
+[ 8444.780266] EtherCAT DEBUG 0-0: Uploading SDO 0x1A23:03.
+[ 8444.780269] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.780271] EtherCAT DEBUG: 00 20 40 23 1A 03 00 00 00 00 
+[ 8444.782420] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.782430] EtherCAT DEBUG: 00 30 43 23 1A 03 20 03 73 60 
+[ 8444.782450] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.782453] EtherCAT DEBUG: 20 03 73 60 
+[ 8444.782463] EtherCAT DEBUG 0-0: PDO entry 0x6073:03, 32 bit, "???".
+[ 8444.782469] EtherCAT DEBUG 0-0: Uploading SDO 0x1A23:04.
+[ 8444.782473] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.782475] EtherCAT DEBUG: 00 20 40 23 1A 04 00 00 00 00 
+[ 8444.783947] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.783951] EtherCAT DEBUG: 00 30 43 23 1A 04 20 04 73 60 
+[ 8444.783969] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.783971] EtherCAT DEBUG: 20 04 73 60 
+[ 8444.783981] EtherCAT DEBUG 0-0: PDO entry 0x6073:04, 32 bit, "???".
+[ 8444.783986] EtherCAT DEBUG 0-0: Uploading SDO 0x1A23:05.
+[ 8444.783989] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.783990] EtherCAT DEBUG: 00 20 40 23 1A 05 00 00 00 00 
+[ 8444.785932] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.785943] EtherCAT DEBUG: 00 30 43 23 1A 05 20 05 73 60 
+[ 8444.785965] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.785967] EtherCAT DEBUG: 20 05 73 60 
+[ 8444.785979] EtherCAT DEBUG 0-0: PDO entry 0x6073:05, 32 bit, "???".
+[ 8444.785985] EtherCAT DEBUG 0-0: Uploading SDO 0x1A23:06.
+[ 8444.785989] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.785992] EtherCAT DEBUG: 00 20 40 23 1A 06 00 00 00 00 
+[ 8444.787144] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.787150] EtherCAT DEBUG: 00 30 43 23 1A 06 20 06 73 60 
+[ 8444.787170] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.787173] EtherCAT DEBUG: 20 06 73 60 
+[ 8444.787183] EtherCAT DEBUG 0-0: PDO entry 0x6073:06, 32 bit, "???".
+[ 8444.787188] EtherCAT DEBUG 0-0: Uploading SDO 0x1A23:07.
+[ 8444.787191] EtherCAT DEBUG 0-0: Upload request:
+[ 8444.787194] EtherCAT DEBUG: 00 20 40 23 1A 07 00 00 00 00 
+[ 8444.793787] EtherCAT DEBUG 0-0: Upload response:
+[ 8444.793803] EtherCAT DEBUG: 00 30 43 23 1A 07 20 07 73 60 
+[ 8444.793824] EtherCAT DEBUG 0-0: Uploaded data:
+[ 8444.793826] EtherCAT DEBUG: 20 07 73 60 
+[ 8444.793837] EtherCAT DEBUG 0-0: PDO entry 0x6073:07, 32 bit, "???".
+[ 8444.793951] EtherCAT DEBUG 0-0: Reading of PDO configuration finished.
+[ 8444.793955] EtherCAT 0: Bus scanning completed in 312 ms.
+[ 8444.793960] EtherCAT 0: Using slave 0 as DC reference clock.
+[ 8444.793965] EtherCAT DEBUG 0-0: ec_slave_calc_transmission_delays_rec(delay = 0 ns)
+[ 8444.793970] EtherCAT DEBUG 0: No app_time received up to now.
+[ 8444.809289] EtherCAT ERROR 0-0: AL status message 0x001A: "Synchronization error".
+[ 8444.810860] EtherCAT 0-0: Acknowledged state SAFEOP.
+[ 8444.810871] EtherCAT DEBUG 0-0: Changing state from SAFEOP to PREOP (forced).
+[ 8444.810875] EtherCAT DEBUG 0-0: Configuring...
+[ 8444.812213] EtherCAT DEBUG 0-0: Now in INIT.
+[ 8444.812219] EtherCAT DEBUG 0-0: Clearing FMMU configurations...
+[ 8444.812262] EtherCAT DEBUG 0-0: Clearing sync manager configurations...
+[ 8444.812300] EtherCAT DEBUG 0-0: Clearing DC assignment...
+[ 8444.812338] EtherCAT DEBUG 0-0: Configuring mailbox sync managers...
+[ 8444.812341] EtherCAT DEBUG 0-0: SM0: Addr 0x1000, Size 128, Ctrl 0x26, En 1
+[ 8444.812346] EtherCAT DEBUG 0-0: SM1: Addr 0x1080, Size 128, Ctrl 0x22, En 1
+[ 8444.812387] EtherCAT DEBUG 0-0: Assigning SII access to PDI.
+[ 8444.813827] EtherCAT DEBUG 0-0: Now in PREOP.
+[ 8444.813841] EtherCAT DEBUG 0-0: Assigning SII access back to EtherCAT.
+[ 8444.813889] EtherCAT DEBUG 0-0: Finished configuration.
+[ 8444.813895] EtherCAT DEBUG 0-0: Ready for requests.
+[ 8444.821963] EtherCAT 0: Slave states on main device: PREOP.

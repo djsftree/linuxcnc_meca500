@@ -17,9 +17,10 @@
           <pdoEntry idx="7200" subIdx="01" bitLen="1" halPin="ctrl.deactivate" halType="bit" />
           <pdoEntry idx="7200" subIdx="02" bitLen="1" halPin="ctrl.activate" halType="bit" />
           <pdoEntry idx="7200" subIdx="03" bitLen="1" halPin="ctrl.home" halType="bit" />
-          <pdoEntry idx="7200" subIdx="04" bitLen="1" halPin="ctrl.reset-errror" halType="bit" />
+          <pdoEntry idx="7200" subIdx="04" bitLen="1" halPin="ctrl.reset-error" halType="bit" />
           <pdoEntry idx="7200" subIdx="05" bitLen="1" halPin="ctrl.sim-mode" halType="bit" />
-          <pdoEntry idx="0000" subIdx="00" bitLen="27" />
+          <pdoEntry idx="7200" subIdx="05" bitLen="1" halPin="ctrl.recovery-mode" halType="bit" />
+          <pdoEntry idx="0000" subIdx="00" bitLen="26" />
         </pdo>
 		
 	<!-- MotionControl -->
@@ -34,13 +35,42 @@
 		
 	<!-- Movement -->
         <pdo idx="1602">
-          <pdoEntry idx="7305" subIdx="00" bitLen="32" halPin="vel-command" halType="u32"  />
+          <pdoEntry idx="7305" subIdx="00" bitLen="32" halPin="vel-cmd-id" halType="u32"  />
           <pdoEntry idx="7306" subIdx="01" bitLen="32" halPin="vel-cmd.a1" halType="float-ieee" />
           <pdoEntry idx="7306" subIdx="02" bitLen="32" halPin="vel-cmd.a2" halType="float-ieee" />
           <pdoEntry idx="7306" subIdx="03" bitLen="32" halPin="vel-cmd.a3" halType="float-ieee" />
           <pdoEntry idx="7306" subIdx="04" bitLen="32" halPin="vel-cmd.a4" halType="float-ieee" />
           <pdoEntry idx="7306" subIdx="05" bitLen="32" halPin="vel-cmd.a5" halType="float-ieee" />
           <pdoEntry idx="7306" subIdx="06" bitLen="32" halPin="vel-cmd.a6" halType="float-ieee" />
+        </pdo>
+        
+    <!-- Host Time -->
+        <pdo idx="1610">
+          <pdoEntry idx="7400" subIdx="00" bitLen="32" halPin="ctrl.host-time" halType="u32"  />
+        </pdo>
+        
+    <!-- Brake Control -->
+        <pdo idx="1611">
+          <pdoEntry idx="7410" subIdx="01" bitLen="1" halPin="ctrl.brakes-ctrl-allowed" halType="bit" />
+          <pdoEntry idx="7410" subIdx="02" bitLen="1" halPin="ctrl.brakes-engaged" halType="bit" />
+          <pdoEntry idx="0000" subIdx="00" bitLen="30" />
+        </pdo>
+        
+    <!-- Dynamic Data Cfg0 -->
+        <pdo idx="1620">
+          <pdoEntry idx="7420" subIdx="00" bitLen="32" halPin="ctrl.dyn-data0-id" halType="u32"  />
+        </pdo>
+    <!-- Dynamic Data Cfg1 -->
+        <pdo idx="1621">
+          <pdoEntry idx="7421" subIdx="00" bitLen="32" halPin="ctrl.dyn-data1-id" halType="u32"  />
+        </pdo>
+    <!-- Dynamic Data Cfg2 -->
+        <pdo idx="1622">
+          <pdoEntry idx="7422" subIdx="00" bitLen="32" halPin="ctrl.dyn-data2-id" halType="u32"  />
+        </pdo>
+    <!-- Dynamic Data Cfg3 -->
+        <pdo idx="1623">
+          <pdoEntry idx="7423" subIdx="00" bitLen="32" halPin="ctrl.dyn-data3-id" halType="u32"  />
         </pdo>
 
       </syncManager>
@@ -52,7 +82,9 @@
           <pdoEntry idx="6010" subIdx="03" bitLen="1"  halPin="status.activated" halType="bit" />
           <pdoEntry idx="6010" subIdx="04" bitLen="1"  halPin="status.homed" halType="bit" />
           <pdoEntry idx="6010" subIdx="05" bitLen="1"  halPin="status.sim-activated" halType="bit" />
-          <pdoEntry idx="0000" subIdx="00" bitLen="12" />
+          <pdoEntry idx="6010" subIdx="06" bitLen="1"  halPin="status.brakes-engaged" halType="bit" />
+          <pdoEntry idx="6010" subIdx="07" bitLen="1"  halPin="status.recovery-mode" halType="bit" />
+          <pdoEntry idx="0000" subIdx="00" bitLen="10" />
           <pdoEntry idx="6010" subIdx="01" bitLen="16" halPin="status.error" halType="u32" />
         </pdo>
         
@@ -66,16 +98,17 @@
           <pdoEntry idx="6015" subIdx="07" bitLen="1"  halPin="status.cleared" halType="bit" />
           <pdoEntry idx="6015" subIdx="08" bitLen="1"  halPin="status.pstop" halType="bit" />
           <pdoEntry idx="6015" subIdx="09" bitLen="1"  halPin="status.excessive-torqe" halType="bit" />
-          <pdoEntry idx="0000" subIdx="00" bitLen="26" />
+          <pdoEntry idx="0000" subIdx="00" bitLen="10" />
+          <pdoEntry idx="6015" subIdx="04" bitLen="16" halPin="status.offline-prog-id" halType="u32" />
         </pdo>
         
         <pdo idx="1a02">
-          <pdoEntry idx="6030" subIdx="01" bitLen="32" halPin="encoder.a1" halType="float-ieee"/>
-          <pdoEntry idx="6030" subIdx="02" bitLen="32" halPin="encoder.a2" halType="float-ieee"/>
-          <pdoEntry idx="6030" subIdx="03" bitLen="32" halPin="encoder.a3" halType="float-ieee"/>
-          <pdoEntry idx="6030" subIdx="04" bitLen="32" halPin="encoder.a4" halType="float-ieee"/>
-          <pdoEntry idx="6030" subIdx="05" bitLen="32" halPin="encoder.a5" halType="float-ieee"/>
-          <pdoEntry idx="6030" subIdx="06" bitLen="32" halPin="encoder.a6" halType="float-ieee"/>
+          <pdoEntry idx="6030" subIdx="01" bitLen="32" halPin="status.target-a1" halType="float-ieee"/>
+          <pdoEntry idx="6030" subIdx="02" bitLen="32" halPin="status.target-a2" halType="float-ieee"/>
+          <pdoEntry idx="6030" subIdx="03" bitLen="32" halPin="status.target-a3" halType="float-ieee"/>
+          <pdoEntry idx="6030" subIdx="04" bitLen="32" halPin="status.target-a4" halType="float-ieee"/>
+          <pdoEntry idx="6030" subIdx="05" bitLen="32" halPin="status.target-a5" halType="float-ieee"/>
+          <pdoEntry idx="6030" subIdx="06" bitLen="32" halPin="status.target-a6" halType="float-ieee"/>
         </pdo>
         
         <pdo idx="1a03">
@@ -86,31 +119,73 @@
           <pdoEntry idx="6031" subIdx="05" bitLen="32" halPin="pose.a5" halType="float-ieee" />
           <pdoEntry idx="6031" subIdx="06" bitLen="32" halPin="pose.a6" halType="float-ieee" />
         </pdo>
-        
-        <pdo idx="1a04">
-          <pdoEntry idx="6032" subIdx="01" bitLen="32" halPin="velocity.a1" halType="float-ieee" />
-          <pdoEntry idx="6032" subIdx="02" bitLen="32" halPin="velocity.a2" halType="float-ieee" />
-          <pdoEntry idx="6032" subIdx="03" bitLen="32" halPin="velocity.a3" halType="float-ieee" />
-          <pdoEntry idx="6032" subIdx="04" bitLen="32" halPin="velocity.a4" halType="float-ieee" />
-          <pdoEntry idx="6032" subIdx="05" bitLen="32" halPin="velocity.a5" halType="float-ieee" />
-          <pdoEntry idx="6032" subIdx="06" bitLen="32" halPin="velocity.a6" halType="float-ieee" />
+    <!-- WRF -->        
+        <pdo idx="1a09">
+          <pdoEntry idx="6050" subIdx="01" bitLen="32" halPin="WRF.1" halType="float-ieee" />
+          <pdoEntry idx="6050" subIdx="02" bitLen="32" halPin="WRF.2" halType="float-ieee" />
+          <pdoEntry idx="6050" subIdx="03" bitLen="32" halPin="WRF.3" halType="float-ieee" />
+          <pdoEntry idx="6050" subIdx="04" bitLen="32" halPin="WRF.4" halType="float-ieee" />
+          <pdoEntry idx="6050" subIdx="05" bitLen="32" halPin="WRF.5" halType="float-ieee" />
+          <pdoEntry idx="6050" subIdx="06" bitLen="32" halPin="WRF.6" halType="float-ieee" />
+        </pdo>
+    <!-- TRF -->           
+        <pdo idx="1a0a">
+          <pdoEntry idx="6051" subIdx="01" bitLen="32" halPin="TRF.1" halType="float-ieee" />
+          <pdoEntry idx="6051" subIdx="02" bitLen="32" halPin="TRF.2" halType="float-ieee" />
+          <pdoEntry idx="6051" subIdx="03" bitLen="32" halPin="TRF.3" halType="float-ieee" />
+          <pdoEntry idx="6051" subIdx="04" bitLen="32" halPin="TRF.4" halType="float-ieee" />
+          <pdoEntry idx="6051" subIdx="05" bitLen="32" halPin="TRF.5" halType="float-ieee" />
+          <pdoEntry idx="6051" subIdx="06" bitLen="32" halPin="TRF.6" halType="float-ieee" />
+        </pdo>
+    <!-- Robot Timestamp -->           
+        <pdo idx="1a10">
+          <pdoEntry idx="6060" subIdx="01" bitLen="32" halPin="status.timestamp-seconds" halType="u32"  />
+          <pdoEntry idx="6060" subIdx="02" bitLen="32" halPin="status.timestamp-useconds" halType="u32"  />
+          <pdoEntry idx="6060" subIdx="03" bitLen="32" halPin="status.dyn-data-cycles" halType="u32"  />
+          <pdoEntry idx="0000" subIdx="00" bitLen="32" />
+          <pdoEntry idx="0000" subIdx="00" bitLen="32" />
+          <pdoEntry idx="0000" subIdx="00" bitLen="32" />
+        </pdo>
+    <!-- Dynamic Data 0 -->           
+        <pdo idx="1a20">
+          <pdoEntry idx="6070" subIdx="01" bitLen="32" halPin="dyn-data0.id" halType="u32" />
+          <pdoEntry idx="6070" subIdx="02" bitLen="32" halPin="dyn-data0.1" halType="float-ieee" />
+          <pdoEntry idx="6070" subIdx="03" bitLen="32" halPin="dyn-data0.2" halType="float-ieee" />
+          <pdoEntry idx="6070" subIdx="04" bitLen="32" halPin="dyn-data0.3" halType="float-ieee" />
+          <pdoEntry idx="6070" subIdx="05" bitLen="32" halPin="dyn-data0.4" halType="float-ieee" />
+          <pdoEntry idx="6070" subIdx="06" bitLen="32" halPin="dyn-data0.5" halType="float-ieee" />
+          <pdoEntry idx="6070" subIdx="07" bitLen="32" halPin="dyn-data0.6" halType="float-ieee" />
         </pdo>
         
-        <pdo idx="1a05">
-          <pdoEntry idx="6033" subIdx="01" bitLen="32" halPin="torque.a1" halType="float-ieee" />
-          <pdoEntry idx="6033" subIdx="02" bitLen="32" halPin="torque.a2" halType="float-ieee" />
-          <pdoEntry idx="6033" subIdx="03" bitLen="32" halPin="torque.a3" halType="float-ieee" />
-          <pdoEntry idx="6033" subIdx="04" bitLen="32" halPin="torque.a4" halType="float-ieee" />
-          <pdoEntry idx="6033" subIdx="05" bitLen="32" halPin="torque.a5" halType="float-ieee" />
-          <pdoEntry idx="6033" subIdx="06" bitLen="32" halPin="torque.a6" halType="float-ieee" />
+        <pdo idx="1a21">
+          <pdoEntry idx="6071" subIdx="01" bitLen="32" halPin="dyn-data1.id" halType="u32" />
+          <pdoEntry idx="6071" subIdx="02" bitLen="32" halPin="dyn-data1.1" halType="float-ieee" />
+          <pdoEntry idx="6071" subIdx="03" bitLen="32" halPin="dyn-data1.2" halType="float-ieee" />
+          <pdoEntry idx="6071" subIdx="04" bitLen="32" halPin="dyn-data1.3" halType="float-ieee" />
+          <pdoEntry idx="6071" subIdx="05" bitLen="32" halPin="dyn-data1.4" halType="float-ieee" />
+          <pdoEntry idx="6071" subIdx="06" bitLen="32" halPin="dyn-data1.5" halType="float-ieee" />
+          <pdoEntry idx="6071" subIdx="07" bitLen="32" halPin="dyn-data1.6" halType="float-ieee" />
         </pdo>
         
-        <pdo idx="1a06">
-          <pdoEntry idx="6040" subIdx="01" bitLen="32" halPin="accel.x" halType="float-ieee"  />
-          <pdoEntry idx="6040" subIdx="02" bitLen="32" halPin="accel.y" halType="float-ieee"  />
-          <pdoEntry idx="6040" subIdx="03" bitLen="32" halPin="accel.z" halType="float-ieee"  />
+        <pdo idx="1a22">
+          <pdoEntry idx="6072" subIdx="01" bitLen="32" halPin="dyn-data2.id" halType="u32" />
+          <pdoEntry idx="6072" subIdx="02" bitLen="32" halPin="dyn-data2.1" halType="float-ieee" />
+          <pdoEntry idx="6072" subIdx="03" bitLen="32" halPin="dyn-data2.2" halType="float-ieee" />
+          <pdoEntry idx="6072" subIdx="04" bitLen="32" halPin="dyn-data2.3" halType="float-ieee" />
+          <pdoEntry idx="6072" subIdx="05" bitLen="32" halPin="dyn-data2.4" halType="float-ieee" />
+          <pdoEntry idx="6072" subIdx="06" bitLen="32" halPin="dyn-data2.5" halType="float-ieee" />
+          <pdoEntry idx="6072" subIdx="07" bitLen="32" halPin="dyn-data2.6" halType="float-ieee" />
         </pdo>
         
+        <pdo idx="1a23">
+          <pdoEntry idx="6073" subIdx="01" bitLen="32" halPin="dyn-data3.id" halType="u32" />
+          <pdoEntry idx="6073" subIdx="02" bitLen="32" halPin="dyn-data3.1" halType="float-ieee" />
+          <pdoEntry idx="6073" subIdx="03" bitLen="32" halPin="dyn-data3.2" halType="float-ieee" />
+          <pdoEntry idx="6073" subIdx="04" bitLen="32" halPin="dyn-data3.3" halType="float-ieee" />
+          <pdoEntry idx="6073" subIdx="05" bitLen="32" halPin="dyn-data3.4" halType="float-ieee" />
+          <pdoEntry idx="6073" subIdx="06" bitLen="32" halPin="dyn-data3.5" halType="float-ieee" />
+          <pdoEntry idx="6073" subIdx="07" bitLen="32" halPin="dyn-data3.6" halType="float-ieee" />
+        </pdo>     
       </syncManager>
       
     </slave>
