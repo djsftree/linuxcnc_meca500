@@ -13,6 +13,7 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program; if not, write to the Free Software
 #    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+import os.path
 
 from vismach import *
 import hal
@@ -24,13 +25,15 @@ import hal
 
 from typing import Any, List
 
+MODEL_DIR = "/usr/local/share/meca500/share/models/"
+
 NUM_JOINTS = 6
 NUM_LINKS = 7
 
 COL_MACH = [0.9, 0.9, 0.9, 1]  # Greyish?
 COL_RED = [1, 0, 0, 1]
-COL_BLUE = [0, 1, 0, 1]
-COL_GREEN = [0, 0, 1, 1]
+COL_BLUE = [0, 0, 1, 1]
+COL_GREEN = [0, 1, 0, 1]
 COL_X_AXIS = COL_RED
 COL_Y_AXIS = COL_BLUE
 COL_Z_AXIS = COL_GREEN
@@ -39,13 +42,27 @@ SIZE_AXIS = CoordsBase(0, 3, 100, 3)
 SIZE_AXIS0 = CoordsBase(0, 5, 200, 5)
 SIZE_LINK = CoordsBase(1, 3, 100, 3)
 
-X_TRANS = [0, 0, 0, -38, 0, 0, 0]
-Z_TRANS = [91, 135, 135, 61, 61, 61]
+X_TRANS = [0,    0,   0, -38,  0,  0, 0,   0]
+Z_TRANS = [91, 135, 135,  61, 61, 61, 0, 100]
 
-TH_ROT = [0, 1, 1, 1, 1, 1, 1]
-X_ROT = [0, 0, 0, 0, 1, 0, 1]
-Y_ROT = [0, 0, 1, 1, 0, 1, 0]
-Z_ROT = [0, 1, 0, 0, 0, 0, 0]
+TH_ROT = [0, 1, 1, 1, 1, 1, 1, 0]
+X_ROT = [0, 0, 0, 0, 0, 0, 0, 0]
+Y_ROT = [0, 0, 1, 1, 0, 1, 0, 0]
+Z_ROT = [0, 1, 0, 0, 1, 0, 1, 0]
+
+
+def load_file(file_name):
+    """Check for validity paths"""
+    if os.path.exists(file_name):
+        return AsciiOBJ(file_name)
+    else:
+        print(f"Warning: {file_name} not found")
+        return Color(COL_MACH, [CylinderX(0, 3, 100, 3)])
+
+
+def print_debug(msg):
+    print(f"MECAGUI: {msg}")
+
 
 c = hal.component("meca500gui")
 for i in range(NUM_JOINTS):
@@ -60,72 +77,44 @@ tool = Capture()
 tool = Collection([tooltip, tool])
 
 # create visual tool coordinates axes	
-xaxis = Color(COL_X_AXIS, [CylinderX(0, 3, 100, 3)])
-yaxis = Color(COL_Y_AXIS, [CylinderY(0, 3, 100, 3)])
-zaxis = Color(COL_Z_AXIS, [CylinderZ(0, 3, 100, 3)])
+xaxis = Color(COL_X_AXIS, [CylinderX(0, 5, 100, 5)])
+yaxis = Color(COL_Y_AXIS, [CylinderY(0, 5, 100, 5)])
+zaxis = Color(COL_Z_AXIS, [CylinderZ(0, 5, 100, 5)])
 finger1 = Collection([tool, xaxis, yaxis, zaxis])
+finger1 = Translate([finger1], 12.5, -20.0, -40)
 
 try:  # Expect files in working directory
-    link8 = AsciiOBJ(filename="/usr/local/share/meca500/share/models/spindle_assembly.obj")
-    link7 = AsciiOBJ(filename="/usr/local/share/meca500/share/models/meca500_link7.obj")
-    link6 = AsciiOBJ(filename="/usr/local/share/meca500/share/models/meca500_link6.obj")
-    link5 = AsciiOBJ(filename="/usr/local/share/meca500/share/models/meca500_link5.obj")
-    link4 = AsciiOBJ(filename="/usr/local/share/meca500/share/models/meca500_link4.obj")
-    link3 = AsciiOBJ(filename="/usr/local/share/meca500/share/models/meca500_link3.obj")
-    link2 = AsciiOBJ(filename="/usr/local/share/meca500/share/models/meca500_link2.obj")
-    link1 = AsciiOBJ(filename="/usr/local/share/meca500/share/models/meca500_link1.obj")
-    table = AsciiOBJ(filename="/usr/local/share/meca500/share/models/meca500_table.obj")
+    links: List[Any] = [None] * 8
+    links[7] = AsciiOBJ(filename=f"{MODEL_DIR}/spindle_assembly.obj")
+    links[7] = Color(COL_GREEN, [links[7]])
+
+    for i in range(NUM_LINKS):
+        links[i] = load_file(f"{MODEL_DIR}/meca500_link{i + 1}.obj")
+        links[i] = Color(COL_MACH, [links[i]])
+        print_debug(f"Loaded: {MODEL_DIR}/meca500_link{i + 1}.obj ")
+
+    table = AsciiOBJ(filename=f"{MODEL_DIR}/meca500_table.obj")
+    print_debug(f"Loaded: {MODEL_DIR}/meca500_table.obj")
 except Exception as detail:
     print(detail)
     raise SystemExit("meca500 requires files in models directory")
 
-# create spindle model
-link8 = Color(COL_MACH, [link8])
-link8 = Translate([link8], 0, 0, 100)
-link8 = Rotate([link8], -90, 0, 1, 0)
-finger1 = Translate([finger1], 12.5, -20.0, -40)
-link8 = Collection([finger1, link8])
 
-### Create link7
-link7 = Color(COL_MACH, [link7])
-link7 = Collection([link8, link7])
-link7 = HalRotate([link7], c, "joint6", 1, 1, 0, 0)
+links[7] = Collection([finger1, links[7]])
+links[7] = Rotate([links[7]], -180, 0, 0, 1)
+links[7] = HalRotate([links[7]], c, f"joint{6}", TH_ROT[6], X_ROT[6], Y_ROT[6], Z_ROT[6])
 
-### Create link6
-link6 = Color(COL_MACH, [link6])
-link6 = Collection([link7, link6])
-link6 = Translate([link6], 0, 0, 61)
-link6 = HalRotate([link6], c, "joint5", 1, 0, 1, 0)
+for i in range(NUM_LINKS - 1, 0, -1):
 
-### Create link5
-link5 = Color(COL_MACH, [link5])
-link5 = Collection([link6, link5])
-link5 = Translate([link5], 0, 0, 61)
-link5 = HalRotate([link5], c, "joint4", 1, 1, 0, 0)
+    links[i] = Collection([links[i+1], links[i]])
+    links[i] = Translate([links[i]], X_TRANS[i], 0, Z_TRANS[i])
+    if i == 3:
+        links[i] = Rotate([links[i]], 90, 0, 1, 0)
+    if i != 6:
+        links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
 
-### Create link4
-link4 = Color(COL_MACH, [link4])
-link4 = Collection([link5, link4])
-link4 = Translate([link4], -38.0, 0, 61.0)
-link4 = Rotate([link4], 90, 0, 1, 0)
-link4 = HalRotate([link4], c, "joint3", 1, 0, 1, 0)
-
-### Create link3
-link3 = Color(COL_MACH, [link3])
-link3 = Collection([link4, link3])
-link3 = Translate([link3], 0, 0, 135.0)
-link3 = HalRotate([link3], c, "joint2", 1, 0, 1, 0)
-
-### Create link2
-link2 = Color(COL_MACH, [link2])
-link2 = Collection([link3, link2])
-link2 = Translate([link2], 0, 0, 135.0)
-link2 = HalRotate([link2], c, "joint1", 1, 0, 0, 1)
-
-### Create link1 stationary base
-link1 = Color(COL_MACH, [link1])
-link1 = Translate([link1], 0, 0, 91)
-meca500 = Collection([link2, link1])
+links[0] = Translate([links[0]], 0, 0, 91)
+meca500 = Collection([links[1], links[0]])
 
 # create visual world coordinates
 xaxis0 = Color(COL_X_AXIS, [CylinderX(0, 5, 200, 5)])

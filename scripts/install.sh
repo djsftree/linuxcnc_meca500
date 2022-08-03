@@ -5,9 +5,7 @@
 #      Chad A. Woitas AKA satiowadahc
 #  Last Updated July 27, 2022
 
-
 SCRIPT="\033[0;31mI\033[0;32mn\033[0;34ms\033[1;33mt\033[0;31ma\033[0;32nl\033[0;34ml\033[0m"
-
 
 echo -e "$SCRIPT: Initializing Variables"
 PKG_NAME="meca500"
@@ -40,4 +38,6 @@ cp "$SRC_DIR/meca500gui.py" "$DEB_DIR/$PKG_NAME/$BINRY_DIR/meca500gui"
 sudo chmod +x "$DEB_DIR/$PKG_NAME/$BINRY_DIR/meca500gui"
 
 dpkg-deb --build "$DEB_DIR/$PKG_NAME"
+
+echo -e "$SCRIPT: Installing Debian Package"
 sudo apt install "$DEB_DIR/$PKG_NAME.deb" --reinstall
