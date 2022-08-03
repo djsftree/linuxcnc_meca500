@@ -39,8 +39,8 @@ COL_X_AXIS = COL_RED
 COL_Y_AXIS = COL_GREEN
 COL_Z_AXIS = COL_BLUE
 
-X_TRANS = [0,    0,   0,  -38,    0,    0, 0,   0]
-Z_TRANS = [91, 135, 135, 61.5, 58.5, 70.0, 0, 100]
+Y_TRANS = [0,    0,   0,    38,    0,    0,  0,   0]
+Z_TRANS = [91, 135, 135,  61.5, 58.5, 70.0,  0, 100]
 
 TH_ROT = [0, 1, 1, 1, 1, 1, 1, 0]
 X_ROT =  [0, 0, 0, 0, 0, 0, 0, 0]
@@ -107,9 +107,8 @@ links[7] = HalRotate([links[7]], c, f"joint{6}", TH_ROT[6], X_ROT[6], Y_ROT[6], 
 for i in range(NUM_LINKS - 1, 0, -1):
 
     links[i] = Collection([links[i+1], links[i], xaxis, yaxis, zaxis])
-    links[i] = Translate([links[i]], X_TRANS[i], 0, Z_TRANS[i])
-    if i == 3:
-        links[i] = Rotate([links[i]], 90, 0, 1, 0)
+    links[i] = Translate([links[i]], 0, Y_TRANS[i], Z_TRANS[i])
+
     if i != 6:
         links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
 
