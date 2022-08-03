@@ -25,23 +25,23 @@ net j5-pos-fb  <= lcec.0.Meca500.dyn-data0.6
 # set dynamic data port 1 to real-time vel-fb
 
 setp lcec.0.Meca500.ctrl.dyn-data1-id 42
-net j0-vel-fb  <= lcec.0.Meca500.dyn-data1.1
-net j1-vel-fb  <= lcec.0.Meca500.dyn-data1.2
-net j2-vel-fb  <= lcec.0.Meca500.dyn-data1.3
-net j3-vel-fb  <= lcec.0.Meca500.dyn-data1.4
-net j4-vel-fb  <= lcec.0.Meca500.dyn-data1.5
-net j5-vel-fb  <= lcec.0.Meca500.dyn-data1.6
+#net j0-vel-fb  <= lcec.0.Meca500.dyn-data1.1
+#net j1-vel-fb  <= lcec.0.Meca500.dyn-data1.2
+#net j2-vel-fb  <= lcec.0.Meca500.dyn-data1.3
+#net j3-vel-fb  <= lcec.0.Meca500.dyn-data1.4
+#net j4-vel-fb  <= lcec.0.Meca500.dyn-data1.5
+#net j5-vel-fb  <= lcec.0.Meca500.dyn-data1.6
 
 
 # set dynamic data port 2 to real-time tor-fb
 
 setp lcec.0.Meca500.ctrl.dyn-data2-id 43
-net j0-tor-fb  <= lcec.0.Meca500.dyn-data2.1
-net j1-tor-fb  <= lcec.0.Meca500.dyn-data2.2
-net j2-tor-fb  <= lcec.0.Meca500.dyn-data2.3
-net j3-tor-fb  <= lcec.0.Meca500.dyn-data2.4
-net j4-tor-fb  <= lcec.0.Meca500.dyn-data2.5
-net j5-tor-fb  <= lcec.0.Meca500.dyn-data2.6
+#net j0-tor-fb  <= lcec.0.Meca500.dyn-data2.1
+#net j1-tor-fb  <= lcec.0.Meca500.dyn-data2.2
+#net j2-tor-fb  <= lcec.0.Meca500.dyn-data2.3
+#net j3-tor-fb  <= lcec.0.Meca500.dyn-data2.4
+#net j4-tor-fb  <= lcec.0.Meca500.dyn-data2.5
+#net j5-tor-fb  <= lcec.0.Meca500.dyn-data2.6
 
 
 # set dynamic data port 3 to sequential type
