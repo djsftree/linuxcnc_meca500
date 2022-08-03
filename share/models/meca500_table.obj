@@ -1,5 +1,6 @@
 # Blender 3.2.1
 # www.blender.org
+mtllib meca500_table.mtl
 o table
 v -89.999992 -250.000000 -1.000000
 v -89.999992 -250.000000 -49.000000

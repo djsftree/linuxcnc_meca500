@@ -1,5 +1,6 @@
 # Blender 3.2.1
 # www.blender.org
+mtllib meca500_link1.mtl
 o link1
 v -61.658840 -34.360737 -91.000000
 v -61.658840 -34.360737 -81.000000
