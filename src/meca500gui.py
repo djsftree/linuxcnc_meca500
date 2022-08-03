@@ -32,8 +32,8 @@ NUM_LINKS = 7
 
 COL_MACH = [0.9, 0.9, 0.9, 1]  # Greyish?
 COL_RED = [1, 0, 0, 1]
-COL_BLUE = [0, 1, 0, 1]
-COL_GREEN = [0, 0, 1, 1]
+COL_BLUE = [0, 0, 1, 1]
+COL_GREEN = [0, 1, 0, 1]
 COL_X_AXIS = COL_RED
 COL_Y_AXIS = COL_BLUE
 COL_Z_AXIS = COL_GREEN
@@ -50,6 +50,7 @@ X_ROT = [0, 0, 0, 0, 0, 0, 0, 0]
 Y_ROT = [0, 0, 1, 1, 0, 1, 0, 0]
 Z_ROT = [0, 1, 0, 0, 1, 0, 1, 0]
 
+
 def load_file(file_name):
     """Check for validity paths"""
     if os.path.exists(file_name):
@@ -57,6 +58,11 @@ def load_file(file_name):
     else:
         print(f"Warning: {file_name} not found")
         return Color(COL_MACH, [CylinderX(0, 3, 100, 3)])
+
+
+def print_debug(msg):
+    print(f"MECAGUI: {msg}")
+
 
 c = hal.component("meca500gui")
 for i in range(NUM_JOINTS):
@@ -80,27 +86,29 @@ finger1 = Translate([finger1], 12.5, -20.0, -40)
 try:  # Expect files in working directory
     links: List[Any] = [None] * 8
     links[7] = AsciiOBJ(filename=f"{MODEL_DIR}/spindle_assembly.obj")
+    links[7] = Color(COL_GREEN, [links[7]])
 
     for i in range(NUM_LINKS):
         links[i] = load_file(f"{MODEL_DIR}/meca500_link{i + 1}.obj")
         links[i] = Color(COL_MACH, [links[i]])
+        print_debug(f"Loaded: {MODEL_DIR}/meca500_link{i + 1}.obj ")
 
     table = AsciiOBJ(filename=f"{MODEL_DIR}/meca500_table.obj")
+    print_debug(f"Loaded: {MODEL_DIR}/meca500_table.obj")
 except Exception as detail:
     print(detail)
     raise SystemExit("meca500 requires files in models directory")
 
 
-for i in range(NUM_LINKS-1, 0, -1):
-    if i == 7:
-        links[i] = Collection([finger1, links[i]])
-    else:
-        links[i] = Collection([links[i+1], links[i]])
-        links[i] = Translate([links[i]], X_TRANS[i], 0, Z_TRANS[i])
+links[7] = Collection([finger1, links[7]])
+links[7] = Rotate([links[7]], -180, 0, 0, 1)
+
+for i in range(NUM_LINKS - 1 , 0, -1):
+
+    links[i] = Collection([links[i+1], links[i]])
+    links[i] = Translate([links[i]], X_TRANS[i], 0, Z_TRANS[i])
     if i == 3:
         links[i] = Rotate([links[i]], 90, 0, 1, 0)
-    if i == 7:
-        links[i] = Rotate([links[i]], -90, 0, 1, 0)
     links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
 
 links[0] = Translate([links[0]], 0, 0, 91)
