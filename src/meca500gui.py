@@ -46,9 +46,9 @@ X_TRANS = [0,    0,   0, -38,  0,  0, 0,   0]
 Z_TRANS = [91, 135, 135,  61, 61, 61, 0, 100]
 
 TH_ROT = [0, 1, 1, 1, 1, 1, 1, 0]
-X_ROT =  [0, 0, 0, 0, 0, 0, 0, 0]
-Y_ROT =  [0, 0, 1, 1, 0, 1, 0, 0]
-Z_ROT =  [0, 1, 0, 0, 1, 0, 1, 0]
+X_ROT = [0, 0, 0, 0, 0, 0, 0, 0]
+Y_ROT = [0, 0, 1, 1, 0, 1, 0, 0]
+Z_ROT = [0, 1, 0, 0, 1, 0, 1, 0]
 
 def load_file(file_name):
     """Check for validity paths"""
@@ -56,7 +56,7 @@ def load_file(file_name):
         return AsciiOBJ(file_name)
     else:
         print(f"Warning: {file_name} not found")
-        return Color(COL_RED, [CylinderX(0, 3, 100, 3)])
+        return Color(COL_MACH, [CylinderX(0, 3, 100, 3)])
 
 c = hal.component("meca500gui")
 for i in range(NUM_JOINTS):
