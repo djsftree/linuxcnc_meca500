@@ -102,14 +102,16 @@ except Exception as detail:
 
 links[7] = Collection([finger1, links[7]])
 links[7] = Rotate([links[7]], -180, 0, 0, 1)
+links[7] = HalRotate([links[7]], c, f"joint{6}", TH_ROT[6], X_ROT[6], Y_ROT[6], Z_ROT[6])
 
-for i in range(NUM_LINKS - 1 , 0, -1):
+for i in range(NUM_LINKS - 1, 0, -1):
 
     links[i] = Collection([links[i+1], links[i]])
     links[i] = Translate([links[i]], X_TRANS[i], 0, Z_TRANS[i])
     if i == 3:
         links[i] = Rotate([links[i]], 90, 0, 1, 0)
-    links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
+    if i != 6:
+        links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
 
 links[0] = Translate([links[0]], 0, 0, 91)
 meca500 = Collection([links[1], links[0]])
