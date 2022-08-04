@@ -39,8 +39,8 @@ COL_X_AXIS = COL_RED
 COL_Y_AXIS = COL_GREEN
 COL_Z_AXIS = COL_BLUE
 
-Y_TRANS = [0,    0,   0, -65,  -60, -65,  0,   0]
-Z_TRANS = [0,  135, 135,  50,    0,   0,  0,   0]
+Y_TRANS = [0,    0,   0, -61.5,  -58.5, -70,  0,   0]
+Z_TRANS = [0,  135, 135,  38,    0,   0,  0,   0]
 
 COLOURS = [COL_MACH] * NUM_LINKS
 # Link Debugging Colour
