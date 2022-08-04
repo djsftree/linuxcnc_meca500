@@ -39,13 +39,17 @@ COL_X_AXIS = COL_RED
 COL_Y_AXIS = COL_GREEN
 COL_Z_AXIS = COL_BLUE
 
-Y_TRANS = [0,   0,   0, -61.5, -58.5, -70, 0, 0]
-Z_TRANS = [91, 135, 135,    38,     0,   0, 0, 0]
+Y_TRANS = [0,    0,   0, -61.5,  -58.5, -70,  0,   0]
+Z_TRANS = [0,  135, 135,  38,    0,   0,  0,   0]
 
-TH_ROT = [0, 1, 1, 1, 1, 1, 1, 0]
-X_ROT =  [0, 0, 0, 0, 0, 0, 0, 0]
-Y_ROT =  [0, 0, 0, 0, 0, 0, 0, 0]
-Z_ROT =  [0, 0, 0, 0, 0, 0, 0, 0]
+COLOURS = [COL_MACH] * NUM_LINKS
+# Link Debugging Colour
+COLOURS[4] = [0.2, 0.6, 0.2, 1]
+
+TH_ROT = [1, 1, 1, 1, 1, 1, 1, 0]
+X_ROT =  [0, 0, 1, 1, 0, 1, 0, 0]
+Y_ROT =  [0, 0, 0, 0, 1, 0, 1, 0]
+Z_ROT =  [0, 1, 0, 0, 0, 0, 0, 0]
 
 
 def load_file(file_name):
@@ -85,12 +89,12 @@ finger1 = Collection([tool, xaxis, yaxis, zaxis])
 try:  # Expect files in working directory
     links: List[Any] = [None] * 8
     links[7] = AsciiOBJ(filename=f"{MODEL_DIR}/spindle_assembly.obj")
-    links[7] = Color(COL_GREEN, [links[7]])
+    links[7] = Color(COL_MACH, [links[7]])
     print_debug(f"Loaded: {MODEL_DIR}/spindle_assembly.obj")
 
     for i in range(NUM_LINKS):
         links[i] = load_file(f"{MODEL_DIR}/meca500_link{i + 1}.obj")
-        links[i] = Color(COL_MACH, [links[i]])
+        links[i] = Color(COLOURS[i], [links[i]])
         print_debug(f"Loaded: {MODEL_DIR}/meca500_link{i + 1}.obj ")
 
     table = AsciiOBJ(filename=f"{MODEL_DIR}/meca500_table.obj")
@@ -110,6 +114,7 @@ for i in range(NUM_LINKS - 1, 0, -1):
     links[i] = Translate([links[i]], 0, Y_TRANS[i], Z_TRANS[i])
     links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
 
+links[0] = Translate([links[0]], 0, Y_TRANS[0], Z_TRANS[0])
 meca500 = Collection([links[1], links[0]])
 
 # create table with a debug finger
