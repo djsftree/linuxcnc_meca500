@@ -46,7 +46,7 @@ COLOURS = [COL_MACH] * NUM_LINKS
 # Link Debugging Colour
 COLOURS[4] = [0.2, 0.6, 0.2, 1]
 
-TH_ROT = [0, 1, 1, 1, 1, 1, 1, 0]
+TH_ROT = [0, 1, 1, 1, 1, 0.5, 0.5, 0]
 X_ROT =  [0, 0, 0, 0, 1, 0, 1, 0]
 Y_ROT =  [0, 0, 1, 1, 0, 1, 0, 0]
 Z_ROT =  [0, 1, 0, 0, 0, 0, 0, 0]
