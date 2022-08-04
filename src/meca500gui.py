@@ -39,14 +39,15 @@ COL_X_AXIS = COL_RED
 COL_Y_AXIS = COL_GREEN
 COL_Z_AXIS = COL_BLUE
 
+LINK_NAMES = ["A1", "A2", "A3", "A4", "A5", "A6", "SPINDLE"]
 X_TRANS = [0,      0,    0,  61.5,  58.5,  70.0,   0,     0]
 Z_TRANS = [91,   135,  135,    38,     0,     0,   0,   100]
 
 COLOURS = [COL_MACH] * NUM_LINKS
 # Link Debugging Colour
-COLOURS[4] = [0.2, 0.6, 0.2, 1]
+COLOURS[5] = [0.2, 0.6, 0.2, 1]
 
-TH_ROT = [0, 1, 1, 1, 1, 0.5, 0.5, 0]
+TH_ROT = [0, 1, 1, 1, 1, 1, 1, 0]
 X_ROT =  [0, 0, 0, 0, 1, 0, 1, 0]
 Y_ROT =  [0, 0, 1, 1, 0, 1, 0, 0]
 Z_ROT =  [0, 1, 0, 0, 0, 0, 0, 0]
@@ -111,11 +112,19 @@ links[7] = HalRotate([links[7]], c, f"joint{6}", TH_ROT[6], X_ROT[6], Y_ROT[6], 
 fingerL = Collection([xaxis, yaxis, zaxis])
 
 for i in range(NUM_LINKS - 1, 0, -1):
-	
-	links[i] = Collection([links[i+1], links[i], fingerL])
-	links[i] = Translate([links[i]], X_TRANS[i], 0, Z_TRANS[i])
-	links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
-
+    if X_ROT[i+1]:
+        links[i] = Collection([links[i + 1], links[i], CylinderX(0, 2, 170, 2)])
+    elif Y_ROT[i+1]:
+        links[i] = Collection([links[i + 1], links[i], CylinderY(0, 2, 170, 2)])
+    elif Z_ROT[i+1]:
+        links[i] = Collection([links[i + 1], links[i], CylinderZ(0, 2, 170, 2)])
+    else:
+        links[i] = Collection([links[i + 1], links[i]])
+    links[i] = Translate([links[i]], X_TRANS[i], 0, Z_TRANS[i])
+    print_debug(f"links[{i}] = Translate([links[{i}]], {X_TRANS[i]}, 0, {Z_TRANS[i]})")
+    links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
+    print_debug(f"links[{i}] = HalRotate([links[{i}]], c, joint{i}, {TH_ROT[i]}, {X_ROT[i]}, {Y_ROT[i]}, {Z_ROT[i]})")
+    print("---")
 links[0] = Translate([links[0]], 0, X_TRANS[0], Z_TRANS[0])
 meca500 = Collection([links[1], links[0]])
 
