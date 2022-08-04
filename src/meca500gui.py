@@ -39,8 +39,8 @@ COL_X_AXIS = COL_RED
 COL_Y_AXIS = COL_GREEN
 COL_Z_AXIS = COL_BLUE
 
-X_TRANS = [0,      0,    0,  61.5,  58.5,  70.0,   0,   0]
-Z_TRANS = [0,    135,  135,     38,    0,     0,   0,   100]
+X_TRANS = [0,      0,    0,  61.5,  58.5,  70.0,   0,     0]
+Z_TRANS = [91,   135,  135,    38,     0,     0,   0,   100]
 
 COLOURS = [COL_MACH] * NUM_LINKS
 # Link Debugging Colour
@@ -116,7 +116,7 @@ for i in range(NUM_LINKS - 1, 0, -1):
 	links[i] = Translate([links[i]], X_TRANS[i], 0, Z_TRANS[i])
 	links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
 
-links[0] = Translate([links[0]], 0, 0, 91)
+links[0] = Translate([links[0]], 0, X_TRANS[0], Z_TRANS[0])
 meca500 = Collection([links[1], links[0]])
 
 # create table with a debug finger
