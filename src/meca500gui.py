@@ -40,7 +40,7 @@ COL_Y_AXIS = COL_GREEN
 COL_Z_AXIS = COL_BLUE
 
 X_TRANS = [0,      0,    0,  61.5,  58.5,  70.0,   0,   0]
-Z_TRANS = [0,  135.5,  135,     38,    0,     0,   0,   100]
+Z_TRANS = [0,    135,  135,     38,    0,     0,   0,   100]
 
 COLOURS = [COL_MACH] * NUM_LINKS
 # Link Debugging Colour
@@ -127,6 +127,9 @@ coordw = Collection([xaxis0, yaxis0, zaxis0])
 table = Color(COL_MACH, [table])
 table = Collection([table, coordw])
 
-model = Collection([tooltip, meca500, table, work])
+myhud = Hud()
+myhud.debug_track = 1
+myhud.show("right-click to reset. scroll for Z")
 
-main(model, tooltip, work, 600, 600, None, -75, 300)
+model = Collection([tooltip, meca500, table, work])
+main(model, tooltip, work, size=600, hud=myhud, lat=-75, lon=215)
