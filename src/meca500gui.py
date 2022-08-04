@@ -39,13 +39,13 @@ COL_X_AXIS = COL_RED
 COL_Y_AXIS = COL_GREEN
 COL_Z_AXIS = COL_BLUE
 
-Y_TRANS = [0,    0,   0,    38,    0,    0,  0,   0]
-Z_TRANS = [91, 135, 135,  61.5, 58.5, 70.0,  0, 100]
+Y_TRANS = [0,   0,   0, -61.5, -58.5, -70, 0, 0]
+Z_TRANS = [91, 135, 135,    38,     0,   0, 0, 0]
 
 TH_ROT = [0, 1, 1, 1, 1, 1, 1, 0]
 X_ROT =  [0, 0, 0, 0, 0, 0, 0, 0]
-Y_ROT =  [0, 0, 1, 1, 0, 1, 0, 0]
-Z_ROT =  [0, 1, 0, 0, 1, 0, 1, 0]
+Y_ROT =  [0, 0, 0, 0, 0, 0, 0, 0]
+Z_ROT =  [0, 0, 0, 0, 0, 0, 0, 0]
 
 
 def load_file(file_name):
@@ -108,22 +108,18 @@ for i in range(NUM_LINKS - 1, 0, -1):
 
     links[i] = Collection([links[i+1], links[i], xaxis, yaxis, zaxis])
     links[i] = Translate([links[i]], 0, Y_TRANS[i], Z_TRANS[i])
+    links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
 
-    if i != 6:
-        links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
-
-links[0] = Translate([links[0]], 0, 0, 91)
 meca500 = Collection([links[1], links[0]])
 
-# create visual world coordinates
+# create table with a debug finger
 xaxis0 = Color(COL_X_AXIS, [CylinderX(0, 2, 200, 2)])
 yaxis0 = Color(COL_Y_AXIS, [CylinderY(0, 2, 200, 2)])
 zaxis0 = Color(COL_Z_AXIS, [CylinderZ(0, 2, 300, 2)])
 coordw = Collection([xaxis0, yaxis0, zaxis0])
-
-# create machine table
 table = Color(COL_MACH, [table])
 table = Collection([table, coordw])
+
 model = Collection([tooltip, meca500, table, work])
 
 main(model, tooltip, work, 600, 600, None, -75, 300)
