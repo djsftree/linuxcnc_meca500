@@ -1,7 +1,7 @@
 # Kinematic HAL config file for Mecademic Meca500 robot arm - 6 DOF
 
-#            L4   j3   L5  j4   L6  j5  L7
-#   j2    *-------*--------*--------*-------|end_effector|
+#            L4   j3   L5   j4   L6   j5  L7
+#   j2    *-------*---------*---------*-------|end_effector|
 #         |
 #   L3    |      
 #         |
@@ -12,43 +12,34 @@
 #   j0    *
 #       |---|
 #   L1  |---|
-#  base |---|
-
-# DH
-#   |  joint  |  Alpha   |  A      |  D       |
-#   |    0    |   90     |  0      |  135     |
-#   |    1    |   0      |  -135   |  0       |
-#   |    2    |   90     |  -38    |  0       |
-#   |    3    |   90     |  0      |  120     |
-#   |    4    |   90     |  0      |  0       |
-#   |    5    |   0      |  0      |  70      |
+#       |---|
 
 # DHM
 #   |  joint  |  Alpha   |  A      |  D       |
-#   |    0    |   0      |  0      |  135     |
-#   |    1    |  -90     |  0      |  0       |
-#   |    2    |   0      |  135    |  0       |
-#   |    3    |  -90     |  38     |  120     |
-#   |    4    |  -90     |  0      |  0       |
-#   |    5    |  -90     |  0      |  70      |
+#   |    0    |    0     |  135    |  0       |
+#   |    1    |  -90     |  135    |  0       |
+#   |    2    |  -90     |  38     |  61.5    |
+#   |    3    |    0     |  0      |  58.5    |
+#   |    4    |  -90     |  0      |  70      |
+#   |    5    |    0     |  0      |  0       |
 
-setp genserkins.A-0 0
-setp genserkins.A-1 0
-setp genserkins.A-2 135.0
-setp genserkins.A-3 38.0
+setp genserkins.A-0 135
+setp genserkins.A-1 135
+setp genserkins.A-2 38
+setp genserkins.A-3 0
 setp genserkins.A-4 0
 setp genserkins.A-5 0
 
 setp genserkins.ALPHA-0   0
 setp genserkins.ALPHA-1   -1.570796326
-setp genserkins.ALPHA-2   0
-setp genserkins.ALPHA-3   -1.570796326 
+setp genserkins.ALPHA-2   -1.570796326 
+setp genserkins.ALPHA-3   0 
 setp genserkins.ALPHA-4   -1.570796326
-setp genserkins.ALPHA-5   -1.570796326
+setp genserkins.ALPHA-5   0
 
-setp genserkins.D-0 135.0
+setp genserkins.D-0 0
 setp genserkins.D-1 0
 setp genserkins.D-2 0
-setp genserkins.D-3 120.0
-setp genserkins.D-4 0
+setp genserkins.D-3 61.5
+setp genserkins.D-4 58.5
 setp genserkins.D-5 70.0
