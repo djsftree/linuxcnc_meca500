@@ -39,16 +39,16 @@ COL_X_AXIS = COL_RED
 COL_Y_AXIS = COL_GREEN
 COL_Z_AXIS = COL_BLUE
 
-Y_TRANS = [0,    0,   0, -61.5,  -58.5, -70,  0,   0]
-Z_TRANS = [0,  135, 135,  38,    0,   0,  0,   0]
+X_TRANS = [0,      0,    0,  61.5,  58.5,  70.0,   0,   0]
+Z_TRANS = [0,  135.5,  135,     38,    0,     0,   0,   100]
 
 COLOURS = [COL_MACH] * NUM_LINKS
 # Link Debugging Colour
 COLOURS[4] = [0.2, 0.6, 0.2, 1]
 
-TH_ROT = [1, 1, 1, 1, 1, 1, 1, 0]
-X_ROT =  [0, 0, 1, 1, 0, 1, 0, 0]
-Y_ROT =  [0, 0, 0, 0, 1, 0, 1, 0]
+TH_ROT = [0, 1, 1, 1, 1, 1, 1, 0]
+X_ROT =  [0, 0, 0, 0, 1, 0, 1, 0]
+Y_ROT =  [0, 0, 1, 1, 0, 1, 0, 0]
 Z_ROT =  [0, 1, 0, 0, 0, 0, 0, 0]
 
 
@@ -108,13 +108,15 @@ except Exception as detail:
 links[7] = Collection([finger1, links[7]])
 links[7] = HalRotate([links[7]], c, f"joint{6}", TH_ROT[6], X_ROT[6], Y_ROT[6], Z_ROT[6])
 
+fingerL = Collection([xaxis, yaxis, zaxis])
+
 for i in range(NUM_LINKS - 1, 0, -1):
+	
+	links[i] = Collection([links[i+1], links[i], fingerL])
+	links[i] = Translate([links[i]], X_TRANS[i], 0, Z_TRANS[i])
+	links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
 
-    links[i] = Collection([links[i+1], links[i], xaxis, yaxis, zaxis])
-    links[i] = Translate([links[i]], 0, Y_TRANS[i], Z_TRANS[i])
-    links[i] = HalRotate([links[i]], c, f"joint{i}", TH_ROT[i], X_ROT[i], Y_ROT[i], Z_ROT[i])
-
-links[0] = Translate([links[0]], 0, Y_TRANS[0], Z_TRANS[0])
+links[0] = Translate([links[0]], 0, 0, 91)
 meca500 = Collection([links[1], links[0]])
 
 # create table with a debug finger
