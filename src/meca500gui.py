@@ -43,12 +43,13 @@ Y_TRANS = [0,    0,   0, -65,  -60, -65,  0,   0]
 Z_TRANS = [0,  135, 135,  50,    0,   0,  0,   0]
 
 COLOURS = [COL_MACH] * NUM_LINKS
-COLOURS[3] = [0.2, 0.6, 0.2, 1]
+# Link Debugging Colour
+COLOURS[4] = [0.2, 0.6, 0.2, 1]
 
-TH_ROT = [0, 1, 1, 1, 1, 1, 1, 0]
-X_ROT =  [0, 0, 0, 0, 0, 0, 0, 0]
-Y_ROT =  [0, 0, 0, 0, 0, 0, 0, 0]
-Z_ROT =  [0, 0, 0, 0, 0, 0, 0, 0]
+TH_ROT = [1, 1, 1, 1, 1, 1, 1, 0]
+X_ROT =  [0, 0, 1, 1, 0, 1, 0, 0]
+Y_ROT =  [0, 0, 0, 0, 1, 0, 1, 0]
+Z_ROT =  [0, 1, 0, 0, 0, 0, 0, 0]
 
 
 def load_file(file_name):
