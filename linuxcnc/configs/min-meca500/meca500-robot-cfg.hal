@@ -1,0 +1,56 @@
+# set command type to MoveJointVel in deg/sec
+
+setp lcec.0.Meca500.vel-cmd-id 21
+setp lcec.0.Meca500.motion.set-point 1
+setp lcec.0.Meca500.motion.move-id 0
+net j0-output  =>	lcec.0.Meca500.vel-cmd.a1
+net j1-output  =>	lcec.0.Meca500.vel-cmd.a2
+net j2-output  =>	lcec.0.Meca500.vel-cmd.a3
+net j3-output  =>	lcec.0.Meca500.vel-cmd.a4
+net j4-output  =>	lcec.0.Meca500.vel-cmd.a5
+net j5-output  =>	lcec.0.Meca500.vel-cmd.a6
+
+
+# set dynamic data port 0 to real-time pos-fb
+
+setp lcec.0.Meca500.ctrl.dyn-data0-id 40
+net j0-pos-fb  <= lcec.0.Meca500.dyn-data0.1
+net j1-pos-fb  <= lcec.0.Meca500.dyn-data0.2
+net j2-pos-fb  <= lcec.0.Meca500.dyn-data0.3
+net j3-pos-fb  <= lcec.0.Meca500.dyn-data0.4
+net j4-pos-fb  <= lcec.0.Meca500.dyn-data0.5
+net j5-pos-fb  <= lcec.0.Meca500.dyn-data0.6
+
+
+# set dynamic data port 1 to real-time vel-fb
+
+setp lcec.0.Meca500.ctrl.dyn-data1-id 42
+#net j0-vel-fb  <= lcec.0.Meca500.dyn-data1.1
+#net j1-vel-fb  <= lcec.0.Meca500.dyn-data1.2
+#net j2-vel-fb  <= lcec.0.Meca500.dyn-data1.3
+#net j3-vel-fb  <= lcec.0.Meca500.dyn-data1.4
+#net j4-vel-fb  <= lcec.0.Meca500.dyn-data1.5
+#net j5-vel-fb  <= lcec.0.Meca500.dyn-data1.6
+
+
+# set dynamic data port 2 to real-time tor-fb
+
+setp lcec.0.Meca500.ctrl.dyn-data2-id 43
+#net j0-tor-fb  <= lcec.0.Meca500.dyn-data2.1
+#net j1-tor-fb  <= lcec.0.Meca500.dyn-data2.2
+#net j2-tor-fb  <= lcec.0.Meca500.dyn-data2.3
+#net j3-tor-fb  <= lcec.0.Meca500.dyn-data2.4
+#net j4-tor-fb  <= lcec.0.Meca500.dyn-data2.5
+#net j5-tor-fb  <= lcec.0.Meca500.dyn-data2.6
+
+
+# set dynamic data port 3 to sequential type
+setp lcec.0.Meca500.ctrl.dyn-data3-id 0
+
+net robot-activate   <= lcec.0.Meca500.ctrl.activate
+net robot-deactivate <= lcec.0.Meca500.ctrl.deactivate
+net robot-home       <= lcec.0.Meca500.ctrl.home
+net robot-reset      <= lcec.0.Meca500.ctrl.reset-error
+net robot-activated  <= lcec.0.Meca500.status.activated
+net robot-busy       <= lcec.0.Meca500.status.busy
+net robot-homed      <= lcec.0.Meca500.status.homed

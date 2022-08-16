@@ -1,0 +1,29 @@
+loadusr -W lcec_conf meca500-ethercat.xml
+loadrt lcec
+
+loadrt [KINS]KINEMATICS
+loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[KINS]JOINTS
+
+# PID Realtime Loop Component
+loadrt at_pid names=pid.j0,pid.j1,pid.j2,pid.j3,pid.j4,pid.j5
+
+addf lcec.read-all          servo-thread
+
+addf motion-command-handler servo-thread
+addf motion-controller      servo-thread
+
+addf pid.j0.do-pid-calcs    servo-thread
+addf pid.j1.do-pid-calcs    servo-thread
+addf pid.j2.do-pid-calcs    servo-thread
+addf pid.j3.do-pid-calcs    servo-thread
+addf pid.j4.do-pid-calcs    servo-thread
+addf pid.j5.do-pid-calcs    servo-thread
+
+addf lcec.write-all         servo-thread
+
+# estop loopback
+net estop-loop iocontrol.0.user-enable-out iocontrol.0.emc-enable-in
+
+# create signals for tool loading loopback
+net tool-prep-loop iocontrol.0.tool-prepare iocontrol.0.tool-prepared
+net tool-change-loop iocontrol.0.tool-change iocontrol.0.tool-changed
