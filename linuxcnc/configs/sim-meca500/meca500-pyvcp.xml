@@ -2,8 +2,6 @@
 <pyvcp>
 
   <vbox>
-   <labelframe text="Joints values">
-    <font>("Helvetica",14)</font>
     <multilabel>
       <legends>["WORLD COORD", "JOINT COORD"]</legends>
       <font>("DejaVu Sans Mono",12)</font>
@@ -20,12 +18,9 @@
       <text>"Joint Coord"</text>
       <bd>3</bd>
     </button>
-  </labelframe>
   </vbox>
   
   <vbox>    
-  <labelframe text="Joints values">
-    <font>("Helvetica",14)</font>
     <hbox>
      <label>
         <text>"A1: "</text>
@@ -92,7 +87,6 @@
         <format>"4.4f"</format>
        </number>
     </hbox>
-  </labelframe>
   </vbox>
 
   <vbox>
