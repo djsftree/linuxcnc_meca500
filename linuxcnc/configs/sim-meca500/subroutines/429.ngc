@@ -13,7 +13,7 @@ o1 endif
 
    M66  E0 L0                           ; force synch
    M68  E#<SWITCHKINS_PIN> Q#<kinstype> ; set kinstype value
-   G10 L2 P8 X0 Y0 Z0 A0 B0 C0
+   G10 L2 P8 X0 Y-90 Z0 A0 B0 C180
    G59.2
    M66  E0 L0                           ; force synch
 ;   (debug, M429:identity kins)
