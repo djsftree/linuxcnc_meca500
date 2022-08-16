@@ -14,7 +14,7 @@ linuxcnc linuxcnc/configs/sim-meca500/sim-meca500.ini
 3). manipulate a meca500 vtk demo app
 ```
 cd share/models
-python3 meca500.py
+python3 vtk-meca500.py
 ```
 
 4). current sim DH here
