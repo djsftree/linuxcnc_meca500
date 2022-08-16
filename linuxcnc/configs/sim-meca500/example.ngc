@@ -14,38 +14,38 @@ G01 X0 Y0 Z0 A0 B10 C0 F1000
 
 (Switch to Coordinated, i.e. cartesian, world mode)
 ("M428" sets offsets to "G59.1" and resets those)
-(to "G10 L2 P7 X0 Y0 Z0 A0 B0 C0")
+(to "G10 L2 P7 X0 Y0 Z0 A-180 B0 C-180")
 (Origin is at bottom center of the robot base)
 
 M428
 
 G90
-X0 Y100 Z0 B-10 C0
+X50 Y0 Z50 B0 C0
 
 (Draw a cube of 150mm)
 
 G91
-G0 Y50
-X50
-Y-50
+G0 X50
+Y50
 X-50
+Y-50
+Z50
+X50
+Z-50
 Z50
 Y50
 Z-50
 Z50
-X50
+X-50
 Z-50
 Z50
 Y-50
-Z-50
-Z50
-X-50
 
 (Switch to Joint mode trivial kinematics)
 M429
 
 (Go to start pose)
 G90
-G0 X0 Y0 Z0 A0 B-10 C0
+G0 X0 Y0 Z0 A0 B0.1 C0
 
 M2

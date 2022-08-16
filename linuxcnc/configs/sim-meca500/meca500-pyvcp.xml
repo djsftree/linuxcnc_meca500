@@ -3,7 +3,7 @@
 
   <vbox>
     <multilabel>
-      <legends>["WORLD COORD", "JOINT COORD"]</legends>
+      <legends>["WORLD M428", "JOINT M429"]</legends>
       <font>("DejaVu Sans Mono",12)</font>
       <bg>"black"</bg>
       <fg>"yellow"</fg>
